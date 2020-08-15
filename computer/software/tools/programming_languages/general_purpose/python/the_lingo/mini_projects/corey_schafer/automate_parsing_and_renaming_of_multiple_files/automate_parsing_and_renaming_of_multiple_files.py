@@ -23,8 +23,8 @@ def rearrange():
     for file in os.listdir():
         # splitting the extension
         f_name_and_ext = os.path.splitext(file)
-        ext = f_name_and_ext[1]
         f_name = f_name_and_ext[0]
+        ext = f_name_and_ext[1]
 
 
         # splitting the file name into parts
@@ -34,10 +34,11 @@ def rearrange():
         f_name_parted[0] = ' ' + f_name_parted[0]
 
         # moving number to the front with zfill and adding spaces
-        number = f_name_parted.pop(1)
+        number = f_name_parted[1]
         number = number.strip().zfill(2)
         number += ' '
-        f_name_parted.insert(0, number)
+        f_name_parted[1] = f_name_parted[0]
+        f_name_parted[0] = number
 
         # finally joining everything back together
         final_no_ext = '-'.join(f_name_parted)
