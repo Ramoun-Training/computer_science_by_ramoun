@@ -42,7 +42,7 @@ def rearrange():
         # finally joining everything back together
         final_no_ext = '-'.join(f_name_parted)
         final_with_ext = final_no_ext + f_ext
-        print(final_with_ext)
+        yield (final_with_ext)
 
 
 def rearrange_v2():
@@ -64,9 +64,15 @@ def rearrange_v2():
         # final join
         new_name = f"{f_num}" + (" - {}"*3).format(f_course, f_title, f_part) + f_ext
 
-        print(new_name)
+        yield new_name
+
+
+def change_file_system(rearrange_function):
+    new_name = rearrange_function() 
+    for old_name in os.listdir():
+        os.rename(old_name, next(new_name))
 
 
 if __name__ == '__main__':
     # rearrange()
-    rearrange_v2()
+    change_file_system(rearrange_v2)
