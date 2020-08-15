@@ -23,10 +23,7 @@ def rearrange():
     """a functions that automates parsing and renaming filenames in a system"""
     for file in os.listdir():
         # splitting the extension
-        f_name_and_ext = os.path.splitext(file)
-        f_name = f_name_and_ext[0]
-        f_ext = f_name_and_ext[1]
-
+        f_name, f_ext = os.path.splitext(file)
 
         # splitting the file name into parts
         f_name_parted = f_name.split('-')
@@ -40,6 +37,7 @@ def rearrange():
         number += ' '
         f_name_parted[1] = f_name_parted[0]
         f_name_parted[0] = number
+        # x,y = y,x -> is a great way of swaping
 
         # finally joining everything back together
         final_no_ext = '-'.join(f_name_parted)
