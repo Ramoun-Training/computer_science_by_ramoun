@@ -20,11 +20,12 @@ os.chdir("python tuts proj")
 # print(os.listdir())
 
 def rearrange():
+    """a functions that automates parsing and renaming filenames in a system"""
     for file in os.listdir():
         # splitting the extension
         f_name_and_ext = os.path.splitext(file)
         f_name = f_name_and_ext[0]
-        ext = f_name_and_ext[1]
+        f_ext = f_name_and_ext[1]
 
 
         # splitting the file name into parts
@@ -42,9 +43,9 @@ def rearrange():
 
         # finally joining everything back together
         final_no_ext = '-'.join(f_name_parted)
-        final_with_ext = final_no_ext + ext
+        final_with_ext = final_no_ext + f_ext
         print(final_with_ext)
-    
+
 
 if __name__ == '__main__':
     rearrange()
