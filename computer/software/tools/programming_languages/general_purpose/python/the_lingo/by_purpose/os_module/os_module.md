@@ -189,6 +189,7 @@ print(dir(os))
     > **Tip**: try `dir(os.path)`
 
 
+> **Note**: if you deleted a file created through a script with the `os` module the `CWD` will change to the trash path (`/home/ramoun/.local/share/Trash/files/python tuts proj`) because python tracks files created.
 
 # Refrences
 
