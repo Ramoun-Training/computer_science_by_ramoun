@@ -47,5 +47,28 @@ def rearrange():
         print(final_with_ext)
 
 
+def rearrange_v2():
+    """another version of the rearrange function with different more organized cleaner approach"""
+    for f in os.listdir():
+        # splitting the extension
+        # returns a tuple of 2 values
+        f_name, f_ext = os.path.splitext(f)
+
+        # splitting the file name into parts
+        f_course, f_num, f_title, f_part = f_name.split('-')
+
+        # clearing space around parts of the file name and adding the zfill for the number
+        f_course = f_course.strip()
+        f_num = f_num.strip().zfill(2)
+        f_title = f_title.strip()
+        f_part = f_part.strip()
+
+        # final join
+        new_name = f"{f_num}" + (" - {}"*3).format(f_course, f_title, f_part) + f_ext
+
+        print(new_name)
+
+
 if __name__ == '__main__':
-    rearrange()
+    # rearrange()
+    rearrange_v2()
