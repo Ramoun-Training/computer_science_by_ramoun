@@ -100,6 +100,21 @@ don't have enough information to determine things like timezones or daylight sav
 
         > **Note**: nothing in the `datetime` library gonna give you tzone aware objects(datetimes), you have to explicitly set them.
 
+    - make a naïve datetime timezone aware
+
+        ```python
+        now = datetime.datetime.now() # not time zone aware because we didn't pass the timezone info
+        dt_cairo = now.astimezone(pytz.timezone('Africa/Cairo')) # output: ValueError: astimezone() cannot be applied to naive datetime
+        ```
+        ```python
+        # to make a naïve datetime tzone aware, you gotta run the localize()
+        cairo_tz = pytz.timezone('Africa/Cairo')
+        dt_cairo = cairo_tz.localize(dt_cairo)
+
+        # after we made the datetime timezone aware, now we can change the timezone
+        dt_mountain = dt_cairo.astimezone(pytz.timezone('US/Mountain'))
+        ```
+
 ### Aware datetimes  
 they have enough information to determine teimezones and keep track of daylight saving times.
 
@@ -122,6 +137,16 @@ they have enough information to determine teimezones and keep track of daylight 
         ```python
         dt_now = datetime.datetime.now(tz=pytz.UTC) # easier, less typing, easier to read (RECOMM|ENDED)
         dt_utcnow = datetime.datetime.utcnow().replace(tzinfo=pytz.UTC)
+
+        dt_cairo = dt_utcnow.astimezone(pytz.timezone('Africa/Cairo'))
+        # we took a tzone aware datetime set to utc and converted that to cairo time.
+        ```
+
+        > **Note**: `pytz` has a huge list of timezones to choose from. You can print them all out using a `for` loop.
+
+        ```python
+        for tz in pytz.all_timezones:
+            print(tz)
         ```
 
 ## time deltas
@@ -166,6 +191,48 @@ are the difference between 2 dates or times. They are useful for doing operation
     td = datetime.timedelta(hours=8)
     print(td + datetime.timedate.today())
     ```
+
+## format datetime
+
+- `isoformat()`
+    
+    an international standard to format datetime.
+
+    ```python
+    print(dt_cairo.isoformat()) 
+    ```
+- `strftime()`
+
+    used to convert a datetime into a string.
+
+    this method needs format codes in (list of formats) section
+
+    f: for format
+    
+    ```python
+    print(dt_cairo.strftime('%B %d, %Y'))
+    ```
+    
+    > **Note**: don't remember the formats, just see the documentation to find the format that you want.
+
+- `strptime()`
+
+    usded to convert a string into a datetime object.
+
+    p: for parse
+
+    ```python
+    dt_str = 'July 26, 2020'
+    dt = datetime.datetime.strptime(dt_str, '%B %d, %Y')
+    ```
+
+- list of formats
+
+        # see the documentation
+
+
+
+> **Note**: There is a popular python package called Arrow that is used to deal with dates and times in an easier way.
 
 # Refrences
 
