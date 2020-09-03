@@ -5,21 +5,85 @@ for more about remving non-alphanumeric symbols from a string in python checkout
 '''
 import sys
 import re
+import os
 
-title = ' '.join(sys.argv[1:]).lower()
+
+def replace_camel_with_space(title):
+    title_splitted = re.split('(?=[A-Z])', title)
+
+    return ' '.join(title_splitted)
 
 
-def replace_space_with_under(title):
-    title_splitted = title.split()
-    final_title = []
+def replace_space_with_under(title_splitted):
+    return '_'.join(title_splitted)
 
-    for word in title_splitted:   
-        if not word.isalnum():
-            word = re.sub(r'\W+', '', word)
 
-        final_title.append(word)
-    return '_'.join(final_title)
+# def remove_non_alnum(title_splitted):
+#     title_with_no_non_alnums = []
+
+#     for word in title_splitted:
+
+#         if word.isalnum():
+#             # if '_' in word:
+#             #     word = word.replace('_', '')
+#             # word = re.sub(r'\W+', '', word)
+
+#             title_with_no_non_alnums.append(word)
+
+#   return title_with_no_non_alnums
+
+
+def replace(title):
+
+    # removing the extension
+    title, extension = os.path.splitext(title)
+
+    # removing the starting '.'
+    if title.startswith('.'):
+        dot, title = title[0], title[1:]
+    else:
+        dot = ''
+
+    # checking if the title is all uppercase or not
+    if title.isupper():
+        return title + extension
+
+    # splitting the title on non-alnums
+    title = ' '.join(title.split('_'))
+    title = re.split(r'\W+', title)
+
+    # removing non-alnums
+    # title = remove_non_alnum(title_splitted)
+
+    # split words on camelCase
+    # title = replace_camel_with_space(title)    
+    title_splitted = [re.split('(?=[A-Z])', word) for word in title if word != '']
+    [word.remove(empty) for word in title_splitted for empty in word if empty == '']
+    title_splitted = [single_word for word in title_splitted for single_word in word]
+
+    # replace space with '_'
+    title = replace_space_with_under(title_splitted)
+
+    # make all lowercase
+    title = title.lower()
+
+    # adding the extension and the starting '.' again
+    title = dot + title
+    title += extension
+
+    return title
 
 
 if __name__ == '__main__':
-    print(replace_space_with_under(title))    
+
+    title = ' '.join(sys.argv[1:])
+    title = replace(title)
+
+    # title = 'sir.M_Rg/ol.text'
+    # title = 'README.md'
+
+    print(replace(title))
+
+
+# re.split('(?=[A-Z])', 'theLongAndWindingRoad') -> for splitting a str at uppercase
+# re.findall('[A-Z][a-z]*', 'TheLongAndWindingRoad') -> another way
