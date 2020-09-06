@@ -119,6 +119,36 @@ print(cls.__dict__)
     ```
     > **Tip**: to know if the method is a static method and not a regular method or a class method (check for 'cls' & 'self' within your function because if you don't access the instance or the class anywhere within the function).
 
+## Inheritance
+
+inheritance allows us to inherit (copy) attributes and methods from a parent class.
+
+```python
+class A:
+    def __init__(self, name):
+        self.name = name
+class B(A):
+    pass
+
+b = B('ramoun')
+```
+
+### How it works
+
+1. when an object is instanciated, python looks in the class for the `__init__`().
+1. if doesn't find it, it walks up the chain of inheritance until it finds what it is looking for.
+
+```python
+# more in depth look
+print(help(B))
+'''ouput
+class B(A)
+| method resuolution order
+|    B
+|    A
+|    builtins.objects # the last place to look and every class in python inherits from this base object class
+'''
+```
 
 # Resources
 
