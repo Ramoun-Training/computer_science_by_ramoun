@@ -8,7 +8,7 @@ oop is a logical way (or paradigm) for representing data in an encapsulated form
 
 in almost every programming language ever (including python) data can be represented in one of 3 forms [primitive, collectioin, more complex (json, xml, numerous collections, __oop__, ...etc)]
 
-[Imgur](https://imgur.com/xBwpufW)
+![data reprsentation illustration]https://i.imgur.com/xBwpufW.png)
 
 
 - why OOP?
