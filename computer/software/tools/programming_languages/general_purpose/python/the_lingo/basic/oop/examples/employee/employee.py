@@ -1,5 +1,5 @@
 #%%
-from datetime import datetime
+import datetime
 
 class Employee:
 
@@ -40,10 +40,14 @@ class Employee:
 
         return True
 
-    def __str__(self):
+    def __len__(self):
+        return len(self.full_name())
+
+    # this was __str__ but it was changed for testing purposes
+    def __repr__(self):
         return f'{self.first} {self.last} {self.email} {self.pay}'
 
-    __repr__ = __str__
+    # __repr__ = __str__
     
             
 # creating emp objects
@@ -123,7 +127,13 @@ class Developer(Employee):
 
     def __init__(self, first, last, pay, prog_lang):
         Employee.__init__(self, first, last, pay)
+        # super().__init__(first, last, pay)
         self.prog_lang = prog_lang
+
+    def __repr__(self):
+        # trying to return a string that could be used to recreate the object
+        return f'Developer({self.first},{self.last},{self.pay},{self.prog_lang})'
+
 
 #%%
 # =====================
@@ -136,3 +146,112 @@ print(dev1.pay)
 print(dev1.raise_amount)
 print(emp1.raise_amount)
 
+
+#%%
+#= ==========================================
+class Manager(Employee):
+
+    def __init__(self, first, last, pay, employees=None):
+        super().__init__(first, last, pay)
+        if employees is not None:
+            self.employees = employees
+        else:
+            print("emp_list address: " ,hex(id(employees)))
+            print("None address: " ,hex(id(None)))
+            self.employees = []
+
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+
+    def remove_emp(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
+
+    def print_emps(self):
+        for emp in self.employees:
+            print('==> ' + emp.full_name())
+
+
+# %%
+# ==================================
+mng1 = Manager('ramoun', 'python', 90000)
+
+mng1.print_emps()
+mng1.add_emp(emp1)
+mng1.print_emps()
+
+
+# %%
+# ==============================
+mng2 = Manager('mike', 'wasaoski', 80000, [emp2])
+
+mng2.print_emps()
+mng2.add_emp(emp1)
+print('.-'*20)
+mng2.print_emps()
+mng2.remove_emp(emp2)
+print('.-'*20)
+mng2.print_emps()
+print('.-'*20)
+print(mng2.email)
+
+
+# %%
+# ======================
+print(isinstance(emp1, Employee))
+print(issubclass(Manager, Employee))
+print(issubclass(Employee, Employee))
+
+
+#%%
+# ======================
+# don't do that, you want always to be explicit about what are you adding together
+
+class N:
+    def __init__(self, n):
+        self.n = n
+
+    def __add__(self, other):
+        return self.n + other.n
+
+num1 = N(30)
+num2 = N(70)
+print(num1 + num2)
+
+
+#%%
+# =============================
+dev3 = Developer('peter', 'parker', 100000, 'Javascript')
+
+print(len(dev3))
+
+
+#%%
+# ============================
+class User:
+    
+    def __init__(self, first, last):
+            self.first = first
+            self.last = last
+
+    @property
+    def email(self):
+        return f'{self.first}.{self.last}@company.com'
+
+    @property
+    def full_name(self):
+        return f'{self.first} {self.last}'
+
+    @full_name.setter
+    def full_name(self, new_name):
+        self.first, self.last = new_name.strip().split(' ')        
+
+user = User('ramoun', 'python')        
+
+user.last = 'Ruby'
+user.full_name = 'Mr Python' # == User.full_name(user, 'Mr Python')
+
+print(user.first)
+print(user.email) # the email is not updated
+print(user.full_name)
