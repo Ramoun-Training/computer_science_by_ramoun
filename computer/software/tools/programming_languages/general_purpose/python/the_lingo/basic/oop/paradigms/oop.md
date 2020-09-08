@@ -2,11 +2,15 @@
 
 ## What is OOP? [2]
 
-oop is a logical way (or paradigm) of representing data in an encapsulated form (attributes[properties] - methods[actions]).
+oop is a logical way (or paradigm) for representing data in an encapsulated form (attributes[properties] - methods[actions]).
 
 ## Data representation [2]
 
-in almost every programming language ever (including python) data can be represented in one of 3 forms [primitive, collectioin, more complex (json, xml, numerous collections, oop, ...etc)]
+in almost every programming language ever (including python) data can be represented in one of 3 forms [primitive, collectioin, more complex (json, xml, numerous collections, __oop__, ...etc)]
+
+![data representation illustration](https://imgur.com/xBwpufW)
+
+
 
 
 - why OOP?

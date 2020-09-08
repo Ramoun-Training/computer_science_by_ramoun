@@ -338,6 +338,10 @@ pipenv graph
 pipenv --rm
 ```
 
+## How to Manage multiple projs, env.vars, and v.envs?[4]
+
+
+
 # Resources
 - [[2] corey ](https://www.youtube.com/watch?v=zDYL22QNiWk&list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7&index=22)
 - [[3] corey ](https://www.youtube.com/watch?v=Kg1Yvry_Ydk&list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7&index=24)

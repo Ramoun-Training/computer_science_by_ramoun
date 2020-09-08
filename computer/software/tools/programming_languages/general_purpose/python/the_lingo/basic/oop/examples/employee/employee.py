@@ -247,11 +247,25 @@ class User:
     def full_name(self, new_name):
         self.first, self.last = new_name.strip().split(' ')        
 
+    @full_name.deleter
+    def full_name(self):
+        self.first = None
+        self.last = None
+
+
 user = User('ramoun', 'python')        
 
 user.last = 'Ruby'
 user.full_name = 'Mr Python' # == User.full_name(user, 'Mr Python')
+# user.full_name('mike doom') # str object is not callable
 
 print(user.first)
 print(user.email) # the email is not updated
+print(user.full_name)
+
+
+del user.full_name
+print(user.email)
+print(user.first)
+print(user.last)
 print(user.full_name)
