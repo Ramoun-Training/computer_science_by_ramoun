@@ -8,23 +8,102 @@ oop is a logical way (or paradigm) for representing data in an encapsulated form
 
 in almost every programming language ever (including python) data can be represented in one of 3 forms [primitive, collectioin, more complex (json, xml, numerous collections, __oop__, ...etc)]
 
-![data reprsentation illustration]https://i.imgur.com/xBwpufW.png)
+![data reprsentation illustration](https://i.imgur.com/xBwpufW.png)
 
 
-- why OOP?
-    1. it allows us to logically group data and functions in a way that is easier to reuse and also easy to build upon if we need.
+## why OOP? [1]
 
-- **class**: a blueprint for creating instances.
-
-- **method**: a function that is associated with a class.
-
-- **attribute**: a variable (data) that is associated with a class.
-
-- **instance variables**: are variables that contain data that is unique to each instance.
-
-- **class variables**: are variables that are shared among all instances of a class (class variables should be the same for each instance). class variables can be accessed through objects too (and not only class name).
+it allows us to logically group data and functions in a way (logical unit) that is easier to reuse and also easy to build upon if we need.
 
 > **Tip**: try creating an oop intensive app without the use of any oop paradigm (functional programming only) and see the result and compare.
+
+
+## Terminology [1]
+
+- **class**: a blueprint for creating instances (grouping of data [vars, methods]).
+
+- **object**: an instance of a class (it has all class methods and attributes) with the a bility to be modified without affecting the original class.
+
+- **method**: a function that is associated with a class (i.e: provides the functionality, what the objects can do, or what can we do with the objects).
+
+- **attribute**: a variable (data) that is associated with a class (i.e: provides the data we need to store).
+
+- **instance variables**: are variables that contain data that is unique to each instance (object).
+
+- **class variables**: are variables that are shared among all instances of a class (class variables should be the same for each instance). class variables can be accessed through objects too (and not only class name due to __method resolution order__).
+
+## Class-Object Relationship
+
+an object is an instance (like a copy) of a class.
+
+![class_object_relationship](https://i.imgur.com/0dvVfUD.png)
+
+
+## Creating Classes
+
+- constructors/inititilizer
+
+    is a method called automatically whenever an object is created.[2]
+
+    `__init__()` is used to set attributes for newly created objects.[1]
+
+    ```python
+    class Employee:
+        def __init__(self, first, last, pay):
+            self.first = first
+            self.last = last
+            self.email = f'{first}.{last}@company.com'
+            self.pay = pay
+    ```
+
+    > **Note**: `__init__()` is a special method that python looks looks for when a class is created to execute code inside of it.[2]
+
+    > **Note**: if the `__init__()` is not found, then the original one defined by python in the _builtins_ is invoked.[2]   
+
+    > **Tip**: `__init__()` should be as thin as possilble. Its soul purpose is to basically take passed-in args & assign them to the object.
+
+    
+    |redundent way|optimal solution|
+    |---------|---------|
+    |obj1 = Cls()| def func(obj, name, age):|
+    |obj1.name=""| obj.name= name|
+    |obj1.age=25 | obj.age= age|
+    |obj2 = Cls()| |
+    |obj2.name=""| |
+    |obj2.age=22 | |
+
+<br>
+
+- methods
+
+    ```python
+        def full_name(self):
+            return f'{self.first} {self.last}'
+    ```
+    
+    > **Note**: each method within the class automatically (implicitly) takes the instance as its first argument.
+
+        > Note: 
+            params: are the names listed in the function defination.
+            args: are the real values passed to the function.
+        so we can say: params are initialized to the values of the args supplied. 
+
+- `self` mystery solved
+
+    __`self`__: refers to the object itself. In python, objects are passed by refrence.It's more like `this` in other languages.
+
+    We put the variable 'self' as paramater for any method that we create to work with individual objects.
+
+    ```python
+    emp1.fullname()
+    # is the same as 
+    Empolyee.fullname(emp1) # actually that's what happens in the bg when `emp1.fullname()` is executed
+    ```
+    > **Note**: the `self` is always implicit, you never have to pass anything for that.
+
+> **Note**: python is more dynamic language than c# or Java, because you can add attributes and methods(that works differently) on the fly (like JS). but it's recommended to not do that.
+
+> **Note**: It's considered best practice to put any data that you expect an object ot have inside the `__init__()` method.
 
 ## Creating Instances (objects)
 - creating a dummy class
@@ -44,38 +123,6 @@ in almost every programming language ever (including python) data can be represe
     
     ```python
     emp1.name = 'ramoun'
-    ```
-
-## Creating Classes
-
-> **Note**: each method within the class automatically (implicitly) takes the instance as the first argument.
-
-- constructors/inititilizer
-
-    used to set attributes for newly created objects
-
-    ```python
-    class Employee:
-        def __init__(self, first, last, pay):
-            self.first = first
-            self.last = last
-            self.email = f'{first}.{last}@company.com'
-            self.pay = pay
-    ```
-
-- methods
-
-    ```python
-        def full_name(self):
-            return f'{self.first} {self.last}'
-    ```
-
-- `self` mystery solved
-
-    ```python
-    emp1.fullname()
-    # is the same as 
-    Empolyee.fullname(emp1) # actually that's what happens in the bg when `emp1.fullname()` is executed
     ```
 
 ## Class variables
@@ -104,9 +151,16 @@ print(cls.__dict__)
 
 ## methods
 
+python got multiple types of methods
+
 - regular methods
 
     they take the instance as their first argument by default (automatically).
+
+    > **Note**: if an object is passed to a method in python, then this method can apply multiple changes to that object (it can Create/Edit/Remove/Access the object's properties and methods).
+
+    ![regualr methods](https://i.imgur.com/k0O5i9Q.png)
+
 
 - class methods
     
@@ -122,6 +176,8 @@ print(cls.__dict__)
 
     methods that don't take anything as their first args by default (automatically). They behave like ordinary functions. We include them in classes because they have some logical connection with a class but it doesn't actually depend on any specific instance or class varaible. 
 
+    static methods are invoked on the class itself.
+
     ```python
     @staticmethod
     def is_workday(day):
@@ -131,6 +187,13 @@ print(cls.__dict__)
         return False
     ```
     > **Tip**: to know if the method is a static method and not a regular method or a class method (check for 'cls' & 'self' within your function because if you don't access the instance or the class anywhere within the function).
+
+- other 
+
+    ```python
+    def method():
+        return 'method'
+    ```
 
 ## Inheritance (subclassing)
 
@@ -170,7 +233,7 @@ if used correctly, subclassing can help us reuse our code nicely.
 
 ## Special (Magic/dunder) Methods
 
-special methods allow us to emulate some built-in behaviour within python and it is also how we implement operator over-loading.
+special methods are methods that already exist and we can overide to perform specific tasks .They also allow us to emulate some built-in behaviour within python and it is also how we implement operator over-loading.
 
 - Examples of Operator overloading
 
@@ -199,6 +262,13 @@ special methods allow us to emulate some built-in behaviour within python and it
         ```
     > **Note**: using special methods, we can change some of these built-in behaviour and operations. 
 
+### why use the dunder (`__`)?
+
+1. to distinguish the method from other methods in the class (i.e: telling python, this is a special method that you're looking for).
+1. dunder methods can't be called by objects (they are like private methods in other languages that are only called by the class itself).
+
+> **Note**: `cls.__init__(obj)`, `obj.__init__()` works.
+
 ### `__repr__`
 
 `__repr__()` is implicitly called whenever we call `repr()` on our objects or `print()`.
@@ -207,13 +277,17 @@ special methods allow us to emulate some built-in behaviour within python and it
 
 ### `__str__`
 
-`__str__()` is implicitly called whenever we call `str()` on our objects.
+`__str__()` is implicitly called whenever we call `str()` on our objects (whenever you try to convert an object to a string).
+
+we override the `__str__()` because somethimes we need ot know the data iteself instead fo knowing the address of the data.
 
 > **Note**: `__str__()` is meant to be more of a readable representation of the object and it's meant to be used as a display for the end-user.
 
 > **Tip**: you first wanna make sure to at least have an `__repr__()` in your class because if you only have `__repr__()` and don't have a `__str__()`. Then calling `str()` on an object will just use `__repr__()` as a fall back. So it's good to have `__repr__()` as a minimum.
 
 > **Note**: when you try to `print()` an object, it is going to automatically invoke the `__str__()` method and if doesn't find it will look for it in the parent class and if still doesn't find it it will try to use the `__repr__()` of the class itself, and if it doesn't find it will follow the same chain in-order.
+
+> **Note**: anytime you overide the `__str__()`, you need to return a string.
 
 > **Tip**: a good rule of thumb is to try to place something that you could copy and paste back to your python code that would recreate that same object.
 

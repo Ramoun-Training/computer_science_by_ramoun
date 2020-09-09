@@ -269,3 +269,37 @@ print(user.email)
 print(user.first)
 print(user.last)
 print(user.full_name)
+
+
+#%%
+# =======================================
+class Person:
+
+    def __init__(self, name):
+        self.name = name
+
+class Member(Person):
+
+    def __init__(self, name, membership):
+        Person.__init__(name)
+        self.membership = membership
+
+    def upgrade_membership(self, new_membership):
+        # invoke billing sys
+        # invoke API
+        self.membership = new_membership
+        # if worked():
+            # return 0
+        # else:
+            # return -1
+
+# not most scalable solution
+u1 = Person('ramoun')
+u2 = Person('python')
+
+persons = [
+    Person('ramoun'),
+    Person('python')
+]
+
+print(persons[0].name)
