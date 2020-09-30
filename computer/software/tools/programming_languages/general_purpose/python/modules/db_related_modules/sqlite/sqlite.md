@@ -18,6 +18,7 @@ you can use SQLite for small to medium size db apps where the db is gonna live o
     > **Note**: if the `database.db` file is there, it will connect to it But, if it's not there, it will creat it.
 
 - in memory db
+    this is useful for testing if you want a fresh clean db at every run.
     ```python
     conn = sqlite3.connect(':memory:')
     ```
@@ -63,6 +64,63 @@ c.execute("""
 
 ## Query
 
+the `SELECT` statement provides some results that yu can iterate through and to iterate through these results, you can use  `c.fetchone()` or `c.fetchall()`.
+
+- SELET 
+    ```python
+    SELECT column FROM tableName
+    ```
+
+- SELECT all
+    ```python
+    SELECT * FROM tableName
+    ```
+
+- WHERE
+    ```python
+    SELECT * FROM tableName WHERE column1=val1
+    ```
+
+- fetchone()
+    it will get the next row in our results
+
+- fetchall()
+    it will get the next row in our results and only return that row and if there's no rows available then it just returns `None`.
+
+- fetchmany(n)
+    it will get the next `n` number of rows in our results as a list and return these rows and if there's no rows available then it just return and empty list (`[]`).
+
+- fetchall()
+    it will get the remainig rows left in our results and return those as a list and if there's no rows available then it just return and empty list (`[]`).
+
+## populating a DB
+
+- the bad way
+    ```python
+    c.execute("""
+        INSERT INTO tableName VALUES ('{}', '{}', {})
+    """.format(obj.v1, obj.v2, obj.v3))
+    ```
+    
+    > **Note**: using string formating for populating a (any:mysql ..etc) DB because if you are accepting values from and end-user then this is valnurable to sql-injection attack.
+
+- the correct way
+    ```python
+    # you can use `?` and these are db api placehoders
+    c.execute("""
+        INSERT INTO tableName VALUES (?, ?, ?)
+    """, (obj.v1, obj.v2, obj.v3))
+    # no need for '' because it will figure out the type on its own
+    ```
+    > **Note**: even if you are passing in one value into a placeholder, you still need to put it within a tuple.
+
+- the second correct way (RECOMMENDED)
+    ```python
+    c.execute("""
+        INSERT INTO tableName VALUES (:val1, :val2, :val3)
+    """, {'val1': obj.v1, 'val2': obj.v2, 'val3': obj.v3})
+    # this is more readable
+    ```    
 
 
 ## save changes
@@ -72,6 +130,8 @@ save (commit) the changes  to the database
 ```python
 conn.commit()
 ```
+
+> **Note**: SELECT statements doesn't need to be commited unlike: CREATE, UPDATE, DELETE.
 
 > **Note**: When a change to the database is committed, it becomes visible for other connections. Unless it is committed, it remains visible only locally for the connection to which the change was done. Because of the limited concurrency features of sqlite, the database can only be read while a transaction is open.
 
@@ -90,3 +150,5 @@ conn.close()
 > **Note**: check the SQLite documentation on [sqlite official docs](https://sqlite.org/docs.html), [sqlite page](https://sqlite.org/lang.html) and [python sqlite docs](https://docs.python.org/2/library/sqlite3.html)
 
 - [[1] corey's video](https://www.youtube.com/watch?v=pd-0G0MigUA&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=51&ab_channel=CoreySchafer)
+
+> **Note**: sqlite wroks with sqlalchemy (orm for python). you can use both for prototyping your app and when you are ready, you can easily replace that with a postgres or mysql db without hardly changing anythin in the code.
