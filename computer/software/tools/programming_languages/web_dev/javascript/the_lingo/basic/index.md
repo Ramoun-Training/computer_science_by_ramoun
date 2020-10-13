@@ -15,3 +15,204 @@ A high level interpreted multiparadigm scripting language.
 
 ## Why JS?
 
+1. It's the programming language of the browser (i.e: most of the known programming languages are all server-side and they can't deal with the **client-side** unless they use some library that generates javascript for the browser).
+
+2. Build very Interactive interfaces with **JS frameworks** like: React and Angular.
+
+3. Can be used for building very fast **server**-side and **full-stack** apps (unified code-base).
+
+4. Can be used in **Mobile** Dev. (React Native, NativeScript, Ionic, PhoneGap ...etc).
+
+5. Can be used in **Desktop** Apps (Electron JS).
+
+Sot it's basically **EVERYWHERE**.
+
+
+## JS REF.
+
+
+### 1. `Console.log()` & `alert()`
+
+- `console.log()`
+
+    is a part of the window object and adds a pop up message. 
+
+    the `console` object has a punch of methods attached to it and you can view 'em [here](https://www.google.com/search?q=mdn+console&oq=mdn+console&aqs=chrome..69i57j0l7.7041j0j1&sourceid=chrome&ie=UTF-8).
+
+- `alert()`
+
+    is a part of the window object and adds a pop up message. 
+
+    It blocks the rest of the script from running and it's very ineffecient 
+
+### 2. Variables
+
+```javascript
+let x; // declaration / initialization
+x = 10; // assignment 
+
+let x = 10; // 2x1 
+```
+
+- `var`
+
+    used since the beginning of js, but not used that much anymore because it's globally scoped (i.e: if you have 2 variables with the same name and one defined inside of an `if` block and the ohter is outside that block, that will cause conflicts).
+
+- `let`
+
+    has a block-level scope and were added with **ES6**.
+
+    used with **variables**.
+
+    only `let` can be used for **initialization**.
+
+- `const`
+
+    has a block-level scope and were added with **ES6**.
+
+    used with **constants**.
+
+    > **Note**: always use `const` unless you know you're gonna reassign a value. That makes the code more robust and more secure and less prone to errors.
+
+### 2. DataTypes
+
+- **primitive** datatypes
+    
+    data is directly assigned to memory (data is not a resource).
+
+    + **Strings:**
+
+        can use double or single qoutes (it's preferred to use single quotes).
+
+        ```javascript
+        const name = 'ramoun'; 
+        ```
+
+        - **concatenation**
+
+            ```javascript
+            // old way
+
+            const name = 'ramoun';
+            const age  =       22;
+            console.log('my name is ' + name + ' and i am ' + age + ' years old.'); // other datatypes are implicitly converted
+            ```
+
+            ```javascript
+            // ES6 way (Template string)
+
+            const name = 'ramoun';
+            const age  =       22;
+            console.log(`my name is ${name}  and i am ${age} years old.`); // other datatypes are implicitly converted
+            ```
+
+            > **Note**: you can convert any dtype into a string using this simple trick `'' + 4` => `'4'`.
+
+        - **`length`**
+
+            each string variable is a string object because "**EVERYTHING** in JS is an **Object**".
+
+            and each string object has a `length` property that holds the number of characters of that string.
+
+            ```javascript
+            const string =     'hello';
+            console.log(string.length);
+            ```
+
+        - **`toUpperCase()`**
+
+            converts all letters to uppercase.
+
+            ```javascript
+            console.log(string.toUpperCase());
+            ```
+
+        - **`toLowerCase()`**
+
+            converts all letters to uppercase.
+
+            ```javascript
+            console.log(string.toLowerCase());
+            ```
+
+        - **`substring()`**
+
+            pulls a substring out of a string.
+
+            ```javascript
+            console.log(string.substring(0, 3)); // start (inclusive), end (exclusive)
+            ```
+
+        - **chaining**
+
+            ```javascript
+            console.log(string.substring(0, 4).toUpperCase());
+            ```
+
+        - **`split()`**
+
+            splits a string into an array.
+
+            ```javascript
+            console.log(string.split('')); // by letter
+
+            const x =  'this, is, splitted';
+            console.log(string.split(', '));
+            ```
+
+    + **Numbers:**
+
+        can be floats or ints but js doesn't have a seprate dtype for each one. It's just a number.
+
+        ```javascript
+        const age = 22; 
+        const rating = 4.8; 
+        ```
+
+    + Boolean
+
+        thanks mr George Boole.
+
+        ```javascript
+        const isDope = true; 
+        ```
+
+    + **null:**
+
+        means empty (a variable with nothing in it).
+
+        It's not a 0 and not a '' or "".        
+
+        ```javascript
+        const empty = null;
+        ```
+
+
+    + undefined
+
+        ```javascript
+        const undef = undefined;        
+        ```
+
+        > **Note**: using `let x;` makes `x` undefined.
+    + Symbol
+
+    ```javascript
+    // to get the types of data in each var
+    console.log( typeof name   );
+    console.log( typeof age    );
+    console.log( typeof rating );
+    console.log( typeof isDope );
+    console.log( typeof empty  ); // go research 'js null is object typeof' hint: it's not really an object
+    console.log( typeof undef  );
+    ```
+- **objects** datatypes
+
+    + object
+    + Arrays
+    + Literals
+
+## Refrences
+
+- [mdn]
+- [w3schools]
