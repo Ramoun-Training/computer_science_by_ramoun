@@ -81,3 +81,21 @@ const todos = [
 ]
 console.log(todos);
 console.log(todos[1].text);
+
+
+// JSON
+const todosJSON = JSON.stringify(todos);
+console.log(todosJSON);
+
+
+// for loop
+for (let i = 0; i <= 10; i++) {
+    console.log(`this is iteration #${i}`);
+}
+
+for (let i = 0; i < todos.length; i++) {
+    console.log(todos[i].text);
+}
+
+
+

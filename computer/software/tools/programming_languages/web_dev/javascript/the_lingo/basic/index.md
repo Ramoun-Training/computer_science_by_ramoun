@@ -374,8 +374,56 @@ let x = 10; // 2x1
 
 **J**ava**S**cript **O**bject **N**otation is a data format that is used alot within fullstack development using APIs sending data to a server and recieving too.
 
-It's very similar to **object literals**
+> **Note**: It's very similar to **object literals**. The only difference is that we have **double qoutes** around all the keys and we have **dobule qoutes** around all the strings (so no single qoutes in json that would give us an error).
 
+- converting an **array of objects** to **JSON**
+
+    ```javascript
+    // maybe you want to get it ready to be sent to a server or something like that
+
+    //easy
+    const todosJSON = JSON.stringify(todos);
+    console.log(todosJSON);
+    // and this is how we would send data to a server
+    ```
+
+### 4. Loops
+
+- `for` loop
+
+    ```javascript
+    // the i is iterator
+    for (let i = 0; i < 10; i++) {
+        // run this code until the condition is not true
+        console.log(`for loop number: ${i}`);
+    }
+    ```
+
+    ```javascript
+    for (let i = 0; i < todos.length; i++) {
+        console.log(todos[i].text);
+    }
+    ```
+- `for` `of` loop    
+
+    like the traditional for loop but much more readable and suitable for traversing arrays
+
+    ```javascript
+    for (let todo of todos) {
+        console.log(todo.id);
+        console.log(todo.text);
+    }
+    ```
+
+- `while` loop 
+
+    ```javascript
+    let i = 0;
+    while (i < 10) {
+        // code goes here
+        i++;
+    }
+    ```
 
 ## Refrences
 
