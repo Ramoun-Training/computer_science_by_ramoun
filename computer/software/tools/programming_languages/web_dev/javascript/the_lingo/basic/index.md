@@ -289,9 +289,95 @@ let x = 10; // 2x1
         > **Note**: javascirpt is a dynamically typed programming language (so you can't do semehting like this: `const x:string`), if you like static typing you can use Typescirpt (a javascript preprocessor).
 
     + Object Literals
-    
+
+        are basically key:value pairs (like dictionaries in python but with little differences).
+
+        - **creation:**
+
+            ```javascript
+            const person = {
+                name: 'ramoun',
+                33  :       20,
+                true:     true,
+                age :       22,
+                hobbies: ['programming', 'programming', 'programming'];
+                contact: function() {
+                    console.log('omar.ramoun@gmail.com');
+                }
+                // embeded objects: objects within objects
+                address: {
+                    street :        22,
+                    state  : 'florida',
+                    country:     'U.S'
+                }        
+            }
+            
+            console.log(person.name, person.address.state);
+            console.log(person.hobbies[1]);
+            console.log(person.33);
+            console.log(person.true);
+            ```
+        
+        - **destructuring:**
+
+            converting key parts of an object to variables (aka: pulling variables of an object).
+
+            It's not assigning something, but pulling different things out.
+
+            It's part of **ES6**.
+
+            ```javascript
+            const { name, age, address } = person;
+            console.log(name); // the variable names must match the keys in the literal object in order for this to work or thesse vars will be all undefined.
+
+            const { 33, true } = person; // this is a syntax error 'cus it violates rules of naming identifiers inside of js 
+            // that's why the keys should always be ruled with the naming rules of identifiers in order to pull 'em out if needed.
+            ```
+
+            ```javascript
+            // pulling embbeded objects is easy
+            const { hobbies, address { city } } = person;
+            console.log(city);
+            ```
+        
+        - **adding properties:**
+
+            ```javascript
+            person.email = 'omar.ramoun@gmail.com';
+            console.log(perosn;)
+            ```
+
+        - **arrays of objects:**
+
+            ```javascript
+            const todos = [
+                {
+                    id  :                             1,
+                    text: 'get a job as a software dev',
+                    isCompleted : false
+                },
+                {
+                    id  :                              2,
+                    text: 'write better javascript code',
+                    isCompleted : true
+                },
+                {
+                    id  :                               3,
+                    text: 'organise some of my bookmarks',
+                    isCompleted : false
+                }
+            ]
+            console.log(toos);
+            ```
+
+### 3. JSON            
+
+**J**ava**S**cript **O**bject **N**otation is a data format that is used alot within fullstack development using APIs sending data to a server and recieving too.
+
+It's very similar to **object literals**
+
 
 ## Refrences
 
-- [mdn]
-- [w3schools]
+- [mdn]()
+- [w3schools]()
