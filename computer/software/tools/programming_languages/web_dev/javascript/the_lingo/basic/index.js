@@ -17,3 +17,11 @@ console.log( typeof empty  );
 console.log( typeof (empty));
 console.log( typeof undef  );
 
+
+const arr = ['this', 'is', 33];
+arr[1]    =           'isn\'t';
+console.log(arr);
+
+arr.unshift('first');
+arr.    push('last');
+console.    log(arr);

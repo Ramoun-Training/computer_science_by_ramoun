@@ -210,7 +210,86 @@ let x = 10; // 2x1
 
     + object
     + Arrays
-    + Literals
+
+        they are variables that hold multiple values.
+
+        you can **add / manipulate / use** methods on values of the array even if it's `const` (the only thing you cannot do to a `const` array is reassigning the whole array).
+
+        - **Creation:**
+
+            ```javascript
+            // creating an array with and Array() constructor - not used that much
+            
+            const numbers = new Array(1,2,3); // the new keyword is used in a lot of programming languages to indicate a constructor call and to differentiate between a constructor call and a function call
+            ```
+
+            ```javascript
+            // using brackets - used usually
+
+            const names = ['john', 'mike']; // faster
+            ```
+
+            ```javascript
+            // in js you can have multiple datatypes in the same array (just like python) + you don't have to explicitly write the number of objects in an array (like java or c++ for example)
+
+            const array = ['my', 'name', 33, true];
+            ```
+
+        - **Accessing:**
+
+            ```javascript
+            console.log(array[0]); // arrays are 0 based in every language
+            ```
+
+        - **Traversing:**            
+
+            ```javascript
+            for (let i = 0; i < array.length; i++) {
+                console.log(array[i]);
+            }
+            ```
+
+        - **Adding:**
+
+            ```javascript
+            array[4] = 'this element wasn\'t here before';
+            ```
+
+            ```javascript
+            // if you wanna add to the end without knowing the last element index
+            array.push('this is gonnna be added to the end of the array');
+            ```
+
+            ```javascript
+            // if you wanna add to the beginning of the array
+            array.unshift('this should be added to the beginning of the array');
+            ```            
+
+        - **removing:**
+
+            ```javascript
+            // removing the last element of an array
+            array.pop();
+            ```
+
+        - **checking:**
+
+            ```javascript
+            // if you wanna check if somehting is an array
+            console.log(Array.isArray('this should return false'));
+            ```
+
+        - **index:**
+
+            ```javascript
+            // let's see what is the index of 'name'
+            console.log(arr.indexOf('name'));
+            ```
+
+        > **Note**: javascirpt is a dynamically typed programming language (so you can't do semehting like this: `const x:string`), if you like static typing you can use Typescirpt (a javascript preprocessor).
+
+    + Object Literals
+    
 
 ## Refrences
 
