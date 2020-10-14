@@ -424,6 +424,68 @@ let x = 10; // 2x1
         i++;
     }
     ```
+### 5. High Order Array Mehtods
+
+> **Note**: Theses high order array methods they take as a parameter a function.
+
+- `forEach`
+
+    allows us to loop through and array almost identical to the `for .. of` statement.
+
+    ```javascript
+    // the function can take multiple items but the first one will always be the varaible you are gonna use to represent each item
+    todos.forEach(function (todo) {
+        console.log(todo.text);
+    });
+
+    // you can also use arrow functions
+    todos.forEach(todo => {
+        console.log(todo.text);
+    });
+    ```
+
+- `map`
+
+    allows us to create a new array from an existing one.
+
+    It returns an array.
+
+    ```javascript
+    const todoText = todos.map(function (todo) {
+        return todo.text;
+    });
+    console.log(todoText);
+    ```
+
+    ```javascript
+    const todoText = todos.map(todo => {
+        return todo.text;
+    });
+    console.log(todo.text);
+    ```
+
+- `filter`
+
+    allows us to create a new array based on a condition (i.e: as the name suggests it allows you to filter your array)
+
+    ```javascript
+    const completedTodos = todos.filter(function () {
+        return todo.isCompleted === true;
+    });
+    console.log(completedTodos);
+
+    // same with arrow functions
+    ```
+
+- chained
+
+    ```javascript
+    const completedTodosText = todos.filter(function (todo) {
+        return todo.isCompleted === true;
+    }).map(function (todo) { return todo.text });
+    ```
+
+### 6. conditionals
 
 ## Refrences
 

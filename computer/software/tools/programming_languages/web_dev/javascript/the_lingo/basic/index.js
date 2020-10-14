@@ -98,4 +98,42 @@ for (let i = 0; i < todos.length; i++) {
 }
 
 
+// for of
+for (let todo of todos) {
+    console.log(todo.id);
+}
 
+// forEach
+todos.forEach(function(todo) {
+    console.log(todo.text);
+});
+
+todos.forEach(todo => {
+    console.log(todo.isCompleted);
+});
+
+
+// map
+const todoText = todos.map(function (todo) {
+    return todo.text;
+});
+console.log(todoText);
+
+const todoIds = todos.map(todo => todo.id);
+console.log(todoIds);
+
+const completedTodos = todos.filter(todo => todo.isCompleted === true);
+console.log(completedTodos);
+
+// chains
+const completedTodosText = todos.filter(function (todo) {
+    return todo.isCompleted === true;
+}).map(function (todo) {
+    return todo.text;
+});
+
+// or in one line
+const completedTodosText_arrow = todos.filter(todo => todo.isCompleted === true).map(todo => todo.text);
+
+console.log(completedTodosText);
+console.log(completedTodosText_arrow);
