@@ -613,6 +613,158 @@ for the most part conditionals in js are just like conditionals in java and c/c+
     }
     ```
 
+### 8. functions
+
+- general syntax
+
+    ```javascript
+    function addNums(num1, num2) {
+        return num1 + num2;
+    }
+    console.log(addNums()); // NaN
+    ```
+    > **Note**: `NaN` is not a number.
+
+    ```javascript
+    function func(x, y) {
+        return x == y;
+    }
+
+    console.log(func(3, '3')      ); // true
+    console.log(func(3, 3.0)      ); // true
+    console.log(func(true, 'true')); // false
+    console.log(func(true, 1)     ); // true
+    console.log(func(0, false)    ); // true
+    console.log(func(0, '')       ); // true
+    console.log(func(false, '')   ); // true
+    console.log(func(false, [])   ); // true
+    
+    console.log(![]); // false 
+    console.log(!''); // true
+    console.log(!0 ); // true
+    console.log(!{}); // false
+    ```
+
+- default values
+
+    ```javascript
+    function add(num1 = 0, num2 = 0) {
+        return num1 + num2;
+    }
+    console.log(add());
+    ```
+
+- arrow functions
+
+    ```javascript
+    const addFun = (num1 = 1, num2 = 2) => {
+        return num1 + num2;
+    }
+    console.log(addFun(3, 3));
+    ```
+
+    ```javascript
+    const subFun =  (num1 = 0, num2 = 0) => {return num1 - num2}; // you cann't get rid of the braces if you use the return keyword
+    console.log(subFun(3, 3));
+    ```
+
+    ```javascript
+    const cube = num1 => num1 * num1 * num1;
+    console.log(cube(3));
+    ```
+
+    ```javascript
+    // can be used with other high order array methods
+    todos.forEach(todo => console.log(todo));
+    ```
+
+    > **Note**: arrow functions has huge advantage when it comes to `this`.
+
+
+### 9. Objects
+
+in js you can create objects using object literals or using constructor functions or you can use **ES6** classes.
+
+- constructor functions
+
+    ```javascript
+    // constructor functions
+    function Person (firstName, lastName, dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob);
+        this.getBirthYear = () => {
+            return this.dob.getFullYear();
+        }
+    }
+    // instanciate an object
+    const person1 = new Person('john', 'doe', '10-22-1998');
+    console.log(person1);
+    console.log(person1.dob);
+    ```
+
+    > **Note**: there's built in constructor functioins like 'Array' and there's custom made ones like 'Person'.
+
+    > **Note**: constructor functions cannot be done using arrow functions.
+
+- Prototypes
+
+    ```javascript
+    Person.prototype.getFullName = () => {
+        return this.firstName + ' ' + this.lastName;
+    }
+    ```
+
+- ES6 classes
+    
+    classes does the same exact thing and adds the methods to the prototype under the hood however it is what's named syntactic sugar (i.e: a prettier way to write it but it does the same thing under the hood)
+
+    ```javascript
+    class Person {
+        constructor (firstName, lastName, dob) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.dob = new Date(dob);
+        }
+
+        getBirthYear = () => {
+            return this.dob.getFullYear();
+        }
+
+        getFullName () {
+            return this.firstName + ' ' + this.lastName;
+        }
+    }
+    const person1 = new Person('john', 'doe', '10-22-1998');
+    console.log(person1);
+    console.log(person1.dob);
+    ```
+
+    > **Note**: it allows people comming from different backgrounds to be familier with this rather than dealing with prototypes.
+
+
+### 10. Date 
+
+- creation
+
+    ```javascript
+    const date = new Date('2-19-2020');
+    ```
+
+- methods
+
+    ```javascript
+    console.log(date);
+    console.log(date.getDate());
+    console.log(date.getDay());
+    console.log(date.getFullYear());
+    console.log(date.getHours());
+    // ...etc
+    ```
+
+
+
+
 ## Refrences
 
 - [mdn]()

@@ -205,3 +205,90 @@ switch (y) {
         console.log('finished');
 }
 
+
+
+// funfunfunctions
+
+function func(x, y) {
+    return x == y;
+}
+
+console.log(func(3, '3')      );
+console.log(func(3, 3.0)      );
+console.log(func(true, 'true'));
+console.log(func(true, 1)     );
+console.log(func(0, false)    );
+console.log(func(0, '')       );
+console.log(func(false, '')   );
+console.log(func(false, [])   );
+
+console.log(![]);
+console.log(!'');
+console.log(!0 );
+console.log(!{});
+
+
+function add(num1 = 0, num2 = 0) {
+    return num1 + num2;
+}
+console.log(add());
+
+// arrow functions
+
+const addFun = (num1 = 1, num2 = 2) => {
+    return num1 + num2;
+}
+
+const subFun =  (num1 = 0, num2 = 0) => {return num1 - num2}; // you cann't get rid of the braces if you use the return keyword
+console.log(addFun(3, 3));
+console.log(subFun(3, 3));
+
+const cube = num1 => num1 * num1 * num1;
+console.log(cube(3));
+
+
+// objects through constructor functions
+
+// constructor functions
+function Person (firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+    this.getBrithYear = function () {
+        return this.dob.getFullYear();
+    }
+}
+
+Person.prototype.getFullName = () => {
+    return this.firstName + ' ' + this.lastName;
+}
+
+
+// instanciate an object
+const person1 = new Person('john', 'doe', '10-15-1988');
+console.log(person1);
+console.log(person1.lastName);
+console.log(person1.dob);
+console.log(person1.getBrithYear());
+
+
+// Date
+
+const date = new Date('2-28-1998');
+console.log(date);
+console.log(date.getDate());
+console.log(date.getDay());
+console.log(date.getFullYear());
+console.log(date.getHours());
+// ...etc
+
+// ES6 classes
+
+
+class Engineer {
+    constructor(firstName, lastName, hobbies) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.hobbies = hobbies;
+    }
+}
