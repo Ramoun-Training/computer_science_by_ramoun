@@ -499,6 +499,120 @@ let x = 10; // 2x1
  
 > **Tip**: alot of the stuff generally in programming is prefrence. 
 
+### 7. Conditionals
+
+for the most part conditionals in js are just like conditionals in java and c/c++.
+
+- `if..else`
+
+    ```javascript
+    // comparing 3 numbers
+    let a =  3;
+    let b =  4;
+    let c = 33;
+    let max;
+    
+    if (a > b) {
+        if (a > c) {
+            max = a;
+        } else {
+            max = c;
+        }
+    } else {
+        if (b > c) {
+            max = b;
+        } else {
+            max = c;
+        }
+    }
+    
+    console.log(max);
+    ```
+
+- `if..else if`
+
+    ```javascript
+    if (a > b) {
+        console.log("greater than b");
+    } else if (a === b) {
+        console.log("is equal to b");
+    } else {
+        console.log("is less than b");
+    }
+    ```
+
+- `||` (or)
+
+    ```javascript
+    let x = 4;
+    if (x < 10 || x > 5) {
+        console.log("x is less than 10 and greater than 5");
+    }
+    ```
+
+- `&&` (and)
+
+    ```javascript
+    let x = 10;
+    if (x < 20 && x > 10) {
+        console.log("x is less than 20 and greater than 10");
+    }
+
+    // you can achieve the same result with 
+    if (x < 20) {
+        if (x > 10) {
+            console.log("x is less than 20 and greater than 10");
+        }
+    }
+    ```
+
+- `! ` (not)
+
+    ```javascript
+    x = !true; // x = false;
+    ```
+
+- ternary operator (`? : `)
+
+    used as a shorthand if statement. Mainly used to assign variables based on a condition.
+
+    ```javascript
+    let x = 1;
+    let color = x == 0 ? 'black' : 'white';
+    ```
+
+- `switch`
+
+    another way to evalutate a condition.
+
+    ```javascript
+    switch (color) {
+        case 'black':
+            console.log('color is black');
+            break;
+        case 'white':
+            console.log('color is white');
+            break;
+        default:
+            console.log('doesn\'t match');
+    }
+    ```
+
+    ```javascript
+    switch (y) {
+        case 1:
+            console.log(1);
+        case 2:
+            console.log(2);
+        case 3:
+            console.log(3);
+        case 4:
+            console.log(4);
+        default:
+            console.log('finished');
+    }
+    ```
+
 ## Refrences
 
 - [mdn]()

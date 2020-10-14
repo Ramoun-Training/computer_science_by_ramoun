@@ -137,3 +137,71 @@ const completedTodosText_arrow = todos.filter(todo => todo.isCompleted === true)
 
 console.log(completedTodosText);
 console.log(completedTodosText_arrow);
+
+
+// conditionals
+
+let a = 33;
+let b = 44;
+let c = 33;
+let max;
+
+if (a > b) {
+    if (a > c) {
+        max = a;
+    } else {
+        max = c;
+    }
+} else {
+    if (b > c) {
+        max = b;
+    } else {
+        max = c;
+    }
+}
+
+if (a > b) {
+    console.log("greater than b");
+} else if (a === b) {
+    console.log("is equal to b");
+} else {
+    console.log("is less than b");
+}
+
+console.log(max);
+
+
+// ternary 
+
+let x = 1;
+let color = x == 0 ? 'black' : 'white';
+console.log(color);
+
+// switch 
+
+switch (color) {
+    case 'black':
+        console.log('color is black');
+        break;
+    case 'white':
+        console.log('color is white');
+        break;
+    default:
+        console.log('doesn\'t match');
+}
+
+let y = 3;
+
+switch (y) {
+    case 1:
+        console.log(1);
+    case 2:
+        console.log(2);
+    case 3:
+        console.log(3);
+    case 4:
+        console.log(4);
+    default:
+        console.log('finished');
+}
+
