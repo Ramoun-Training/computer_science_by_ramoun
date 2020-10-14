@@ -485,7 +485,19 @@ let x = 10; // 2x1
     }).map(function (todo) { return todo.text });
     ```
 
-### 6. conditionals
+### 6. Equal sign
+
+- double equal (`==`)
+    
+    matches only the values and not the data types (e.g: `'10' == 10` returns `true`).
+
+- triple equal (`===`)
+
+    matches the values and teh data types (e.g: `'10' === 10` returns `false`).
+
+> **Note**: most developers use triple equal (`===`) because for the most part they always wanna match the types.
+ 
+> **Tip**: alot of the stuff generally in programming is prefrence. 
 
 ## Refrences
 
