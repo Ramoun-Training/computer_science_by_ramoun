@@ -6,6 +6,7 @@ cwd = os.getcwd()
 os.mkdir("styles")
 os.mkdir("scripts")
 os.mkdir("images")
+os.mkdir("pages")
 
 
 # adding boiler plate code
@@ -26,7 +27,8 @@ index_boiler = '''<!DOCTYPE html>
 </html>
 '''
 
-reset_boiler = ''':root { font: 20px/1.2 "Roboto", sans-serif; } /* or html */
+reset_boiler = '''@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+:root { font: 20px/1.2 "Poppins", sans-serif; } /* or html */
 
 body,
 body * {
@@ -46,9 +48,37 @@ debug_boiler = '''body * {
 }
 '''
 
+style_boiler = ''':root {
+    --dark:         #2F303A;
+    --light-black:  #26262e;
+
+    --accent:       #1762A7;
+    --accent-hover: #2180d8;
+
+    --light:        #ffffff;
+    --light-hover:  #adadad;
+
+    --blue:         #3856B0;
+    --red:          #b038a0;
+    --purple:       #3a38b0;
+}
+
+* {
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+a {
+    cursor: pointer;
+}
+'''
+
+layout_boiler = '''* {
+    outline: none;
+}
+'''
+
 
 # creating files
-style = open('styles/style.css', 'w')
 script = open('scripts/script.js', 'w')
 
 with open('index.html', 'w') as index:
@@ -60,8 +90,14 @@ with open('styles/debug.css', 'w') as debug:
 with open('styles/reset.css', 'w') as reset:
     reset.write(reset_boiler)
 
+with open('styles/style.css', 'w') as style:
+    style.write(style_boiler)
 
-index.close()
-style.close()
+with open('styles/layout.css', 'w') as layout:
+    layout.write(layout_boiler)
+
+
 script.close()
+
+print('all files and folders were created successfully.')
 
