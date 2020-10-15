@@ -292,3 +292,12 @@ class Engineer {
         this.hobbies = hobbies;
     }
 }
+
+
+// DOM
+
+function closeModal() {
+    const modal = document.getElementById("modal");
+
+    modal.style.display = "none";
+}

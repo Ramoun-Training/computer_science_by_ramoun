@@ -1,0 +1,40 @@
+body {
+    background: hsl(0, 0%, 94%);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgb(36, 36, 36);
+    color: hsl(0, 0%, 90%);
+
+    border-radius: 4px;
+    padding: 0 10px;
+
+    font-size: 0.6rem;
+}
+
+#modal button {
+    font-weight: bolder;    
+}
+
+#modal button:hover {
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    background: #fff;
+}
+
+#signup-form {
+    background: hsl(0, 0%, 90%);
+    border-radius: 4px;
+}
