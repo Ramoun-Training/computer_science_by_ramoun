@@ -274,4 +274,19 @@ Make sure you don't nest 'C' style comments. It is easy to make this mistake if 
 
         > **Note**: And the pseudo-variable `$...`.
 
-        > **Note**: Some references to the type "double" may remain in the manual. Consider double the same as float; the two names exist only for historic reasons (something like backward compatiblity).
+        > **Note**: Some references to the type "double" may remain in the manual. Consider double the same as float; the two names exist only for historic reasons (something like backward compatiblity).        
+
+    **php** is a dynamically loosley typed language. thus The type of a variable is not usually set by the programmer; rather, it is decided at runtime by PHP depending on the context in which that variable is used.
+
+    > **Note**: To check the **type and value** of an expression, use the **`var_dump()`** function.
+
+    > **Note**: To get a human-readable representation of a **type** for **debugging**, use the **`gettype()`** function. To check for a **certain type**, do not use `gettype()`, but rather the **`is_type()`** functions. 
+
+    Some examples:
+    ```html
+    <?php
+    # var_dump();  gettype();  is_type();
+    ?>
+    ```
+
+    > **Note**: to get in-depth look of php data types see [php various type-related comparisons](https://www.php.net/manual/en/types.comparisons.php).
