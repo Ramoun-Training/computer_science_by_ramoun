@@ -149,6 +149,25 @@ Otherwise, it will be:
 
 Using this method, you can have HTML tags with optional attributes, depending on some PHP condition. Extremely flexible and useful!
 
+```html
+What will be the output you think if we add echo and print both at a time..
+
+<?php
+
+$a = 5;
+
+print print $a;  // prints out: 51     inner 'print' prints the value of $a, then                                                                                                                                     // outer 'print' returns  the boolean true about print $a
+
+echo print $a;  // prints out: 51     inner 'print' prints the value of $a, then
+// outer 'echo' returns  the boolean true about print $a
+
+echo echo $a;    // syntax error.. echo doesn't return
+
+print echo $a;     // syntax error.. echo doesn't return
+
+?>
+```
+
 <br><br>
 
 #### notes
@@ -290,3 +309,279 @@ Make sure you don't nest 'C' style comments. It is easy to make this mistake if 
     ```
 
     > **Note**: to get in-depth look of php data types see [php various type-related comparisons](https://www.php.net/manual/en/types.comparisons.php).
+
+
+- **Booleans**
+
+    This is the simplest type. A boolean expresses a truth value. It can be either TRUE or FALSE.
+
+    + syntax
+
+        To specify a boolean literal, use the constants TRUE or FALSE. Both are case-insensitive.
+
+        ```html
+        <?php
+        $foo = True; // assign the value TRUE to $foo
+        $poo = FaLsE; // this works too
+        ?>
+        ```
+
+    + uses
+
+        > **Note**: Typically, the result of an operator which returns a boolean value is passed on to a [control structure](https://www.php.net/manual/en/language.control-structures.php) (if, switch, ..etc).
+
+        ```html
+        <?php
+        // == is an operator which tests
+        // equality and returns a boolean
+        if ($action == "show_version") {
+            echo "The version is 1.23";
+        }
+        
+        // this is not necessary...
+        if ($show_separators == TRUE) {
+            echo "<hr>\n";
+        }
+        
+            // ...because this can be used with exactly the same meaning:
+        if ($show_separators) {
+            echo "<hr>\n";
+        }
+        ?>
+        ```
+
+    + converting to Boolean
+
+        To explicitly convert a value to boolean, use the (bool) or (boolean) casts. However, in most cases the cast is unnecessary, since a value will be automatically converted if an operator, function or control structure requires a boolean argument.
+
+        > **Note**: see also type juggling.
+
+        * When converting to boolean, the following values are considered FALSE:
+            - the boolean FALSE itself
+            - the integers 0 and -0 (zero)
+            - the floats 0.0 and -0.0 (zero)
+            - the empty string, and the string "0"
+            - an array with zero elements (empty array)
+            - the special type NULL (including unset variables)
+            - [SimpleXML](https://www.php.net/manual/en/ref.simplexml.php) objects created from empty tags
+
+            > **Note**: Every other value is considered TRUE (including any **resource** and **NAN**).
+
+            > **Warning**: -1 is considered TRUE, like any other non-zero (whether negative or positive) number!
+
+            > **Tip**: The *correct* design of php would have been that *any* non-empty string is TRUE - period, end of story. For more seaarch for "php best practices".
+
+        * boolean output of operators
+
+            ```html
+            <?php
+            $x=TRUE;
+            $y=FALSE;
+            $z=$y OR $x;
+            ?>
+            
+            Is $z TRUE or FALSE?
+            <!--$z is FALSE-->
+            ```
+            > **Note**: the above code is equivalent to `<?php ($z=$y) OR $x ?>` rather than `<?php $z=($y OR $x) ?>` as might be expected - because the `OR` operator has lower precedence than assignment operators.
+
+            ```html
+            On the other hand, after this code sequence:
+            <?php
+                $x=TRUE;
+                $y=FALSE;
+                $z=$y || $x;
+            ?>
+            
+            $z will be TRUE, as expected, because the || operator has higher precedence than assignment:  The code is equivalent to $z=($y OR $x).
+            ```
+
+            > **Note**: This is why you should NEVER use the `OR` operator without explicit parentheses around the expression where it is being used.
+
+        * js booleans vs php booleans
+
+            ```html
+            Note for JavaScript developers:
+
+            In PHP, an empty array evaluates to false, while in JavaScript an empty array evaluates to true.
+
+            In PHP, you can test an empty array as <?php if(!$stuff) …; ?> which won’t work in JavaScript where you need to test the array length.
+
+            This is because in JavaScript, an array is an object, and, while it may not have any elements, it is still regarded as something.
+
+            Just a trap for young players who routinely work in both langauges.
+            ```
+
+        * boolean automatic conversion
+
+            ```html
+            Beware of certain control behavior with boolean and non boolean values :
+
+            <?php
+            // Consider that the 0 could by any parameters including itself
+            var_dump(0 == 1); // false
+            var_dump(0 == (bool)'all'); // false
+            var_dump(0 == 'all'); // TRUE, take care
+            var_dump(0 === 'all'); // false
+
+            // To avoid this behavior, you need to cast your parameter as string like that :
+            var_dump((string)0 == 'all'); // false
+            ?>
+            ```
+            ```PHP
+            a = 'a string';
+            $b = 0;
+            
+            if ( $a == true && $b == false && $a == $b ) {
+            exit;
+            }
+            ```
+
+            > **Note**: 'a string' == true equates to true because PHP will evaluate any non empty string to true if compared with a boolean.
+
+            > 0 == false equates to true because the integer 0 is evaluated as false when compared with a boolean.
+
+            > **Note**: '`a string' == 0` evaluates to true because any string is converted into an integer when compared with an integer. If PHP can't properly convert the string then it is evaluated as 0. So 0 is equal to 0, which equates as true. To get around this issue you can use the `===` operator in place of the `==` operator. [link](https://www.hashbangcode.com/article/string-equals-zero-php).
+
+            > **Note**: The type conversion does not take place when the comparison is `===` or `!==` as this involves comparing the type as well as the value.
+
+            ```html
+            Just something that will probably save time for many new developers: beware of interpreting FALSE and TRUE as integers.
+            For example, a small function for deleting elements of an array may give unexpected results if you are not fully aware of what happens:
+
+            <?php
+
+            function remove_element($element, $array)
+            {
+            //array_search returns index of element, and FALSE if nothing is found
+            $index = array_search($element, $array);
+            unset ($array[$index]);
+            return $array;
+            }
+
+            // this will remove element 'A'
+            $array = ['A', 'B', 'C'];
+            $array = remove_element('A', $array);
+
+            //but any non-existent element will also remove 'A'!
+            $array = ['A', 'B', 'C'];
+            $array = remove_element('X', $array);
+            ?>
+
+            The problem here is, although array_search returns boolean false when it doesn't find specific element, it is interpreted as zero when used as array index.
+
+            So you have to explicitly check for FALSE, otherwise you'll probably loose some elements:
+
+            <?php
+            //correct
+            function remove_element($element, $array)
+            {
+            $index = array_search($element, $array);
+            if ($index !== FALSE)
+            {
+                unset ($array[$index]);
+            }
+            return $array;
+            } ?>
+            ```
+            ```html
+            Beware that "0.00" converts to boolean TRUE !
+
+            You may get such a string from your database, if you have columns of type DECIMAL or CURRENCY. In such cases you have to explicitly check if the value is != 0 or to explicitly convert the value to int also, not only to boolean.
+            ```
+
+            ```html
+            PHP does not break any rules with the values of true and false.  The value false is not a constant for the number 0, it is a boolean value that indicates false.  The value true is also not a constant for 1, it is a special boolean value that indicates true.  It just happens to cast to integer 1 when you print it or use it in an expression, but it's not the same as a constant for the integer value 1 and you shouldn't use it as one.  Notice what it says at the top of the page:
+
+            A boolean expresses a truth value.
+
+            It does not say "a boolean expresses a 0 or 1".
+
+            It's true that symbolic constants are specifically designed to always and only reference their constant value.  But booleans are not symbolic constants, they are values.  If you're trying to add 2 boolean values you might have other problems in your application.
+            ```
+            ```html
+            It is correct that TRUE or FALSE should not be used as constants for the numbers 0 and 1. But there may be times when it might be helpful to see the value of the Boolean as a 1 or 0. Here's how to do it.
+
+            <?php
+            $var1 = TRUE;
+            $var2 = FALSE;
+
+            echo $var1; // Will display the number 1
+
+            echo $var2; //Will display nothing
+
+            /* To get it to display the number 0 for
+            a false value you have to typecast it: */
+
+            echo (int)$var2; //This will display the number 0 for false.
+            ?>
+            ```
+            > **Note**: For those wondering why the string "0" is falsy, consider that a good deal of input data is actually string-typed, even when it is semantically numeral.PHP often tries to autoconvert these strings to numeral, as the programmer certainly intended (try 'echo "2"+3'). Consequently, PHP designers decided to treat 0 and "0" similarly, ie. falsy, for consistency and to avoid bugs where the programmer believes he got a true numeral that would happen to be truthy when zero.
+
+        * negation trick
+            ```html
+            Note you can also use the '!' to convert a number to a boolean, as if it was an explicit (bool) cast then NOT.
+
+            So you can do something like:
+
+            <?php
+            $t = !0; // This will === true;
+            $f = !1; // This will === false;
+            ?>
+
+            And non-integers are casted as if to bool, then NOT.
+
+            Example:
+            <?php
+            $a = !array();      // This will === true;
+            $a = !array('a');   // This will === false;
+            $s = !"";           // This will === true;
+            $s = !"hello";      // This will === false;
+            ?>
+
+            To cast as if using a (bool) you can NOT the NOT with "!!" (double '!'), then you are casting to the correct (bool).
+
+            Example:
+
+            <?php
+            $a = !!array();   // This will === false; (as expected)
+            /*
+            This can be a substitute for count($array) > 0 or !(empty($array)) to check to see if an array is empty or not  (you would use: !!$array).
+            */
+
+            $status = (!!$array ? 'complete' : 'incomplete');
+
+            $s = !!"testing"; // This will === true; (as expected)
+            /*
+            Note: normal casting rules apply so a !!"0" would evaluate to an === false
+            */
+            ?>
+            ```
+        * precedence benfits
+        
+            ```html
+            Note on the OR operator.
+
+            A previous comment notes the trap you can fall into with this operator. This is about its usefulness.
+
+            Both OR and || are short-circuited operators, which means they will stop evaluating once they reach a TRUE value. By design, OR is evaluated after assignment (while || is evaluated before assignment).
+
+            This has the benefit of allowing some simple constructions such as:
+
+            <?php
+                $stuff=getStuff() or die('oops');
+                $thing=something() or $thing=whatever();
+            ?>
+
+            The first example, often seen in PERL, could have been written as <?php if(!$stuff=getStuff()) die('oops'); ?> but reads a little more naturally. I have often used it in situations where null or false indicate failure.
+
+            The second allows for an alternative value if a falsy one is regarded as insufficient. The following example
+
+            <?php
+                $page=@$_GET['page'] or $page=@$_COOKIE['page'] or $page=1;
+            ?>
+
+            is a simple way sequencing alternative values. (Note the usual warnings about using the @ operator or accepting unfiltered input …)
+
+            All this presupposes that 0 is also an unacceptable value in the situation.
+            ```
