@@ -121,6 +121,8 @@ the `SELECT` statement provides some results that yu can iterate through and to 
 
     > **Note**: using string formating for populating a (any:mysql ..etc) DB because if you are accepting values from and end-user then this is valnurable to sql-injection attack.
 
+    > **Note**: when using string formating methods like .format or f-strings make sure to add the single quotation in order for this to work.
+
 - the correct way
 
     ```python
@@ -141,6 +143,8 @@ the `SELECT` statement provides some results that yu can iterate through and to 
     """, {'val1': obj.v1, 'val2': obj.v2, 'val3': obj.v3})
     # this is more readable
     ```
+
+> **Note**: use `[]` with email if you get an email error because of the `@` sign.
 
 ## save changes
 

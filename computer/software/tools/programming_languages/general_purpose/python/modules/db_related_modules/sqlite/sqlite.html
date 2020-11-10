@@ -141,6 +141,9 @@ it will get the remainig rows left in our results and return those as a list and
 <blockquote>
 <p><strong>Note</strong>: using string formating for populating a (any:mysql ..etc) DB because if you are accepting values from and end-user then this is valnurable to sql-injection attack.</p>
 </blockquote>
+<blockquote>
+<p><strong>Note</strong>: when using string formating methods like .format or f-strings make sure to add the single quotation in order for this to work.</p>
+</blockquote>
 </li>
 <li>
 <p>the correct way</p>
@@ -163,6 +166,9 @@ c.execute(<span class="hljs-string">"""
 </div></code></pre>
 </li>
 </ul>
+<blockquote>
+<p><strong>Note</strong>: use <code>[]</code> with email if you get an email error because of the <code>@</code> sign.</p>
+</blockquote>
 <h2 id="save-changes">save changes</h2>
 <p>save (commit) the changes  to the database</p>
 <pre><code class="language-python"><div>conn.commit()
