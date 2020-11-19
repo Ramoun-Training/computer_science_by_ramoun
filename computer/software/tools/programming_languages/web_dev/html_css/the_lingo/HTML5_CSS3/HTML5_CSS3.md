@@ -129,4 +129,48 @@ body > p { /* body is not the parent of the p : so nothing will happen */
 }
 ``` 
 
+## + (plus sign)
 
+```css
+p.ramoun + p { /* only apply this rule for paragraphs that immediatly follow paragraphs with .ramoun class */
+/*they must be siblings aka: have the same parent*/
+    color: red;
+}
+``` 
+```html
+<div id="mama">
+    <p class="ramoun">good</p> <!--this one doesn't because it follows a div not even a p-->
+    <p class="ramoun">good</p>
+    <p class="ramoun">good</p>
+    <p class="ramoun">good</p>
+</div>
+```
+
+## ~ (tilde sign)
+
+```css
+p.ramoun ~ p { /* only apply this rule for paragraphs that immediatly follow paragraphs with .ramoun class */
+/*they must be siblings aka: have the same parent*/
+/*unlike the plus sign it doesn't have to immediatly follow*/
+    color: red;
+}
+``` 
+```html
+<div id="mama">
+    <p class="ramoun">good</p> <!--this one doesn't because it follows a div not even a p-->
+    <p class="ramoun">good</p>
+    <span>hi</span>
+    <p class="ramoun">good</p>
+    <p class="ramoun">good</p>
+</div>
+```
+
+
+|comparison  |explaination  |Column3  |Column4  |
+|---------|---------|---------|---------|
+|div p     |selects all p that are descendents of the division(divs) regardless of if those p are direct descendents(children) or not.|         |         |
+|div>p     |slects children p only (no grandchildren, great-grandchildren ..etc)|         |         |
+|div+p     |selects any p that follows a div immediatly|         |         |
+|div~p     |selects any p that follows a div (even if not immediatly)|         |         |
+
+> **Tip**: if a parent element has no grandchildren of the element type to be selected, it's better to use the child selector (>) because it's less processor intensive.
