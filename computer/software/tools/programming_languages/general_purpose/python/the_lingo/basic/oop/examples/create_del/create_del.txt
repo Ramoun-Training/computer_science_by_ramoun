@@ -1,3 +1,0 @@
-newc = c2()
-<__main__.c2 object at 0x7f42676f18e0> created
-<__main__.c1 object at 0x7f42676f1d00> deleted
