@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SQLite</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body>
+        <h1 id="sqlite">SQLite</h1>
+<p>is extremly useful when you need some database functionality and don't wanna spend up a full fledged database like: mysql or Postgres.</p>
+<p>you can use SQLite for small to medium size db apps where the db is gonna live on disk or you can use it for testing and prototyping out an application and if you have the need to move up to a larger db then you can later port that over.</p>
+<blockquote>
+<p><strong>Note</strong>: SQLite is part of python standard library.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: SQLite allows you to have a db in smiple file db or even in memory db that lives in ram.</p>
+</blockquote>
+<h2 id="connecting-to-a-db">Connecting to a db</h2>
+<ul>
+<li>
+<p>a db file</p>
+<pre><code class="language-python"><div>conn = sqlite3.connect(<span class="hljs-string">'database.db'</span>)
+<span class="hljs-comment"># database.db : is a file where we can stoer our db (the db is stored as a tree)</span>
+</div></code></pre>
+<blockquote>
+<p><strong>Note</strong>: if the <code>database.db</code> file is there, it will connect to it But, if it's not there, it will creat it.</p>
+</blockquote>
+</li>
+<li>
+<p>in memory db
+this is useful for testing if you want a fresh clean db at every run.</p>
+<pre><code class="language-python"><div>conn = sqlite3.connect(<span class="hljs-string">':memory:'</span>)
+</div></code></pre>
+</li>
+</ul>
+<h2 id="creating-a-cursor">Creating a Cursor</h2>
+<p>a cursor allows us to execute some SQLite commands.</p>
+<pre><code class="language-python"><div>c = conn.cursor()
+</div></code></pre>
+<h2 id="creating-tables">Creating Tables</h2>
+<blockquote>
+<p><strong>Note</strong>: it is recommended to type the <code>execute()</code> commands in docstrings and it is also used in the python documentation.</p>
+</blockquote>
+<ul>
+<li>
+<p><code>CREATE</code></p>
+<pre><code class="language-python"><div>c.execute(<span class="hljs-string">"""
+    CREATE Table tableName (
+        column1 DATATYPE
+        column2 DATATYPE
+    )
+"""</span>)
+</div></code></pre>
+</li>
+<li>
+<p>DATATYPES</p>
+<ul>
+<li>INTEGER</li>
+<li>REAL</li>
+<li>TEXT</li>
+<li>BLOB</li>
+<li>NULL</li>
+</ul>
+</li>
+</ul>
+<h2 id="insert-into-table">INSERT INTO table</h2>
+<pre><code class="language-python"><div>c.execute(<span class="hljs-string">"""
+    INSERT INTO tableName VALUES (val1, val2)
+"""</span>)
+</div></code></pre>
+<h2 id="query">Query</h2>
+<p>the <code>SELECT</code> statement provides some results that yu can iterate through and to iterate through these results, you can use  <code>c.fetchone()</code> or <code>c.fetchall()</code>.</p>
+<ul>
+<li>
+<p>SELET</p>
+<pre><code class="language-python"><div>SELECT column FROM tableName
+</div></code></pre>
+</li>
+<li>
+<p>SELECT all</p>
+<pre><code class="language-python"><div>SELECT * FROM tableName
+</div></code></pre>
+</li>
+<li>
+<p>WHERE</p>
+<pre><code class="language-python"><div>SELECT * FROM tableName WHERE column1=val1
+</div></code></pre>
+</li>
+<li>
+<p>fetchone()
+it will get the next row in our results</p>
+</li>
+<li>
+<p>fetchall()
+it will get the next row in our results and only return that row and if there's no rows available then it just returns <code>None</code>.</p>
+</li>
+<li>
+<p>fetchmany(n)
+it will get the next <code>n</code> number of rows in our results as a list and return these rows and if there's no rows available then it just return and empty list (<code>[]</code>).</p>
+</li>
+<li>
+<p>fetchall()
+it will get the remainig rows left in our results and return those as a list and if there's no rows available then it just return and empty list (<code>[]</code>).</p>
+</li>
+</ul>
+<h2 id="populating-a-db">populating a DB</h2>
+<ul>
+<li>
+<p>the incorrect way</p>
+<pre><code class="language-python"><div>c.execute(<span class="hljs-string">"""
+    INSERT INTO tableName VALUES ({obj.v1},{obj.v2})
+"""</span>)
+</div></code></pre>
+<blockquote>
+<p><strong>Note</strong>: if you want to insert Python values into a SQL database, just naming the Python variables in the SQL statement is not enough. The SQL database instead thinks you wanted to insert values taken from the table or another query instead.Use SQL parameters instead, and pass in the actual values:</p>
+</blockquote>
+</li>
+<li>
+<p>the bad way</p>
+<pre><code class="language-python"><div>c.execute(<span class="hljs-string">"""
+    INSERT INTO tableName VALUES ('{}', '{}', {})
+"""</span>.format(obj.v1, obj.v2, obj.v3))
+</div></code></pre>
+<blockquote>
+<p><strong>Note</strong>: using string formating for populating a (any:mysql ..etc) DB because if you are accepting values from and end-user then this is valnurable to sql-injection attack.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: when using string formating methods like .format or f-strings make sure to add the single quotation in order for this to work.</p>
+</blockquote>
+</li>
+<li>
+<p>the correct way</p>
+<pre><code class="language-python"><div><span class="hljs-comment"># you can use `?` and these are db api placehoders</span>
+c.execute(<span class="hljs-string">"""
+    INSERT INTO tableName VALUES (?, ?, ?)
+"""</span>, (obj.v1, obj.v2, obj.v3))
+<span class="hljs-comment"># no need for '' because it will figure out the type on its own</span>
+</div></code></pre>
+<blockquote>
+<p><strong>Note</strong>: even if you are passing in one value into a placeholder, you still need to put it within a tuple.</p>
+</blockquote>
+</li>
+<li>
+<p>the second correct way (RECOMMENDED)</p>
+<pre><code class="language-python"><div>c.execute(<span class="hljs-string">"""
+    INSERT INTO tableName VALUES (:val1, :val2, :val3)
+"""</span>, {<span class="hljs-string">'val1'</span>: obj.v1, <span class="hljs-string">'val2'</span>: obj.v2, <span class="hljs-string">'val3'</span>: obj.v3})
+<span class="hljs-comment"># this is more readable</span>
+</div></code></pre>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: use <code>[]</code> with email if you get an email error because of the <code>@</code> sign.</p>
+</blockquote>
+<h2 id="save-changes">save changes</h2>
+<p>save (commit) the changes  to the database</p>
+<pre><code class="language-python"><div>conn.commit()
+</div></code></pre>
+<blockquote>
+<p><strong>Note</strong>: SELECT statements doesn't need to be commited unlike: CREATE, UPDATE, DELETE.
+<strong>Note</strong>: When a change to the database is committed, it becomes visible for other connections. Unless it is committed, it remains visible only locally for the connection to which the change was done. Because of the limited concurrency features of sqlite, the database can only be read while a transaction is open.</p>
+</blockquote>
+<blockquote>
+<p><strong>Tip</strong>: for more about the sue of <code>conn.commit()</code> follow <a href="https://stackoverflow.com/questions/36243538/python-sqlite3-how-often-do-i-have-to-commit">this link</a></p>
+</blockquote>
+<h2 id="close-connection">close connection</h2>
+<p>We can also close the connection if we are done with it. Just be sure any changes have been committed or they will be lost.</p>
+<pre><code class="language-python"><div>conn.close()
+</div></code></pre>
+<h1 id="resources">Resources</h1>
+<blockquote>
+<p><strong>Note</strong>: check the SQLite documentation on <a href="https://sqlite.org/docs.html">sqlite official docs</a>, <a href="https://sqlite.org/lang.html">sqlite page</a> and <a href="https://docs.python.org/2/library/sqlite3.html">python sqlite docs</a></p>
+</blockquote>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=pd-0G0MigUA&amp;list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&amp;index=51&amp;ab_channel=CoreySchafer">[1] corey's video</a></li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: sqlite wroks with sqlalchemy (orm for python). you can use both for prototyping your app and when you are ready, you can easily replace that with a postgres or mysql db without hardly changing anythin in the code.</p>
+</blockquote>
+
+    </body>
+    </html>

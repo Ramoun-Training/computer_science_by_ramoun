@@ -1,0 +1,14 @@
+NOTE:
+
+alphanumeric strings share the same id (same memory address)
+
+```python
+x = 'hello'
+y = 'hello'
+
+x is y # True
+
+x.isalnum() # True
+y.isalnum() # True
+
+
