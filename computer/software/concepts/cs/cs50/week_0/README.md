@@ -1,5 +1,6 @@
 # WEEK #0
 
+Discussing computational thinking and scratch (visual porgramming language by MIT).
 
 ## Dashboard
 
