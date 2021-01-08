@@ -25,3 +25,6 @@ an intro to computer science course
 
 - [link](https://cs50.harvard.edu/x/2021/new/)
 
+## repo
+
+- [link](https://github.com/cs50?page=2)
