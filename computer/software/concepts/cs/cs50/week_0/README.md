@@ -16,7 +16,8 @@ Discussing computational thinking and scratch (visual porgramming language by MI
 
 ## Slides
 
-- [link](lecture0.pdf)
+- [pdf](lecture0.pdf)
+- [Google Slides](https://docs.google.com/presentation/d/11nbVogBHrI5XWZ5yqg6Lhn7WxvRPTntUDGDzLbPbzC4/edit#slide=id.g94fba800c4_0_467)
 
 ## Problem Set
 

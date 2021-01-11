@@ -19,7 +19,8 @@ an intro to computer science course
 
 ## docs
 
-- [link](https://manual.cs50.io/)
+- [docs](https://manual.cs50.io/)
+- [cdn](https://cdn.cs50.net/2020/fall/lectures/0/src0/)
 
 ## :smile: new
 
