@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>1MAC - HTML - CSS</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="1mac---html---css">1MAC - HTML - CSS</h1>
+<p>a <a href="">nanodegree</a> from udacity for front-end web development.</p>
+<h2 id="lesson-1-the-web-and-html">Lesson 1: the web and html</h2>
+<h3 id="1-intro-the-web">1. intro (The Web)</h3>
+<pre><code>the web: html documents and other resources refering to each other using hypertext (links).
+</code></pre>
+<h3 id="5-html-and-programming-similarities">5. HTML and programming (:similarities)</h3>
+<ul>
+<li>
+<p><strong>Syntax</strong></p>
+<p>the grammer rules of a language.<br>
+<img src="https://imgur.com/vKWjAIg.png" alt="syntax"></p>
+</li>
+<li>
+<p><strong>Formalism</strong></p>
+<p>computers are literal.</p>
+</li>
+<li>
+<p><strong>Nesting</strong></p>
+<p>how some bits of code can go inside other bits of code.<br>
+<img src="https://imgur.com/O0oBcZN.png" alt="nesting"></p>
+</li>
+</ul>
+<h3 id="6-text-editors-and-files">6. Text Editors and files</h3>
+<ul>
+<li>
+<p><strong>Text Editors</strong></p>
+<p>text editors used to write text files (are nothing but characters[letters, numbers, symbols, spaces ..etc - all unicode/ascii chars only], they don't contain any special typography such as bold, italics or colors, they dont' contain images ... it can be thought of as any text you can type on an old fashioned type wirter) .</p>
+<blockquote>
+<p><strong>Note</strong>: there's programs that can take text input and <a href="http://lilypond.org/">turn it into musical notations</a>, or <a href="https://www.latex-project.org/">format it for scientifc paper</a>, or <a href="https://en.wikipedia.org/wiki/Comma-separated_values">load specially organized text into a spreadsheet</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: when a browser encounters a link (img, file, ...etc) while parsing the html file, it sends a request to the server to get that resource so that it can display it on window.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Syntax Highlighting</strong></p>
+<p>is a special feature of the text editor, those colors are not saved in file, rather the editor knows the grammer of html and it applies colors in order to help you get the grammer right as you are editing it.</p>
+<blockquote>
+<p><strong>Note</strong>: extensions helps programs treat files appopriately.</p>
+</blockquote>
+<blockquote>
+<p><strong>CAUTION</strong>: Don't try to write your code in a word processor (like Microsoft Word, Pages, Google Docs, or TextEdit). <em><strong>These applications can add extra hidden formatting data to the text</strong></em>. Although the code may look fine, this additional hidden data can cause errors that prevent the code from working!</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: a pdf isn't a text file and you can't edit it in a text editor.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="7-the-job-of-html">7. The job of HTML</h3>
+<ul>
+<li>
+<p><strong>html is made of:</strong></p>
+<ol>
+<li><strong>Text</strong>: that the user will actually read in their browser (page content - matters for the user).</li>
+<li><strong>Markup</strong>: tells the browser what that <em>text</em> should look like, or how it is arranged. And within markup their can be <strong>Refrences</strong>.</li>
+<li><strong>Refrences</strong>: to include other documents like files, images, and videos.</li>
+</ol>
+<blockquote>
+<p><strong>Note</strong>: for the most part &quot;plain text&quot; in html shows up as &quot;plain text&quot; in the browser, but if we wanna make the text look different, we need markup.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="8-markup">8. Markup</h3>
+<ul>
+<li>
+<p><strong>Markup</strong></p>
+<p>is just text that has a special meaning for the browser (that renders and parses html pages).</p>
+</li>
+</ul>
+<h3 id="10-breaks-and-empty-space">10. Breaks and empty Space</h3>
+<blockquote>
+<p><strong>Note</strong>: Did you know? Spaces, tabs, and line breaks are called
+<strong>whitespace</strong>.</p>
+</blockquote>
+<p><code>check this out</code></p>
+<p>'''</p>
+<p>Did you
+know?
+Spaces,
+tabs,<br>
+and line
+breaks     are     called
+<strong>whitespace</strong>.</p>
+<p>'''</p>
+<p><code>cool right?</code></p>
+<blockquote>
+<p><strong>Note</strong>: when browsers render html, all whitespace gets collapsed into a single space.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: whitespace is a word used by programmers to talk about spaces, tabs, and line breaks.</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>void elements</strong> <em>(empty elements)</em></p>
+<p>HTML elements with no content and no closing tags.</p>
+</li>
+<li>
+<p><strong><code>&lt;br&gt;</code></strong></p>
+<p><code>&lt;br&gt;</code> just tells the browser, <strong>break the line here</strong>.</p>
+</li>
+</ul>
+<h3 id="11-paragraphs">11. Paragraphs</h3>
+<ul>
+<li>
+<p>Why use <code>&lt;p&gt;</code> and not <code>&lt;br&gt;</code></p>
+<p>There are good reasons to tell the browser about the structure of our text (the little pieces it is made up of) and not just what we want it to visually look like (we'll understand that throughly when we learn to control the visual appearance of a page sepratley using css) (+ it is needed for <em>SEO</em>).</p>
+</li>
+</ul>
+<h3 id="12-practice-midpoint-review">12. Practice Midpoint Review</h3>
+<ul>
+<li><img src="https://imgur.com/jgBvE9d.png" alt="some very important definations"></li>
+</ul>
+<h3 id="13-lots-of-elements">13. Lots of Elements</h3>
+<blockquote>
+<p><strong>Note</strong>: <code>sub</code> and <code>sup</code> stand for <em>&quot;subscript&quot;</em> and <em>&quot;superscript&quot;</em>. Originally, HTML started out as a tool for scientific and academic work; and these are really useful for science and math, like writing x<sup>2</sup>+3x+4 = 1 or chemical formulas like H<sub>2</sub>O.</p>
+</blockquote>
+<h3 id="14-nesting">14. Nesting</h3>
+<blockquote>
+<p><strong>Note</strong>: some nesting combinations don't work, like nesting a <code>&lt;p&gt;</code> element inside of another <code>&lt;p&gt;</code> element.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: overlaping between html elements is not allowed.
+<img src="https://imgur.com/s9yodMG.png" alt="no overlaping"></p>
+</blockquote>
+<ul>
+<li>
+<p><strong>netsting that works but not good</strong></p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>Hello<span class="hljs-tag">&lt;<span class="hljs-name">mark</span>&gt;</span>Guys<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mark</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 
+   If we give this to a browser, it will probably figure out what we mean, because browsers are actually really lenient. But this is technically wrong HTML.
+ --&gt;</span>
+</div></code></pre>
+</li>
+</ul>
+<h3 id="15-html-elements-review-1">15. HTML Elements Review 1</h3>
+<ul>
+<li>
+<p><strong>revision of html elements</strong></p>
+<ul>
+<li>
+<p><code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code> — Emphasis.<br>
+By default, text inside <code>&lt;em&gt;</code> is displayed as italic, and text in <code>&lt;strong&gt;</code> is displayed as boldface.</p>
+</li>
+<li>
+<p><code>&lt;p&gt;</code> — Paragraph.<br>
+Text in a paragraph is separated visually from other paragraphs by a small margin.</p>
+</li>
+<li>
+<p><code>&lt;br&gt;</code> — Line break. (empty)<br>
+A line break does not create a new paragraph; it only marks the end of a line.</p>
+</li>
+<li>
+<p><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> — Superscript and subscript.<br>
+Useful for math and chemistry: I have x<sup>3</sup>+2x<sup>2</sup> molecules of H<sub>2</sub>O.</p>
+</li>
+<li>
+<p><code>&lt;mark&gt;</code> — Highlighting.<br>
+Not very often used, but it's <mark>kind of cool</mark>.
+Of these elements, the br element is the only one that is an empty (or void) element.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="16-headings---practice">16. Headings - Practice</h3>
+<ul>
+<li>
+<p><strong>Headings</strong></p>
+<p>As the <code>h1</code> element can be used for <strong>headlines</strong>, or <strong>section headings</strong>. There are actually six of these heading elements: <code>h1</code> through <code>h6</code>.</p>
+<blockquote>
+<p><strong>Note</strong>: <code>h1</code> is used for the main heading on a page, while the rest are used for sub-headings.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: like with the <code>p</code> element, heading elements create a little bit of space (margin) around themselves.</p>
+</blockquote>
+<blockquote>
+<p>This is an excercise</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>My HTML Notes<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This page is a collection of my awesome notes about HTML!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>The Web<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The Web (or World Wide Web) is a collection of documents and other files. Most of the documents are made using Hypertext Markup Language (HTML).<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>What is HTML?<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>HTML stands for <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>Hypertext Markup Language<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span>. It&#x27;s used to define the structure or layout of a web page.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: You may have noticed that you don't actually have to use the p element as shown in our solution here. But like we mentioned earlier, it's a good idea to tell the browser what kind of content something is—by enclosing those paragraphs inside <code>p</code> elements, this is indicating that the contents are paragraphs of text.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="17-elements-review">17. Elements Review</h3>
+<ul>
+<li>
+<p><strong>More Definations</strong></p>
+<p><img src="https://imgur.com/Fss2QTt.png" alt="more definations"></p>
+</li>
+</ul>
+<h3 id="18-block--inline">18. Block &amp; Inline</h3>
+<ul>
+<li>
+<p><strong>Difference between <code>&lt;br&gt;</code> and <code>&lt;p&gt;</code></strong></p>
+<ul>
+<li>
+<p><code>&lt;br&gt;</code><br>
+just tells the browser, break the line here</p>
+</li>
+<li>
+<p><code>&lt;p&gt;</code><br>
+it does something else beside just containing the text, it tells the browser to create a little invisible box around the text (this box is called a <strong>block</strong>).</p>
+<blockquote>
+<p><strong>Note</strong>: <code>blocks</code> are heavily involved in how the browser lays out text on the screen. A block has a height and a width + a margin above and below it (that's why there's a space around it).</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>some examples</strong></p>
+<ul>
+<li><img src="https://imgur.com/v75V1Ga.png" alt="inline vs block"></li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: <strong>inline</strong> elements don't make a box around them, instead they flow with text that they are used in.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Quick Refrence</strong></p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#elements">Block-level elements</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements">Inline elements</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="19-block-and-inline---practice">19. Block and Inline - practice</h3>
+<ul>
+<li>
+<p><code>p</code> is a <strong>block element</strong>, which means the browser creates a box around it. It also generates a margin around this box, <em>to visually separate the paragraph from surrounding elements</em>.</p>
+</li>
+<li>
+<p>In contrast, <code>br</code> is an <strong>inline element</strong> that just creates a line break. It doesn't have a box around it and doesn't create any margin.</p>
+</li>
+</ul>
+<h3 id="20-the-div-element">20. The <code>Div</code> element</h3>
+<ul>
+<li>
+<p>The <code>div</code> is short for <strong>division</strong>, because that's what this element is for—you can use it to <em>divide up</em> the page into different sections.</p>
+</li>
+<li>
+<blockquote>
+<p><strong>Note</strong>: a <code>p</code> element is specifically meant to contain text. In contrast, the <code>div</code> element is a generic container for whatever other elements you might want to put inside.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><strong>Note</strong>: You can use the <code>div</code> element to <em>organize</em> the content and <em>divide</em> the page into sections.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><strong>Note</strong>: The <code>div</code> element is a super important one, and it's used a lot in HTML <em>to help lay out and organize pages</em>.</p>
+</blockquote>
+</li>
+</ul>
+
+    </body>
+    </html>
