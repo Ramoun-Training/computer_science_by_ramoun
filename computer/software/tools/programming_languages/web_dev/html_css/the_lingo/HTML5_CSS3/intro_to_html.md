@@ -19,7 +19,7 @@ A [udacity course](https://classroom.udacity.com/courses/ud001) & also part of m
     > ```
     > the "This is a paragraph." text is a child of the `<p>` element.
     > ![paragraph_content](https://imgur.com/fES03qk.png)
-
+    > "content" can be either _text_ or other html elements.
 
 ### 4. Environments
 
