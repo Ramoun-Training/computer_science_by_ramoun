@@ -1,0 +1,4 @@
+https://adamtheautomator.com/convert-markdown-to-html/#:~:text=To%20convert%20Markdown%20to%20HTML%20using%20Typora%2C%20click%20File%20%E2%80%94%3E,file%20in%20your%20preferred%20location.&text=The%20image%20below%20shows%20that%20the%20HTML%20output%20looks%20exactly,Markdown%20is%20displayed%20inside%20Typora.
+
+https://zapier.com/blog/markdown-html-export/
+
