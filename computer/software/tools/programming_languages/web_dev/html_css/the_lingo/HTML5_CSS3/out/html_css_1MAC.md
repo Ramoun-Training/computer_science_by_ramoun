@@ -360,8 +360,180 @@ breaks     are     called
 - ![img](https://imgur.com/2SNbCWA.png)
 - > **Note**: `alt` text is displayed when the file is missing from the server or if the user's network connection stops working before that image can be loaded (which is really common on mobiles) or when the user uses a text-reader program to read the page.
 - > **Note**: puting an `img` element into your html file doesn't copy the __image file__ into your html file, it just tells the browser where to find that __image file__, the __image file__ still has to be somewhere 
+- > **Note**: `img` is an inline element, you can put an image right into the middle of a piece of text, if the image is taller than the text around it, it'll space the lines of text out.
+
+### 29. Files and relative URLs
+
+- "server" vs "local"
+
+    > **Note**: the browser looks at the `src` attribute value and it searches for a speerator (`://`). And when that happens, the browser looks for the file name as a variation of the HTML's own URL. This is called a relative URL.
+    The html file on my own computer with URL (`file:///Users/Ramoun/Courses/notes.html`), So when this file refers to the relative URL `kittens.jpg`, it will look for that file in the same directory. Even though I only had to write `kittens.jpg` in my html file, the browser will load the same URL as `file:///Users/Ramoun/Courses/kittens.jpg`
+
+- **Benifits of Relative URLs**
+
+    * used as shortcut instead of writing full Path.
+    * independet of the parenth path of the html document.
+
+    > **Note**: as a general rule, if you are referring to an image or a link that's on a webserver (e.g: placebear.com), you'll usually want to use a full URL like `https://www.placebear.com/800/800`, but if you're referring to an image or another file that you're passing around along with you html file, you should use relative URLs.
+
+    > **Note**: relative URLs are the real reason that you can't make an `<a>` link to Google by just writing, `<a href="google.com">Gogole</a>`, even though `google.com` works if you type it directly into your browser. Here the browser will start looking for a file called `google.com`.
+
+    > **Note**: In HTML, a URL with **no** `://` in it is always treated as a relative URL.
+
+    > **LONG Story Short**:
+    > ![relative vs absolute(fully qualified) urls](https://imgur.com/GQNEvGQ.png "relative vs absolute(fully qualified) urls")
+
+### 31. Elemetns Review 2
+
+- **Block elements**
+
+    Block elements are used for __large sections of text__, such as paragraphs, headlines, or lists; and also for some other features such as video players and tables.
+
+    A block element creates a (usually invisible) box in the browser display. By default, this box takes up the full width of the display. __The beginning of a block always starts on a new line in the display__.
+
+    Most block elements have a particular way they are displayed by default: paragraphs have margins around them; lists have bullet-points or numbered items; headlines are printed in large text. There is also a generic block element, `div`, which __has no special defaults__.
+
+    - `p` — Paragraph.   
+        Text in a paragraph is separated visually from other paragraphs by a small margin.
+
+    - `ul` and `ol` — Unordered and ordered lists.   
+        By default, `ul` lists are displayed with bullet points, and `ol` lists with numbered items.
+
+    - `li` — List items inside a `ul` or `ol` list.   
+        The `li` element has to be nested inside a `ul` or `ol` list; it can't occur on its own.
+
+    - Section headers, from `h1` (largest) to `h6` (smallest).   
+        Used for headlines, section titles, and the like.
+
+    - `div` — A logical division of a page or document.   
+        Other block elements such as paragraphs, lists, and headers can be nested inside a `div`.
+
+    You will see the `div` element much more in the next lesson. Because they don't have any default display settings, `div`s are heavily used with custom styling with CSS.    
+
+- **Inline elements**
+
+    Inline elements do not create a full-width box on the display. They modify the display of text, or __insert other things into the text__ — such as line breaks, images, or hyperlinks.
+
+    - `em` and `strong` — Emphasis.   
+        By default, text inside an `em` is displayed as italic, and text in `strong` is displayed as boldface.
+
+    - `br` — Line break. (empty)   
+        A line break does not create a new paragraph; it only marks the end of a line.
+
+    - `sub` and `sup` — Subscript and superscript.   
+        Useful for math and chemistry: I have x<sup>3</sup>+2x<sup>2</sup> molecules of H<sub>2</sub>O.
+
+    - `mark` — Highlighting.
+        Not very often used, but it's kind of cool.
+
+    Some of the inline elements you've seen require attributes, extra information besides the name of the element itself. Attributes are written inside the opening tag of the element.
+
+    - `img` — Images.   
+        Needs a `src` attribute with a URL, and an `alt` attribute with descriptive text.
+
+    - `a` — Hyperlinks.   
+        Needs an `href` attribute with a URL.
+
+    - `Images`
+        The syntax for the `img` tag is like this:
+        ```html
+        <img src="Image URL here" alt="A description of the image">
+        ```
+        The URL of an image may be an absolute URL, such as `http://placebear.com/800/600`, or it may be a relative URL such as `images/wolves.jpg`.
+
+    The `alt` text is used if the image can't be loaded, or if the user can't see images — such as if the user is using a **screen reader**.
+
+    - `Links`
+        Hyperlinks allow the user to navigate from one page to another. They are created using the `a` element. The destination of the link is written in an attribute called `href`; the __link text__ appears as the contents of the `a` element. Here's an example:
+        ```html
+        <a href="https://en.wikipedia.org/wiki/Hypertext">
+            Wikipedia's "Hypertext" article
+        </a>
+
+    This code produces a link like this:[ Wikipedia's "Hypertext" article](https://en.wikipedia.org/wiki/Hypertext).
+
+    A link within a __single web site__ can be written using a __*relative URL*__. Links to __other sites__ must be written as __*absolute URLs*__.
+
+### 33. Documents: The `Doctype` tag    
+
+- **How does a browser know what kind of document is it?**
+
+    the file extension only tells one part of the story (that the type of the file is html but what version of html?).
+
+    we indicate the type (version) of html we are using by adding a special tag at the very beginning of the html file (`!Doctype`).
+
+    > **Note**: the `Doctype` tags became very long and convoluted. Eventually the engineers of htmll decided to simplify them down to the very basics (`!Doctype html`).
+
+    The `<!Doctype html>` tells the browser to treate the document as a modern html document (using the latest version of html).
+
+    > **Note**: without the `<!Doctype html>`, browsers will go into what's called quirks mode (which is trying to be compatiable with older versions of HTML).
+
+### 34. Documents: Head and Body
+
+- **`title`**
+
+    is the only **required** element of the `head` (+ the `doctype` too)
+
+    > **Note**: the `head` element can contain 1 of 4:
+    > ![head element cotents](https://imgur.com/lFKfroI.png)
+    > **Note**: the `lang` attribute is very important for the browser to know the language of the website + it is helpful for screen readers (chat[en] vs chat[fr]).
+
+- __Are head and body required?__   
+
+    In one sense, __*no*__, but in another sense, __*yes*__.
+
+    The grammar of HTML __does not require__ that you literally write a `<head>` or `<body>` tag in your HTML code. Many web developers do write these. However, **if you don't, _the browser will attempt to place them into your code itself_**.
+
+    It needs to put the `head` element around certain elements that belong there, such as `title`; and to put the `body` element around the elements that form the document's body. This means that all the head elements must appear first, and the body elements after.
+
+    You can't have a `head` element, such as `title`, in the middle of your document:
+
+    ```html
+    <h1>Here is a 😨 problem:</h1>
+    <p>This is a paragraph, which has to be part of the body.
+    <title>This is the title, which has to be part of the head.</title>
+    <p>The title is ❗️not allowed ❗️ to be in the middle of the body!
+    ```
+
+    So even if you choose not to literally write the `<head>` and `<body>` tags in your document, the head and body elements are still created by the browser; and the rest of the document needs to be consistent with this. __*But you must make sure that the `title` and other head parts appear before any paragraphs, lists, images, or other body parts*__.
+
+    You might see older HTML documentation that says these tags are required. This was true in XHTML, an older version of HTML. Today's browsers use HTML5, which does not require them.
+
+    In the next lesson, you will learn much more about how the browser understands and displays web pages, as you learn about Cascading Style Sheets.    
+
+### 36. HTML Validation
+
+- > **Note**: some browsers can deal with html styntax mistakes and work around them, but not all browsers though, so the right way to test html code is not to run in the browser but to use [validators](https://validator.w3.org/)
+
+- **The validator is stricter**   
+  
+    Web browsers are very **lenient** about how they interpret HTML. They work around small errors and omissions. The quizzes you have seen in this lesson have been relatively lenient as well. The HTML validator is intentionally stricter than actual browsers.
+
+    For instance, if you write an `img` element with no `alt` attribute, a typical browser will display it just fine. But the language requires the `alt` attribute to provide a textual description of an image; this helps search engines and also users with visual disabilities. By reporting a missing `alt` attribute as an error, the validator makes sure that valid HTML will be more accessible.
+
+    ... but it can't catch everything
+    The validator cannot tell whether you gave your document a good title. It can't tell whether the `alt` attribute contains an accurate description of the image. The validator won't notice if you wrote `<html lang="de">` (saying that your document is in German) on a document that is actually written in Korean. It is still up to you to make sure that your HTML says what you mean it to say.
 
 # Important
 
 > **Note**: _When you put things in your own words, this helps you understand and remember the concepts better_—but don't worry about making it perfect. If you're a little unsure of something, just take a shot at it. This effort by itself will help you develop your understanding when you encounter that concept again.
+
+- **But what does it mean?!**   
+
+    + You will definitely sometimes run into validation errors that you don't understand. **This is a normal part of being a programmer**, so it's important to develop skills for working through them!
+
+    + When you do see an error that you're not sure about, here are a few things you can try:
+
+        * Copy and paste the error into your favorite search engine.
+
+        * Post the error to your Study Group and discuss it with other students and your mentors.
+
+        * Search Knowledge (stackoverflow) to see if someone has previously encountered this error. If they haven't, you can post a question about it yourself!
+
+- Placeholder images sites:
+    - [placebear](https://placebear.com)
+    - [placekitten](https://placekitten.com)
+    - [Lorem Picsum](https://picsum.photos/)
+    - [Fill Muray](https://www.fillmurray.com/)
+    - for more: search for [`"image placeholder"`](https://www.google.com/search?q=%22image+placeholder%22&rlz=1C1YEIU_enEG929EG929&oq=%22image+placeholder%22&aqs=chrome..69i57j33i160.3041j0j1&sourceid=chrome&ie=UTF-8)
 

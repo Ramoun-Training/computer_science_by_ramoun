@@ -285,6 +285,187 @@ it does something else beside just containing the text, it tells the browser to 
 </blockquote>
 </li>
 </ul>
+<h3 id="21-lists-and-implied-close-tags">21. Lists and Implied close tags</h3>
+<ul>
+<li>
+<blockquote>
+<p><strong>Note</strong>: There are few elements that are always used inside certain other elements. They don't make sense on their own. e.g: <code>li</code>.</p>
+</blockquote>
+</li>
+<li>
+<p><strong><code>li</code></strong></p>
+<p>a list item can't just appear by itself. It will always be part of a list.</p>
+</li>
+<li>
+<p><strong>Why can't a list item stand on its own outside of a list?</strong></p>
+<p>because an <code>ol</code> and <code>ul</code> are displayed differently, without the context of one or the other kind of list, the browser wouldn't know whether to put a dot or a number on the item. Because of that <code>html</code> has a rule that <code>li</code> elements can only occur inside either an <code>ol</code> or a <code>ul</code> element.</p>
+<blockquote>
+<p><strong>Note</strong>: lists can be nested iniside other lists</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Nested Lists</strong></p>
+<blockquote>
+<p><strong>Note</strong>:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>How to move to NY<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Pack your Stuff
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Kitchen Stuff<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Bedrooom Stuff<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Garage Stuff<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Drive to NY<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Unpack stuff into tiny appartment<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>OUTPUT:</p>
+</blockquote>
+<h2>How to move to NY</h2>
+<ol>
+  <li>Pack your Stuff
+      <ul>
+          <li>Kitchen Stuff</li>
+          <li>Bedrooom Stuff</li>
+          <li>Garage Stuff</li>
+      </ul>
+  </li>
+  <li>Drive to NY</li>
+  <li>Unpack stuff into tiny appartment</li>
+</ol>
+<blockquote>
+<p>NOTE:</p>
+</blockquote>
+<p>Because an <code>li</code> element can only occur inside a list and it can not occur directly inside another <code>li</code>, HTML doesn't actually require us to write a closing tag for <code>li</code> elements.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: some web developers omit the closing tags of <code>li</code> elements becaue leaving them out saves a little tiny bit of space in the file and some don't because they think it makes their code more clear.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: you have to always write close tags for <code>ol</code> and <code>ul</code>, so the browser doesn't try to stuff everything after them into the list.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: The <code>p</code> element is another example of an element for which the closing tag is optional.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: Remember, when you leave off an optional closing tag, it is still implied—that is, the browser will figure out where the element should be closed, even though you didn't explicitly tell it.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: We must be sure to close the list as a whole! Why? Because if we leave off the closing <code>&lt;/ol&gt;</code> or <code>&lt;/ul&gt;</code>, then the browser will not know when our list ends! It will simply treat everything that comes after that point as part of the list.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>How does the browser know that there has to be a closing tag?</strong></p>
+<p>when it gets to <em>the start tag of a new element that can't be inside of the last one</em>. For example, when it gets to the start of a new <code>p</code> element, it knows the previous <code>p</code> element must be closed.</p>
+<blockquote>
+<p><strong>Note</strong>: <code>p</code> and <code>li</code> are the two elements you've seen with optional closing tags. And the browser knows there has to be a closing tag when it gets to the start tag of a new element that can't be inside of the last one. For example, when it gets to the start of a new <code>p</code> element, it knows the previous <code>p</code> element must be closed.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="23-identation---practice">23. Identation - Practice</h3>
+<ul>
+<li>
+<blockquote>
+<p><strong>Note</strong>: for more about indentation in html, click <a href="https://www.granneman.com/webdev/coding/formatting-and-indenting-your-html">here</a>.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="24-implied-close-tags---practice">24. Implied Close Tags - Practice</h3>
+<ul>
+<li>
+<p><strong>Why doesn't the <code>br</code> element require a closing tag?</strong></p>
+<p>The <code>br</code> element is a void element—it doesn't have any contents (unlike <code>p</code>, which does have contents!).</p>
+</li>
+</ul>
+<h3 id="25-web-addresses">25. Web Addresses</h3>
+<ul>
+<li>
+<p><strong>Web Addresses</strong></p>
+<p>are called URLs (<strong>U</strong>niform <strong>R</strong>esource <strong>L</strong>ocators):</p>
+<ul>
+<li><em><strong>Uniform</strong></em>: Standardized (consistent).</li>
+<li><em><strong>Resource</strong></em>: a file or other data object.</li>
+<li><em><strong>Locator</strong></em>: address for finding something.</li>
+</ul>
+<p>an address that tells the browser how to locate a particular resource (e.g: a file) in a standardized way.</p>
+<blockquote>
+<p><strong>Note</strong>: we have to be pretty carefull to give the browser all the information that it needs when we provide a url for a resource in html (or it will think that we are looking for a local file on server and not a &quot;qualified url&quot;).</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Fully Qualified URLs</strong></p>
+<ul>
+<li>
+<p><img src="https://imgur.com/YD6uK9S.png" alt="fully qualified url"></p>
+</li>
+<li>
+<p>requirements:</p>
+<ul>
+<li>
+<p>At the beginning is the <strong>protocol</strong>:</p>
+<ul>
+<li><strong><code>https</code></strong>: for secure http connection.</li>
+<li><strong><code>http</code></strong>: for traditional http connection.</li>
+<li><strong><code>file</code></strong>: for locating a local file on a local drive.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>://</code></strong></p>
+<p>seprates the protocol from the next part of the url.</p>
+</li>
+<li>
+<p>Main Part:</p>
+<ul>
+<li><strong>Domain Name</strong>: tells the browser what server to connect to.</li>
+<li>File URLs: wont't have a domain name because there's no server (it is just the browser reading off of a local drive -like any other file
+explorer).</li>
+</ul>
+</li>
+<li>
+<p>Last Part:</p>
+<ul>
+<li><strong>File Path</strong>: the name of the directory + the name of the file the URL is referring to (this will sometimes be empty or a single slash <code>/</code>, if you are linking to the top page or home page of a site).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><img src="https://imgur.com/I0hE47o.png" alt="url disection"></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:</p>
+<p>And often the slash will be omitted altogether:</p>
+<pre><code class="language-html"><div>http://en.wikipedia.org
+</div></code></pre>
+<p>This would still be considered a fully-qualified URL.</p>
+</blockquote>
+<ul>
+<li>Knowledge Test
+<ul>
+<li>
+<p><code>https://www.simons-rock.edu</code> is a fully qualified URL that takes you to the main page of a web site.</p>
+</li>
+<li>
+<p><code>github.com</code> is not a fully qualified URL. It's something you can type into your browser, but you can't use it in HTML … unless what you meant was &quot;a file called <code>github.com</code> in the same directory as this HTML file&quot;,_ which you probably didn't_.</p>
+</li>
+<li>
+<p><code>http:///Users/karl/index.html</code> <em>is a mess!</em> It's an http URL, but it doesn't have a domain name on it. The browser won't know what to do with this since <strong>it's http, but there's no server to connect to</strong>!</p>
+</li>
+<li>
+<p>And <code>file:///home/kelly/photos/Scotland1.jpg</code> is a perfectly fine file URL for referring to a file on your own computer ... if you happen to be Kelly on a Linux computer. But keep in mind, if you give a file:// URL to someone else, they probably can't access it because they don't have that file in the exact same location.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="important">Important</h1>
+<blockquote>
+<p><strong>Note</strong>: <em>When you put things in your own words, this helps you understand and remember the concepts better</em>—but don't worry about making it perfect. If you're a little unsure of something, just take a shot at it. This effort by itself will help you develop your understanding when you encounter that concept again.</p>
+</blockquote>
 
     </body>
     </html>
