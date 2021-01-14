@@ -514,6 +514,228 @@ breaks     are     called
     ... but it can't catch everything
     The validator cannot tell whether you gave your document a good title. It can't tell whether the `alt` attribute contains an accurate description of the image. The validator won't notice if you wrote `<html lang="de">` (saying that your document is in German) on a document that is actually written in Korean. It is still up to you to make sure that your HTML says what you mean it to say.
 
+
+## Lesson 2: STyleing with CSS
+
+### 1. Starting with Style
+
+    You will use CSS to change the color or the layout of a web page, among other things! 
+
+### 2. Developer Tools
+
+- **Is there a difference between original code and code inside of the elements tab in the dev tools?**
+
+    there are usually differences! The Elements tab isn't showing you the original HTML source code. It's showing you a sort of map or representation of how the browser sees the page.
+
+    > **Note**: in Chrome, many pieces of text will show up in "double quotes", which aren't in the original source or in the rendered version of the page.
+
+    > **Note**: the view that you see in Elements is actually __a picture of the way the browser thinks about the page internally__ — not just a copy of the original HTML file.
+
+### 3. Text to Trees
+
+- **How the browser renders an html page?**
+
+    the browser takes the html document and converts it to a new file called (DOM) and then it loads it to memory, and from the Dom, it creates the 2D image that appears in the window of the browser(aka: the webpage).
+
+- **What is an HTML file made of?**    
+
+    It is made of text (ASCII/UNICODE characters) used to represent tags and content.
+
+    > **Note**: when we make a style change to the page, that doesn't change the structure of the HTML Source Code, but it does change the appearance (the style is mixed with the DOM).
+
+- **What is a DOM**?    
+
+    it is a data structure (an organized map of what's going to end up on the page)
+
+    > **Note**: Dev Tools let's us look at the DOM (not the html).
+    >
+    > ![DOM](https://imgur.com/9uzk9ZD.png)
+    >
+    > As in Chrome Developer Tools, the "quote marks" just indicate a text element (string) and aren't literally in the page.
+
+### 4. Tree Structures
+
+    Tree STructures are pretty common in CS. It is how programmers talk about the way computer languages work
+
+- **Terminology**    
+
+    A Tree is made up of Parts called **Nodes** (elemnents) and they have conncections between them called **branches** (representing relashionships between the nodes of the tree). 
+
+    A tree always has a **root** node which is the top or start of the tree.
+
+    > **Note**: in the case of html documents, the `html` node is the root of the tree.
+    > ![root](https://imgur.com/ETyteG1.png)
+
+    The nodes that descend from any particular node are called its **children**.
+
+    > **Note**: a tree isn't a kind of diagram with boxes and arrows, it is a data structure (a way that information is organized --how to write or draw that data structure is kinda secondary ). It doesn't have to be even written. Eg: slides, outlines, classifications (categories that got sub-categories -surrounded with circles)
+
+- **Tree Structure Rules**    
+
+    1. A Treee stars with one node that is the _root_.
+    2. Each Node (including the _root_) can have refrences or _branches_ that point to other nodes (its children)
+    3. Each node has exactly **one parent** (except for the root node which has no parent)
+    4. Though each node can have any number of branches going out, it only has one branch comming in.(see 3.)
+    5. A new branch can never point to a node that's already in the tree (aka: 3.)
+
+    > **Note**: At the Elements tab of the DEV Tools, you are not looking at your html code that you've written, but a version that's been reconstituted' from the DOM Tree, and that's why **it looks different from the original**.
+
+### 5. Trees to Boxes
+
+    Every element that appears on the page gets layed out into a box, and these boxes land inside of other boxes, and the layout of theses boxes is controlled by the tree structure with a little help from the css.
+
+ > **Note**: you control how boxes are layedout (h or v) using css.
+ > ![cssom](https://imgur.com/vKs3BXY.png)
+
+
+### 6. Styling HTML Directly
+
+- **inline style (attribute)**
+    
+    ```html
+    <ol>
+        <li style="color:green;">hi
+        <li style="color:greem;">hi
+        <li style="color:green;">hi
+        <li style="color:green;">hi
+    </ol>
+    ```
+    cons:   
+
+    + hard to catch if one of them missed.
+    + change must happen to all of them (not DRY) -> for fewer places things could go wrong.
+  
+    > **Note**: as the browser builds up the picture on the screen from the DOM tree, it'll use the css styles to color, shape, and layout the page.
+
+    > **Note**: the `;` is optiional if there's only one rule applied to the element.
+
+### 9. Quotes or No Quotes
+
+- **removing quotes**
+
+    ```html
+    <p style=color:blue;text-align:center;>Hello!</p>
+    ```
+    Without the quotes, the browser can sometimes still figure out where the attribute value ends. So it's possible to get away with leaving the quotes off, in some cases. But if there is a space (and no quotes) then the browser will get confused and think the attribute value has ended right before that space.
+
+
+    ```html
+     <p style=color:blue; text-align:center;>Hello!</p>
+    ```
+    With the quotes gone and a space added, the editor thinks that `text-align:center;` is an attribute, just like `style`.
+
+    > **Note**: If we just put the CSS anywhere on the page, the browser will get confused. It will try to interpret the CSS code as if it were HTML!. To signal to the browser that this code is in the CSS language, we need to put it inside a `style` element or use it as the value of a `style` attribute.
+
+### 12. CSS Syntax
+
+- **Ruleset Disection**
+
+    + _Selector_:   
+        which element will the ruleset be applied to.
+
+    + _Declaration block_:   
+        How will the ruleset modify these elements.
+
+    ```css
+    p {
+        color: red;
+    }
+    ```
+    - **`p`**: selector.
+    - **`color:red;`**: rule or _declaration_ (part of the declaration block `{}`).
+    - **`color`**: property.
+    - **`red`**: value.
+
+### 13. Selectors: Type
+
+- **Type (element) Selector**
+
+    E.G: `em`, `h1`, `p`...etc.
+
+### 14. Selectors: Class and Id
+
+- **Class**
+
+    In computer Science, `class` is a very common word for "a group of things with the same characteristics".
+
+    ![class](https://imgur.com/PrFVdNk.png)
+
+    > **Note**: use a `class` when there could be several elements that need the same style.
+
+    > **Note**: use an `id` when there's only one element to apply it to.
+
+    > **Note**: the difference between `id` and `class` is that, `id` is meant to be unique. In contrast there can be any number of elements with same `class`.
+
+    > **Note**: Classes and IDs are case-sensitive, start with letters, and can include alphanumeric characters, hyphens, and underscores. A class may apply to any number of instances of any elements. An ID may only be applied to a single element.
+
+### 15. Selectors: combining
+
+- **descendent selector**:
+
+    a _space-sperated_ slelector indicates (parent child) of any degree.
+    E.g:
+    ```html
+    <h1>
+        <ul>
+            <li>hi
+        </ul>
+    </h1>
+    ```
+    ```css
+    h1 li { // we didn't mention the `ul`
+        color: red; // applied to the "hi"
+    }
+    ```
+
+    > **Note**: Want to learn much more about selectors? Check out the [MDN documentation](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors).
+
+    > **Note**: if you have a rule that applies to an element that doesn't exist, the rule will not do anything. It is really common to have the same CSS rules for all pages on a web site; and if a particular page does not make use of a particular rule, that's OK!
+
+### 16. Vocabulary Review
+
+- **important CSS terms**:
+
+    + **_DOM, or Document Object Model_**:   
+    is a tree structure with a node for each HTML element, piece of text, image, and any other object in the web page.
+
+    + **_Selectors_**:    
+    are one part of the CSS ruleset. They indicate which HTML element(s) the rule is for.
+
+    + **_Declaration blocks_**:    
+    are the other part of the CSS ruleset, they say how the rule will modify the elements indicated by selectors.
+
+    + **_CSS rules_**:   
+    are composed of a selector followed by a declaration block.
+
+    + **_type_**:    
+    is the simplest kind of selector. It indicates the name of one type of HTML element (such as `em` or `li`).
+
+    + **_class_**:   
+    in HTML is an attribute that groups elements together that you want to have the same style.
+
+    + **_id_**:   
+    is an attribute that must be unique to a single element, used to identify it.
+
+### 17. Selectors review 
+
+- **CSS Selectors**
+
+    + **_Type selectors_**:   
+    are used to apply a style to a particular type of HTML element, like `h1` or `body`. Type selectors are written using just the type name.
+
+    + **_Class selectors_**   
+    are used to set the style for multiple HTML elements that have a particular value for the `class` attribute. You can name a class anything you want! Class selectors are written with a dot before the class: for elements such as `<p class="blue">`, the class selector is `.blue`.
+
+    + **_ID selectors_**   
+    are used when the `style` is being applied to one HTML element, which has to have an `id` attribute. There can be only one element with a particular `id` on a page. You can also choose any name you want for an id, just like a class. ID selectors are written using a `#` sign: for an element such as `<div id="sidebar">`, the id selector is `#sidebar`.
+
+    > **Note**: a css rule defines the style, using an id,class...etc with an html element (applies the style to that element).
+
+    > **Note**: to apply multiple  classes to the same element, simply put in both of the class names, separated by a space. Like this:
+    >```html
+    > <li class="highlight done">Make waffles</li>
+    >```
+
 # Important
 
 > **Note**: _When you put things in your own words, this helps you understand and remember the concepts better_—but don't worry about making it perfect. If you're a little unsure of something, just take a shot at it. This effort by itself will help you develop your understanding when you encounter that concept again.
@@ -530,6 +752,10 @@ breaks     are     called
 
         * Search Knowledge (stackoverflow) to see if someone has previously encountered this error. If they haven't, you can post a question about it yourself!
 
+- **What should I do with new tools?**
+
+    find out how I can use it to investigate the world and see what I can discover about what I can change with it.
+
 - Placeholder images sites:
     - [placebear](https://placebear.com)
     - [placekitten](https://placekitten.com)
@@ -537,3 +763,9 @@ breaks     are     called
     - [Fill Muray](https://www.fillmurray.com/)
     - for more: search for [`"image placeholder"`](https://www.google.com/search?q=%22image+placeholder%22&rlz=1C1YEIU_enEG929EG929&oq=%22image+placeholder%22&aqs=chrome..69i57j33i160.3041j0j1&sourceid=chrome&ie=UTF-8)
 
+- Good Learning Resources:
+
+    + [MDN-FE](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer).
+    + [MDN-Tools](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools)
+    + [Wikipedia-CSS](https://en.wikipedia.org/wiki/CSS)
+    + [Quirks-Mode](https://en.wikipedia.org/wiki/Quirks_mode)
