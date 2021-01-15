@@ -7,6 +7,6 @@
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com)   
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/mrramoun/)
 
-All computer science notes (+ projects) collected by ramoun from (2013 - 2021)
+All computer science notes (+ projects) collected by Ramoun from (**2013** - 2021)
 
 ![Cover](https://github.com/Ramoun-Training/computer_science_by_ramoun/blob/master/cs%20cover%20x1.png)
