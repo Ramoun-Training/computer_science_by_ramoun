@@ -138,3 +138,50 @@ I Wonder Why didn't they use the tick `` instead.
 ```
 
 ### RESERVED WORDS AND IDENTIFIERS
+
+- Rserved words can't be used as identifiers
+    + Instruction Mnemanics, directives(`.data`), type attributes, operators, predefined symbols.
+    + See MASM refrence.
+
+- Identifiers
+    + 1-247 characters, including digits    
+    + not case sensitive.
+    + first character must be a letter, `_`    , `@`, `?`, or a `$`.
+    + used for labels (procedure names, variables) and constants.
+
+    > **Note**: the `_`,`@`,`?`, and `$` all have conventional meaning (not restricted but recommended). 
+
+    > **Note**: `_` can be used if the identifer name is reserved (`mov` becomes `_mov`)
+
+### INTEL INSTRUCTIONS
+
+- Assembled into machine code by _assembler_.
+- Executed @ runtime by _CPU_.
+- An Instruction contains:
+    - __Label (optional)__:
+        + Act as a place marker (marks the address [offset] of code and data).
+        + Follow Identifier rules.
+        + Data Label (Variable Names) must be unique. Ex: `count DWORD 100` (NOT FOLLOWED BY COLON).
+        + code label: targets loop and jump instuctions (`L1:`).
+        ```x86asm
+        start:
+        MOV AX, 3;
+        LOOP START
+        ```
+    - __Mnemonics/Instruction Formats (required)__:
+        + No Operand: `stc; set carry flag`.
+        + One Operand: `inc eax; register`, `inc myByte; memory`.
+        + Two Operands: `add ebx, ecx; register, register`, `sub myByte, 24; memory, constant`, `add eax, 36*24; reg, const-expr`.
+        + No Operations (NOP Instruction): The safest and most useless instruction, it uses one byte of storage, For CPU (reads it, decodes it, ignores it), usually used to align code to even-address boundaries (multiples of 4).
+        > **Note**: x86 processors are designed to load code and data more quickly from even double word addresses.
+    - Operand(s) (depends on the instruction)
+    - Comment   (optional) - begins with `;`
+
+    ```x86asm
+    ; [label:] mnemonic [operands] [;comment]
+    ```
+
+    ```x86asm
+    ; EX:
+    LOOP1: MOV EAX, 32 ;COUNT OF ARRAY ELEMENTS
+    ```
