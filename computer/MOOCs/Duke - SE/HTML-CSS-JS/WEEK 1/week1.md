@@ -25,6 +25,15 @@
 7. __Ask for Help in the Forums__    
 (part of beign good programmer is knowing how to ask for help effectively).
 
+### <u>TIPS FOR ASKING QUESTIONS</u>
+
+- Provide I/P
+- Provide Expected O/P
+- provide O/P
+- Provide Code
+- What fixes did I try
+
+## Lesson #1: Building a webpage using html
 
 # Resources
 
