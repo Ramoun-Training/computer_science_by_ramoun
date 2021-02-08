@@ -1,0 +1,99 @@
+/*remember that :
+  in concatinating ,you can concatenate strings with any other data types.
+  ie(boolean values,character,integers.....)
+*/
+
+Char Type:
+==========
+The Java type that’s used to store characters is char.
+EX:
+char character='s';
+
+Character.toUpperCase() method:
+-------------------------------
+i.e:
+    char t='h';
+    char bigger=Character.toUpperCase(t);
+    System.out.println(bigger); //output: H
+//the function returns a char value(an uppercase copy of the passed argument).
+
+Character.toLowerCase() method:
+-------------------------------
+i.e:
+    char c='G';
+    System.out.println(Character.toLowerCase(c));
+//the function returns a char value.
+
+NOTE:the Character.toLowerCase() method doesn't raise an exception if you passed
+     a(non-Upper Case) letter to it ,it just gives it back to you.
+     //same to Character.toUpperCase();
+
+charAt():
+---------
+returns a char type (one character at certin position at string).
+i.e:"news".chartAt(0);// returns 'n'
+
+findWithinHorizon():
+--------------------
+returns a String type (depending on parameters).
+NOTE:this method and other methods(i.e:.next(),.nextSomthing()....)works only with
+     a scanner type variable.{you cannot use these mehtods with other types variables.}
+i.e:
+        Scanner keys=new Scanner(System.in);
+        String word=keys.findWithinHorizon(".",0);
+        //where 0 parameters refers to searching in the whole word.
+        //if you change it to 1,by this way you 'll get the first character only.
+        //any other number rather than the zero will limit the number of characters to search in.
+        //the "." refers to the next character (any character at all-:the first character of an input),
+        //and this is called a "regular expression".
+        //there is another regualar expressions like:"\\d\\d\\d" searches for
+        the first3 consecutive digits(numbers).
+        NOTE:when "\\d\\d\\d" is used with 0 ->> the input prompt will never end until you enter 3 consecutive
+             digits.but if used it with 10 or 9 or any other number it will search in these number
+             and return null,if it couldn't find it.
+                    ##########################################
+
+NOTE:
+✓ With methods like nextDouble and nextInt, you type blank spaces
+  between numbers to seprate them.
+  i.e: 23 2 ---> is 23 and 2
+✓ With findWithinHorizon(".", 0).charAt(0) , you don’t type blank
+  spaces between characters to seprate them.
+  i.e: lo ve ---> is 'l' , 'o' , ' ' , 'v' and 'e'
+✓ next methods skip space characters where findWithinHorizon reads space characters.
+NOTE:
+To represent a lone character in the text of a computer program, you surround
+the character with single quote marks. But, when you type a character as part
+of a program’s input, you don’t surround the character with quote marks.
+
+NOTE:
+Remember (nextDouble(),nextInt(),....etc and other numeric methods)terminate
+their input by pressing a spacebar or enter key.
+But(nextLine() and findWithinHorizon())terminate their input by pressign an
+enter key only(with some exceptions for findWithinHorizon() method).
+
+NOTE:
+The nextInt method expects you to type a blank space after each int value.
+
+boolean values:
+==============
+java has a special type for values that are true or false.
+i.e:
+    boolean flag=true;
+other operators:>= <= == != > <
+
+NOTE:remember in java you can divide floats(doubles) with remainder operator(modulu)
+     and you can use doubles and floats in boolean expressions too.(but always
+     try to avoid comparison between float values or double values)
+
+NOTE:when comparing floating point numbers try (float)casting the numbers.
+     (or) 
+     When you compare double values, give yourself some leeway. Instead of comparing for exact equality, ask whether a particular value is reasonably close to the expected value. 
+     For example, use a condition like (fahrenheit >= 69.8 - 0.01 && fahrenheit <= 69.8 + 0.01) to find out whether fahrenheit is within 0.01 of the value 69.8.
+
+NOTE:If your program isn’t doing what you think it should do,
+check your suspicions about the values of variables. Add print and println statements to your code.
+
+characters precedence:
+======================
+numbers ---> Upper-Case letters ---> lower-Case letters

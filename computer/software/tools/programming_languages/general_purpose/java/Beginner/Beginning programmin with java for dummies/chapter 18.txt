@@ -1,0 +1,106 @@
+Simple String Class:
+====================
+(each instance of the String class) has three things:
+    ✓ A bunch of characters (the object’s value)
+    ✓ A number (the object’s count)
+    ✓ A way of being compared with other strings (the object’s equals method)
+NOTE:
+Each string has its own personal copy of the equals method.
+NOTE:
+A dot works the same way for an object’s variables and its methods.
+In either case, a dot takes the object and picks out one of the object’s parts.
+It works whether that part is a piece of data (as in onePurchase.total) or a method (as in password.equals).
+
+The Next() method:
+==================
+next : reads up to the next blank space.
+
+i.e:
+String firstName = keyboard.next();
+String middleInit = keyboard.next();
+String lastName = keyboard.next();
+
+The nextLine() method:
+======================
+nextLine : reads up to the end of the current line.
+
+i.e:
+String fullName = keyboard.nextLine();
+
+NOTE: what is a literal?
+literals are unlike variables, they look just like the stuff that it represents.
+
+comparing in java:
+==================
+in java you can use the double equel sign(==) to compare to primitive types:
+NOTE: the following code prints "cool"
+    int num1 = 1;
+    double num2 = 1.00000000000000000000001;
+    String result = num1 == num2? "cool" : "not cool";
+    out.println(result);
+//java have a good rounding too numbers specially that the 1 in the num2 variable will not be effective.
+//1.0000000000000001 : works after 15 zeros.
+
+NOTE:using next methods is just the same as initializing variable no difference at all.
+
+String Equality:
+================
+Let's analyze the following Java, to understand the identity and equality of Strings:
+
+public static void testEquality(){
+    String str1 = "Hello world.";
+    String str2 = "Hello world.";
+
+    if (str1 == str2)
+        System.out.print("str1 == str2\n");
+    else
+        System.out.print("str1 != str2\n");
+
+    if(str1.equals(str2))
+        System.out.print("str1 equals to str2\n");
+    else
+        System.out.print("str1 doesn't equal to str2\n");
+
+    String str3 = new String("Hello world.");
+    String str4 = new String("Hello world.");
+
+    if (str3 == str4)
+        System.out.print("str3 == str4\n");
+    else
+        System.out.print("str3 != str4\n");
+
+    if(str3.equals(str4))
+        System.out.print("str3 equals to str4\n");
+    else
+        System.out.print("str3 doesn't equal to str4\n");
+}
+
+When the first line of code String str1 = "Hello world." executes, a string \Hello world." is created, and the variable str1 refers to it. Another string "Hello world." will not be created again when the next line of code executes because of optimization. The variable str2 also refers to the existing ""Hello world.".
+
+The operator == checks identity of two objects (whether two variables refer to same object). Since str1 and str2 refer to same string in memory, they are identical to each other. The method equals checks equality of two objects (whether two objects have same content). Of course, the content of str1 and str2 are same.
+
+When code String str3 = new String("Hello world.") executes, a new instance of string with content "Hello world." is created, and it is referred to by the variable str3. And then another instance of string with content "Hello world." is created again, and referred to by str4. Since str3 and str4 refer to two different instances, they are not identical, but their content are same.
+
+Therefore, the output contains four lines:
+
+//Str1 == str2
+//Str1 equals str2
+//Str3! = str4
+//Str3 equals str4
+NOTE:The == operator is a simple comparison of values.
+     For object references the (values) are the (references). So x == y returns true if x and y reference the same object.
+Technical explanations
+----------------------
+     In Java, all variables are either primitive types or references.
+
+     (If you need to know what a reference is: "Object variables" are just pointers to objects. So with Object something = ..., something is really an address in memory (a number).)
+
+     == compares the exact values. So it compares if the primitive values are the same, or if the references (addresses) are the same. That's why == often doesn't work on Strings; Strings are objects, and doing == on two string variables just compares if the address is same in memory, as others have pointed out. .equals() calls the comparison method of objects, which will compare the actual objects
+
+
+Static and non-Static:
+======================
+static : means belongs to the class only and if you created objects of that class they can't copy that method..etc.
+         -static methods(entities) don't need creating an object to use them.
+non-static : means can be copied by any object.
+             -non-static methods(entities) need creating an object to use them.

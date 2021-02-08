@@ -1,0 +1,10 @@
+Card		Win/Lose
+1   		   Lose
+5   		   Lose
+8   		   Win
+7   		   Lose
+------------------------
+Total Cards pulled: 21
+Total Wins: 1
+Total Loses: 3
+Sorry,You Lose

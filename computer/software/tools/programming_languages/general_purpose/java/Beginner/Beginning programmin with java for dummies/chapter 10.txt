@@ -1,0 +1,226 @@
+Logical (boolean) operators:
+============================
+__________________________________________________________________________________
+Operator Symbol          Meaning             Example                Illustration
+----------------------------------------------------------------------------------
+&&                         and          4 < age && age < 8          Figure 10-1(a)
+||                         or           age < 4 || 8 < age          Figure 10-1(b)
+!                          not            !eachKidGetsTen           Figure 10-1(c)
+__________________________________________________________________________________
+
+combined conditions:
+--------------------
+if ( age < 12 || age >= 65 ) {
+		ticket_price = 5.25;
+}
+if ( age >= 12 && age < 65) {//or just simply -> else
+		ticket_price = 9.25;
+}
+
+NOTE:
+When you form the opposite of an existing condition, you can often follow the
+pattern in Listing 10-1. The opposite of >= is <. The opposite of < is >=. The
+opposite of && is ||.
+
+NOTE:
+If you change the dollar amounts in Listing 10-1, you can get into trouble.
+For example, with the statement price = 5.00, the program displays Please
+pay $5.0. Enjoy the show!  This happens because Java doesn’t store
+the two zeros to the right of the decimal point (and Java doesn’t know or care
+that 5.00 is a dollar amount). To fix this kind of thing, see the discussion of
+NumberFormat.getCurrencyInstance in Chapter 18.
+
+When to initialize:
+===================
+the placement of the assignment statement makes a big great difference.
+notice:
+✓ The statement that assigns a value to age (age = keyboard.nextInt() ) isn’t inside an if statement.
+  That assignment statement always gets executed, and (as long as nothing extraordinary happens)
+  the variable age is sure to be assigned a value.
+
+✓ Both statements that assign a value to price (price = 9.25 and price = 5.25) are inside if statements.
+  in the program every age group is covered.So, whenever you run the TicketPrice program,
+  either the first or the second price assignment is executed.
+  The problem is that the compiler isn’t smart enough to check all this.
+  The compiler just sees the structure in Figure 10-4 and becomes scared
+  that the computer won’t take either of the true detours.
+
+_____________________________________________________________________________________
+comparison:
+-------------------------------------------------------------------------------------
+double price=2.3;//error when omitting   |double price=2.3;//no error when omitting
+if(age>12){                              |if(age>12){
+    price==5.23;                         |   price==5.23;
+}                                        |}
+if(age<=12){                             |else{
+    price==9.25;                         |   price == 9.25;
+}                                        |}
+System.out.println(price);               |System.out.println(price);
+_________________________________________|___________________________________________
+since there is no else statement then    |since there is an else statement so
+that increases the probabolity of        |assignment happens anyway.
+price to not be assigned.                |the compiler doesn't show any errors.
+So the compiler shows an error message   |
+_________________________________________|___________________________________________
+NOTE:The Compiler checks the structure of the program without execution (the compiler
+    `doesn't execute the program.`)
+NOTE:computer can’t display price(variable) unless price has a meaningful value.
+
+NOTE:
+When you create a big multipart condition, you always have several ways to
+think about the condition. For example, you can rewrite the last condition in
+Listing 10-2 as if (!(reply == 'Y' || reply == 'y' || reply ==
+'N' || reply == 'n')) . “If it’s not the case that the reply is either Y,
+y, N, or n, then display ‘Huh?’” So which way of writing the condition is
+better — the way I do it in Listing 10-2, or the way I do it in this tip? It depends
+on your taste. Whichever makes the logic easier for you to understand is the better way.
+
+Listing 10-2: Do You Have a Coupon?
+-----------------------------------
+	import java.util.Scanner;
+	class TicketPriceWithDiscount {
+ 			public static void main(String args[]) {
+ 					Scanner keyboard = new Scanner(System.in);
+ 					int age;
+ 					double price = 0.00;
+ 					char reply;
+
+ 					System.out.print("How old are you? ");
+ 					age = keyboard.nextInt();
+ 					System.out.print("Have a coupon? (Y/N) ");
+ 					reply = keyboard.findWithinHorizon(".", 0).charAt(0);
+
+ 					if (age >= 12 && age < 65) {
+ 					price = 9.25;
+ 					}
+ 					if (age < 12 || age >= 65) {
+ 					price = 5.25;
+ 					}
+ 					if (reply == 'Y' || reply == 'y') {
+ 					price -= 2.00;
+ 					}
+ 					if (reply != 'Y' && reply != 'y' &&
+ 					reply!='N' && reply!='n') {
+ 					System.out.println("Huh?");
+ 					}
+
+					System.out.print("Please pay $");
+ 					System.out.print(price);
+ 					System.out.print(". ");
+ 					System.out.println("Enjoy the show!");
+
+ 					keyboard.close();
+ 			}
+	}//as an Assignment rewrite the program with boolean variables.
+
+Nested if statements:
+=====================
+if ( condition )
+	if( condition )
+		System.out.println("wow");
+//i recommend using braces
+//but since if is a statement you can use this structure.
+//Who says SomeStatements can’t contain an if statement?
+NOTE:
+yes, you can create an if statement within an if statement within an if statement.
+There’s no predefined limit on the number of if statements that you can have.
+
+NOTE:
+Nested statements aren’t difficult to write, as long as you take things
+slowly and keep a clear picture of the code’s flow in your mind. If it helps, draw
+yourself a diagram like the one shown in Figure 10-10.
+
+if else:
+========
+In general, you can use else if as many times as you want.
+
+	if (hankeesWin) {
+ 		out.println("Hankees win...");
+ 		out.print("Hankees: ");
+ 		out.println(hankees);
+ 		out.print("Socks: ");
+ 		out.println(socks);
+	} else if (socksWin) {out.println("Socks win...");
+ 		out.print("Socks: ");
+ 		out.println(socks);
+ 		out.print("Hankees: ");
+ 		out.println(hankees);
+	} else if (isATie) {
+ 		out.println("It's a tie...");
+ 		out.print("Hankees: ");
+		out.println(hankees);
+ 		out.print("Socks: ");
+ 		out.println(socks);
+	} else if (gameCancelled) {
+ 		out.println("Sorry, sports fans.");
+	} else {
+ 		out.println("The game isn't over yet.");
+	}
+
+NOTE:
+Cascading if statements take advantage of a loophole
+in Java — a loophole about omitting curly braces in certain circumstances.
+
+the real structure:
+-------------------
+if (hankeesWin) {
+	out.println("Hankees win...");
+	out.print("Hankees: ");
+	out.println(hankees);
+	out.print("Socks: ");
+	out.println(socks);
+}
+else
+	if (socksWin) {out.println("Socks win...");
+		out.print("Socks: ");
+		out.println(socks);
+		out.print("Hankees: ");
+		out.println(hankees);
+	}
+	else
+		if (isATie) {
+			out.println("It's a tie...");
+			out.print("Hankees: ");
+			out.println(hankees);
+			out.print("Socks: ");
+			out.println(socks);
+		}
+		else
+			if (gameCancelled) {
+				out.println("Sorry, sports fans.");
+			}
+			else {
+				out.println("The game isn't over yet.");
+			}
+
+Enumerating the Possibilities:
+==============================
+Life is filled with small sets of possibilities, and Java has a feature that can
+reflect these possibilities. The feature is called an enum type. It’s available
+from Java version 5.0 onward(just like the static import feature).
+
+The story in Listing 10-6 has three possible endings — the Hankees win, the
+Socks win, or the game is tied. You can represent the possibilities with
+the following line of Java code:
+
+|	enum WhoWins { home,vistor,neither}
+
+NOTE:
+One of the goals in computer programming is for each program’s structure to
+mirror whatever problem the program solves. When a program reminds you of
+its underlying problem, the program is easy to understand and inexpensive to
+maintain. For example, a program to tabulate customer accounts should use
+names like customer and account. And a program that deals with three possible outcomes
+(home wins, visitor wins, and tie) should have a variable with
+three possible values. The line enum WhoWins {home, visitor, neither}
+creates a type to store three values.
+
+|	WhoWins who ;//creating a varaiable of type WhoWins
+
+|	who = WhoWins.home;//Assigning a value to the new variable
+
+NOTE:
+Instead of repeatedly checking the hankees > socks condition, I store
+the game’s outcome as an enum value. Then I check the enum value as
+many times as I want. That’s a very tidy way to solve the repeated checking
+problem.

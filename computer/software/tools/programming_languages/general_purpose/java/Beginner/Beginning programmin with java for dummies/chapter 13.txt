@@ -1,0 +1,33 @@
+PrintStream class:
+==================
+import java.io.PrintStream;
+class print {
+    public static void main(String args []) {
+        PrintStream fileWriter = new PrintStream("file.txt");
+        fileWriter.print("this is some text.");
+        fileWriter.println("\t lets end up this line ");
+        fileWriter.close();
+    }
+}//write to files.
+
+FileNotFoundException:
+======================
+import java.io.FileNotFoundException;
+class ////{
+    ////main(////) throws FileNotFoundException {//must type it when you are using a printStream or a FileScanner;
+
+    }
+}
+
+Scanner:
+========
+import java.util.Scanner;
+import java.io.File;
+class read {
+    public static void main(String args []) {
+        Scanner fileReader = new Scanner(new File("file.txt"));//File is here to indicate that this is a path of a file.
+
+        String text = fileReader.nextLine();
+        fileReader.close();
+    }
+}//write to files.

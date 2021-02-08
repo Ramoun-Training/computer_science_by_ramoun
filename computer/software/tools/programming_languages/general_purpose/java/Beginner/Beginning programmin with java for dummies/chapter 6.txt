@@ -1,0 +1,115 @@
+Variables:
+==========
+variables are placeholders.
+You can stick a number in a variable.
+Then change your mind and put a different number.(That’s what varies in a variable.)
+NOTE:when you put a new value in a variable the old value is no longer there.
+     if you didn't save the old number somewhere,the old number is gone.
+NOTE:if you declare a variable in a specific scope (inside a method,class..etc)
+     you can't use it outside that scope.
+NOTE:control the flow statements (like:if,switch,for,while...etc) declaring a variable there
+     depends on a certin condition (if that codition is true the declaration happens else
+     it doesn't happen).
+NOTE:declaration of a variable cannot be twice -even if one of them (or both) was(were)
+     in selection statements.//where assignment can.
+Terminology:
+------------
+value:the thing stored inside the variable (it can change during the run of the program).
+variable type:the kind of value stored in a variable.
+
+NOTE:variables got three things (name,value,type).
+     double amount=22.3;
+     {____} {____} {___}
+      type   name  value
+NOTE:There’s a subtle, almost unnoticeable difference between a variable and a
+     variable’s name.
+     Strictly speaking, amount is the variable name,all the memory storage
+     associated with amount (including the value and typeof amount)
+     is the variable itself.
+
+Assignment Statement:
+=====================
+The statements with equal signs in in them are called assignment statements.
+
+NOTE:In an assignment statement, you assign a value to something. In many cases,
+     this something is a variable.
+
+NOTE:You should get into the habit of reading assignment statements from right to
+     left.
+
+NOTE:A call to System.out.print writes some things and leaves the cursor sitting
+     at the end of the line of output. A call to System.out.println writes things
+     and then finishes the job by moving the cursor to the start of a brand-new line
+     of output.
+NOTE:in the assignment statement the only operand that should be on the left must be
+     a (variable),it can't be an expression or a method call or....etc.
+     i.e: String word.charAt(0) = Character.toUpperCase(word.charAt(0));
+          //don't do that --->>(error).
+          remember:In assignment statement the computer evaluates the right-side and
+                   assigns it to the left side variable-which must be a variable-
+                   The computer doesn't evaluate left side (no way at all).
+Types and declarations:
+=======================
+How do you tell the computer what 01001010 stands for? The answer is in the
+concept called type.
+The type: of a variable describes the kinds of values that the variable is
+permitted to store.
+
+NOTE: WHY Types are important??
+      1-saving space in memory (characters take less space in memory than integers)
+        so by saying that this variable of the type char i save more space.
+      2-this way allowed us to use the same binary number for different values
+        (01001010:can represent 'j' , 106 or 74).
+
+variable declaration:
+---------------------
+double amount;
+//I’m declaring my intention to have a variable named amount in my program.”
+//This line reserves the name amount for your use in the program.
+//the variable(place in memory) amount can only have decimal number values .
+
+NOTE:the computer can substitute something in place of a method call.
+     (or) to be precise the returned value is substituted in place of a method call.
+amount = keyboard.nextDouble();
+
+NOTE:
+double amount = 3.4;
+is not called assignment statement.
+it is called // declaration with an initialization.
+
+NOTE:You can do this:
+            //This is okay:
+            class SnitSoft {
+                    static double amount = 5.95;//declaration and initialalization or declaration only
+                    public static void main(String args[]) {
+                        amount = amount + 25.00;
+                        System.out.print("We will bill $");
+                        System.out.print(amount);
+                        System.out.println(" to your credit card.");
+                    }
+            }
+    But you can't do this:
+            //This does not compile:
+            class BadSnitSoftCode {
+                static double amount;
+                amount = 5.95; //Misplaced statement
+                public static void main(String args[]) {
+                    amount = amount + 25.00;
+                    System.out.print("We will bill $");
+                    System.out.print(amount);
+                    System.out.println(" to your credit card.");
+                }
+            }
+
+NOTE:You can’t drag statements outside of methods.
+(Even though a variable declaration ends with a semicolon,
+a variable declaration isn’t considered to be a statement. Go figure!)
+
+NOTE:In fact, most methods aren’t static.
+But whenever you pull a declaration out of a static method, you
+have to add the word static at the beginning of the declaration.
+
+NOTE:
+You can even add initializations to a combined declaration. When you do,
+each initialization applies to only one variable. For example, with the line
+double cdPrice, shippingAndHandling = 25.00, total;

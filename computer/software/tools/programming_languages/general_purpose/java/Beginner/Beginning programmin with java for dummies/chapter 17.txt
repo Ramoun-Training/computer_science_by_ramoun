@@ -1,0 +1,21 @@
+Refrence types:
+===============
+refrence types : combination of primitive types
+
+OOP:
+====
+class chair {//creating class
+    int legs;
+    String color;
+}
+
+public class program {
+    public static void main {
+        chair Ramoun_chair = new chair();//creates an object with no values in it.
+    }
+}
+
+Terminology:
+============
+you can say "object of chair class" or "instance of chair class".
+

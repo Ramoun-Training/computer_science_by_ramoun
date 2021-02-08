@@ -1,0 +1,127 @@
+﻿1/at regrasp ask when should i use every thing and put tips and important notes in a single paper and keep with you
+﻿Example code of a game:
+
+if(person.touches(goldenRing()){
+	person.getPoints(20)
+}
+
+------------------------------------
+people who write programs have two important qualities:
+	1-they know how to break big problems into smaller step-by-step procedures.
+	2-they can express these steps in a very precise language
+------------------------------------
+Example code in visual Basic:
+
+If columnNumber > 60 Then
+Call wrapToNextLine
+Else
+Call continueSameLine
+End If
+
+Example code in java:
+if(columnNumber > 60){
+	wrapToNextLine();
+else
+	continueSameLine();
+}
+
+Example code in COBOL:
+
+IF COLUMN-NUMBER IS GREATER THAN 60 THEN
+PERFORM WRAP-TO-NEXT-LINE
+ELSE
+PERFORM CONTINUE-SAME-LINE
+END-IF
+
+Example code in Haskell:
+
+median aList =
+[ x | x <- aList,
+length([y | y <- aList, y < x]) ==
+length([y | y <- aList, y > x])]
+*Main> median [4,7,2,1,0,9,6]
+[4]
+
+------------------------------------
+When you create a new computer program you need three tools:
+
+✓ Compiler: A compiler translates your code into computer-friendly (humanunfriendly) instructions.
+✓ Virtual machine: A virtual machine steps through the computer-friendly
+instructions.
+✓ Application programming interface: An application programming interface contains useful prewritten code.
+
+------------------------------------
+->Computers break everything down into very low-level, unfriendly sequences of zeros and ones and then put things back together so that humans can deal with the results.
+------------------------------------
+the program has to get translated into zeros and ones. The official name for the translation process is compilation. Without compilation, the computer can’t run your program.
+------------------------------------
+The compiled mumbo jumbo(zeros and ones):
+✓ Most Java programmers call it bytecode.
+✓ I often call it a .class file. That’s because, in Java, the bytecode gets stored
+in files named SomethingOrOther.class.
+✓ To emphasize the difference, Java programmers call Listing 1-1 the source
+code and refer to the zeros and ones in Figure 1-1 as object code.
+✓ To create object code, the computer uses a special software tool called a (compiler).
+✓ Your computer’s hard drive may have a file named javac or javac.exe. This file contains that special software tool — the compiler. (Hey, how about that?
+The word javac stands for “Java compiler!”)
+-------------------------------------
+The JVM:
+========
+-walks your computer through the execution of some bytecode instructions.
+-It carrys out the instructions that tell the computer how to follow other instructions
+-A java (or java.exe) file contains the instructions illustrated previously in Figure 1-4(in the book pg:34) — the instructions in the JVM.
+------------------------------------
+//the paper //
+------------------------------
+					################################
+API(Application Programming Interface):
+=======================================
+Java came along in 1995, so it was natural for the language’s
+founders to create a library of reusable code. The library included about 250 programs,
+including code for dealing with disk files, code for creating windows, and code for passing information
+over the Internet. Since 1995, this library has grown to include more than 4,000 programs.
+This library is called the Application Programming Interface (API)
+
+Every Java program, even the simplest one, calls on code in the Java API.
+->System.out.println("welcome");//println method is part of the java API.
+
+No one memorizes all the features made available by the Java API.
+ Programmers remember the features that they use often and look up the features that they need in a pinch.
+They look up these features in an online document called the API Specification
+(known affectionately to most Java programmers as the API documentation, or the Javadocs).
+
+The API documentation (see http://docs.oracle.com/javase/8/docs/api/) describes the thousands of features in the Java API. As a Java programmer, you consult this API documentation on a daily basis. You can bookmark the documentation at the Oracle website and revisit the site whenever you need to look up something, or you can save time by downloading your own copy of the API docs using the links found at: www.oracle.com/technetwork/java/javase/downloads/index.html.
+
+		################################
+Your Java Programming Toolset:
+==============================
+✓ You need a Java compiler. (Refer to the section “Translating your code.”)
+✓ You need a JVM. (Refer to the section “Running code.”)
+✓ You need the Java API. (Refer to the section “Code you can use.”)
+✓ You need access to the Java API documentation. (Again, refer to the“Code you can use” section.)
+✓ You need an editor to compose your Java programs.
+✓ You need a way to issue commands.:when you use your computer’s facilities, you jump from one window to another.
+  You open one window to read Java documentation, another window to edit a Java program,
+  and a third window to start up the Java compiler.
+
+IDE:
+----
+In the best of all possible worlds, you do all your program editing, documentation reading,
+and command issuing through one nice interface. This interface is called
+an integrated development environment (IDE)
+
+IDEs such as NetBeans, IntelliJ IDEA, JDeveloper, JCreator, and others
+
+		##########################################
+JDK versus JRE:
+===============
+JDK(java development kit)..JRE(java runtime environment)
+
+The JRE includes:
+a Java Virtual Machine and the Application Programming Interface(JVM+API)
+
+The JDK includes:
+everything in the JRE,and in addition, the JDK includes a Java compiler
+(JVM+API+JavaC)
+
+YOU CAN DOWNLOAD (JAVA SE)TOO.

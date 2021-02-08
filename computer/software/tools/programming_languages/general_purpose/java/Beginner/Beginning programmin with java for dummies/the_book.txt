@@ -1,0 +1,9 @@
+chapter 4:
+keywords:.....
+2 keywords have no meaning in java programs
+Those keywords — const and goto — are reserved
+for non-use in Java.
+The creators of Java
+figure that, if you use either of the words const or goto in your code, you
+should be told politely to move to the C++ programmers’ table
+

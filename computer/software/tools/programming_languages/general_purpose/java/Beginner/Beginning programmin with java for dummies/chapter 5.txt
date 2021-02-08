@@ -1,0 +1,182 @@
+﻿Get Input from keyboard:
+========================
+//the Scanner class and its methods are available from java 5 and later.
+java.util.Scanner;//Scanner is a class(with methods) defined within the java api.
+class scanner{
+	public static void main(String[]args){
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println(keyboard.nextLine());
+		keyboard.close();
+	}
+}
+
+nextLine() method:
+* the computer substitutes -keyboard.nextLine()- with what you enter in the console.
+* it is a defined method within the Scanner class(which is defined inside the java api).
+
+input:"welcome to java"
+
+as if it was(System.out.println("welcome to java");)
+
+Explain:
+1-the computer goes to execute the ..println() method but during that he finds another method
+2-So he goes to execute that method first.
+
+there is a full table about other methods on page 104 in the book
+
+
+
+
+        System.out.println("this is line of code");
+                                  /
+                                 /
+                                /
+		System.out.println(keyboard.nextLine());
+                                          /
+                                         /
+		 -----------------------        /
+		/	    this is line  /        /
+	   /         of code     / -------/
+      /                     /
+     -----------------------
+
+
+
+
+			     #############################################
+Other Input Method:
+===================
+____________________________________________________________________
+To Read This . . . . . . 					Make This Method Call
+--------------------------------------------------------------------
+A number with no decimal point in it 		nextInt()
+A number with a decimal point in it 		nextDouble()
+A word (ending in a blank space, for
+example)                                    next()
+A line (or what remains of a line after		nextLine()
+you’ve already read some data from
+the line)
+A single character (such as a letter, a		findWithinHorizon(".",0).
+digit, or a punctuation character)			charAt(0)
+
+
+
+//#Buried innocently inside the previous program are three extra lines of code. These lines
+help the computer read input from the keyboard. The three lines are:
+
+import java.util.Scanner;
+Scanner keyboard = new Scanner(System.in);
+keyboard.close();
+
+
+Concerning these three lines, I have bad news and good news.
+✓ The bad news is, the reasoning behind these lines is difficult to understand. That’s especially true here in Chapter 5, where I introduce Java’s
+most fundamental concepts.
+✓ The good news is, you don’t have to understand the reasoning behind
+these three lines. You can copy an✓ Don’t expect a program that you type to compile the first time.
+Be prepared to return to your editor and fix some mistakes.
+✓ Don’t expect a program that compiles flawlessly to run correctly.
+Even with no error markers in Eclipse’s editor, your program might still
+contain flaws. After Eclipse compiles your program, you still have to run
+the program successfully. That is, your program should finish its run and
+display the correct output.
+You compile and then you run. Getting a program to compile without
+errors is the easier of the two tasks.
+✓ Read what’s in the Eclipse editor, not what you assume is in the
+Eclipse editor.
+Don’t assume that you’ve typed words correctly, that you’ve capitalized
+words correctly, or that you’ve matched curly braces or parentheses
+correctly. Compare the code you typed with any sample code that you
+have. Make sure that every detail is in order.d paste these lines into any program
+that gets input from the keyboard. You don’t have to change the
+lines in any way. These lines work without any modifications in all
+kinds of Java programs.
+
+Expecting the Unexpected:
+=========================
+✓ Don’t expect a program that you type to compile the first time.
+  Be prepared to return to your editor and fix some mistakes.
+
+✓ Don’t expect a program that compiles flawlessly to run correctly.
+  Even with no error markers in Eclipse’s editor, your program might still
+  contain flaws. After Eclipse compiles your program, you still have to run
+  the program successfully. That is, your program should finish its run and
+  display the correct output.
+  You compile and then you run. Getting a program to compile without
+  errors is the easier of the two tasks.
+✓ Read what’s in the Eclipse editor, not what you assume is in the Eclipse editor.
+  Don’t assume that you’ve typed words correctly, that you’ve capitalized
+  words correctly, or that you’ve matched curly braces or parentheses
+  correctly. Compare the code you typed with any sample code that you
+  have. Make sure that every detail is in order.
+✓ Be patient.
+  Every good programming effort takes a long time to get right. If you
+  don’t understand something right away, be persistent. Stick with it (or
+  put it away for a while and come back to it). There’s nothing you can’t
+  understand if you put in enough time.
+✓ Don’t become frustrated.
+  Don’t throw your pie crust. Frustration (not lack of knowledge) is your
+  enemy. If you’re frustrated, you can’t accomplish anything.
+✓ Don’t think you’re the only person who’s slow to understand.
+  I’m slow, and I’m proud of it. (Melba, Chapter 6 will be a week late.)
+✓ Don’t be timid.
+  If your code isn’t working and you can’t figure out why it’s not working,
+  then ask someone. Post a message on an online forum. And don’t be
+  afraid of anyone’s snide or sarcastic answer. (For a list of gestures you
+  can make in response to peoples’ snotty answers, see Appendix Z.)
+  To ask me directly, send me an e-mail message, tweet me, or post to me
+  on Facebook. (Send e-mail to BeginProg@allmycode.com, tweets to
+  @allmycode, or posts to Facebook at /allmycode.)
+NOTE:
+**when you see a bunch of error messages, read each error message carefully.
+Ask yourself what you can learn from each message. But don’t take each
+message as the authoritative truth. When you’ve exhausted your efforts with
+Eclipse’s messages, return to your efforts to stare carefully at the code.
+
+NOTE:
+If you get more than one error message, always look carefully at each message
+in the bunch. Sometimes a very helpful message hides among a bunch of
+not-so-helpful messages.
+
+NOTE:
+Good practise:->
+Start with a working Java program. After successfully
+running the code, make a change that intentionally introduces errors. Look
+carefully at each error message and ask yourself whether the message would
+help you diagnose the problem.
+
+NOTE: Exception class is the super calss of all the exceptions.
+
+NOTE: Read stack traces carefully.
+
+NOTE: don't ever leave the catch block empty becaue it will cause problems later.
+
+NOTE: if you don't know how to handle a specific exception specify the requirements for the calling class to hanlde it.
+
+NOTE: using messages to user in the catch block not often helpful so try to find a way to fix the error is a better way of handling.
+
+NOTE: remember in the try block the jvm doesn't let the line that throwed the exception
+      ececutes or any other line after it in the try block.
+
+NOTE:
+(main-Main)
+the compiler cares only about certin things in your source code like:
+keywords(class,static,void....),syntax,semantics....and so ....
+but it doesn't care about identifires(because you make up those)
+-->>But it code warn you that there is no main in your code...????
+
+the JVM is the one who executes your code.The JVM needs to find a place to start
+executing statements in your code, so the JVM looks for a starting point named main,
+with a small m. If the JVM doesn’t see anything named main, the JVM gets upset.
+So {at runtime, the JVM, and not the compiler, gives you an error message}.
+					###################################
+
+Scanner:
+========
+Just be sure to put these lines in the right places:
+	✓ Make the import java.util.Scanner line the first line in your
+	  program.
+	✓ Put the Scanner keyboard = new Scanner(System.in)  line
+	  inside your main method immediately after the public static void
+	  main(String args[]) {  line.
+	✓ Make the keyboard close()  line the last line in your program.

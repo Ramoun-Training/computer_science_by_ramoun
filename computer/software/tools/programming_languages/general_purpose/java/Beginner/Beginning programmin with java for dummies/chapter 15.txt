@@ -1,0 +1,133 @@
+For loops:
+==========
+there is another way in java to do loops.
+this way usually used if you know the number of loops previously.
+but it can be used just like the while loop too.
+
+Structure:
+----------
+for (int x = 0;/*intialize the counter*/ x < 10;/*condition*/ x++;/*update*/) {
+    statemet(s);
+}//end of loop
+
+✓ Initialization: The initialization is executed once, when the run of your
+   program first reaches the for statement.
+✓ Condition: The condition is tested several times (at the start of each iteration).
+✓ Update: The update is also evaluated(executed - tested) several times (at the end of each iteration).
+
+TODO:Good way to think about a for loop.
+//This is NOT real code
+int count = 0;//initialization (evaluated only once)
+for count < 0 {//condition (evaluated at the beginning of each iteration)
+    out.print("I've chewed ");
+    out.print(count);
+    out.println(" time(s).");
+    count++;//update (executed - evaluated at the end of each iteration)
+}
+
+NOTE:
+The first line of a for statement (the word for followed by stuff in parentheses) isn’t a complete statement.
+So you almost never put a semicolon after the stuff in parentheses.
+If you make a mistake and type a semicolon,
+    //    // DON'T DO THIS:
+    //    for (int count = 0; count < 10; count++) ;  {
+you usually put the computer into a do-nothing loop.
+The computer counts to itself from 0 to 9. After counting, the computer executes whatever statements
+come immediately after the open curly brace. (The loop ends at the semicolon,
+so the statements after the open curly brace aren’t inside the loop.)
+
+NOTE:
+If you declare a variable in the initialization of a for loop, you can’t use
+that variable outside the loop.
+        //This code does not compile.
+        for (int count = 0; count < 10; count++) {
+         out.print("I've chewed ");
+         out.print(count);
+         out.println(" time(s).");
+        }
+        out.print(count); //The count variable doesn't exist here.
+
+the count variable is declared in the for loop’s initialization.
+Outside the -scope of the- for loop, that count variable doesn’t exist.
+QuickFix:
+000000000
+    int count;
+    for (count = 0; count < 10; count++) {
+        //statement(s);
+    }
+    System.out.println(count);
+OR:
+    int count = 0;
+    for (; count < 10; count++) {
+        //staement(s);
+    }
+    System.out.println(count);
+
+NOTE:
+Usually, when you write a for statement,you’re counting how many times to repeat
+something. But, in truth, you can do just about any kind of repetition with a for statement.
+
+NOTE:
+When declaration happens in a scope it is only known inside that scope but not in the rest of the program.
+
+Nested for loops:
+=================
+just like matrices i want to show 3 numbers 3 times (3 x 3);
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        System.out.println(number);
+    }
+}
+
+do...while() loops:
+===================
+REVIEW:
+while loop:
+-----------
+ex: while (i_have_balance) {
+    Pay_check(customer);
+}
+when you first encounter this statement,if my account have zero balance i won't pay any checks-not even one check.
+thus you need a do....while() loop;
+
+Structure:
+----------
+do {
+    statemet(s);
+} while(condition);//don't forget that semi-colon
+
+i.e:
+int n, i = 0;
+do {
+    n = 3;
+    i++;
+} while (i <= n);
+
+NOTE:
+you cannot declare a variable (which will be used in the while condition) inside the scope of the do..while() loop.
+But you can initialize it inside the do..while() scope.
+
+NOTE:
+you can emulate a do...while() loop with while() loops..HOW???
+while (true) {
+    n = 3;
+    i++;
+    if (!(i <= n)) {
+        break;
+    }
+}//but any way why you want to use this with break and continue statements when java provides you with the do .. while()
+//may be in other languages-that don't have a do..while() loop - like python you would do that.
+Enhanced For loops:
+===================
+Structure:
+----------
+for (TypeName variableName : RangeOfValues) {
+ Statements
+}
+
+i.e: Range of values : {2,5,22,39}
+what the loop does is :
+    *At the beginning of every iteration the "variableName" takes one value of the values of the Range of values list
+    *The loop terminates when the "variableName" assigned the last item on the list.
+    *RangeOfValues could be an array , linked list or an enumeration.
+    

@@ -1,0 +1,13 @@
+NOTE:some of java's famous classes (String,Spring,Swing...etc)
+
+=================================NOTE====================================
+You never need to memorize the names or features of Java’s API classes.
+Instead, you keep Java’s API documentation handy. When you need to know
+about a class, you look it up in the documentation. If you need a certain class
+often enough, you’ll remember its features. For classes that you don’t use
+often, you always have the docs.
+=================================NOTE====================================
+For tips on using Java’s API documentation, see my article “Making
+Sense of Java’s API Documentation,” at www.dummies.com/extras/
+beginningprogrammingwithjava. To find gobs of sample Java code,
+visit some of the websites listed in Chapter 21.

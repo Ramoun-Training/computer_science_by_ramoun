@@ -1,0 +1,518 @@
+﻿
+
+ 	 /---- M(set/put):store the value
+  M1
+	\
+	 \---- M(get):restore the value
+
+------------------------------------------
+
+   /---- M(set/put):store the value
+  M2
+	\
+	 \---- M(get):restore the value
+
+------------------------------------------
+let us now call m1->x and m2->y
+and lets call 'em variables instead of memories
+4->x === x=4;
+3+4->x === x=3+4;
+1000->y === y=1000;
+3+y->x === x=3+y;
+------------------------------------------
+the assignment statement is a change of state
+------------------------------------------
+swapping:
+
+a=x;
+x=y;
+y=a;
+------------------------------------------
+so far we've seen calculators that shows:
+1-values
+2-expressions(have a value:evaluated)
+3-statements(change states:changing the value of a variable
+:produces an effect {does something})
+4-programs(history)(this history can be input to the calculatot only)
+------------------------------------------
+simple programs are just like :simple computaions written on a piece of paper or stored in any other form i.e:{in the digital way inside the memory of the compuer}
+------------------------------------------
+a program is not only a set of computaions,it also can be instructions{take the next right,move forward....}or {set the color to black,draw 2cm to the left}
+------------------------------------------
+they were called boolean in honor of george boole
+true - false
+operations:
+ same | negation(not)    !     !(n<m) == (n>=m)
+ prec-| conjunction(and) &&
+ dence| disjunction(or)  ||     (n<m) || (n==m) == (n<=m)
+------------------------------------------
++ :2 numeric arguments and a numeric result
+&&:2 boolean values and a boolean result
+< :2 numeric values and a boolean result
+------------------------------------------
+Operator 	Description
+=====================
+= 	Simple assignment operator. It assigns values from right side operands to left side operand.
+
+->arithmetic operators:
+-----------------------
++ 	Addition operator       - Adds operands on both sides of the operator
+- 	Subtraction operator    - Subtracts the right side operand from the left side operand
+* 	Multiplication operator - Multiplies operands on both sides of the operator
+/ 	Division operator       - Divides the left side operand by the right side operand
+% 	Modulus operator        - Divides the left side operand by the right side operand and returns  remainder
+++ 	Increment operator      - Increases the value of operand by 1
+-- 	Decrement operator      - Decreases the value of operand by 1.
+
+->relational operators:
+-----------------------
+> 	Checks if the value of the left operand is greater than the value of the right operand, if yes then the condition becomes true.
+< 	Checks if the value of the left operand is less than the value of the right operand, if yes then the condition becomes true.
+>= 	Checks if the value of the left operand is greater than or equal to the value of the right operand, if yes then the condition becomes true.
+<= 	Checks if the value of the left operand is less than or equal to the value of the right operand, if yes then the condition becomes true.
+
+->equality operators:
+--------------------wz-
+== 	Checks if the values of the two operands are equal or not, if yes then the condition becomes true.
+!= 	Checks if the values of the two operands are equal or not, if values are not equal then the condition becomes true
+
+->Logical(boolean) Operators:
+--------------------
+! 	NOT Operator. Reverses the value of a boolean operand
+&& 	AND Operator. If both boolean operands are true, the condition becomes true
+|| 	OR Operator. If any of the boolean operands is true, the condition becomes true
+
+------------------------------------------
+general precedence:
+===================
+1-arithmetic
+2-relational
+3-logical(not and or)
+
+------------------------------------------
+till now variables names were predefined by the factory
+now we are going to give 'em names(identifiers)
+
+#code:
+/ int FirstNumber;
+/ boolean Found;
+
+rules of naming:
+================
+1-start with a letter(capital-small) or an under score
+2-can contain numbers ,letters(capital-small),digits or the under_score
+3-no use of reserved words
+4-no spaces(the computer considers them 2 names and this is not a correct way of declaring 2 variables)
+5-you cannot declare 2 variables with the same name in the same scope
+
+how to choose good names?
+1-use meaningful names
+2-use camel naming method or pascal naming method(for more than one word names)
+3-for variables that are not going to change (use capital letters only)
+///except for $ :used at the beginning automatically generated variables
+-----------------------------------------
+strings and printing:
+=====================
+text:consists of characters in sequence
+char:a single character
+string:a sequence of characters ,one character only or even no characters at all.
+___________________________
+char       string
+---------------------------
+'s'        "Java"
+' '        "HELLO,RAMOUN"
+';'        " "
+'3'        ""(empty string)
+---------------------------
+
+backslash:special escaping symbol.
+#code:
+String like="Java";
+//for concatenation
+String s="s";
+String t="top";
+String st=s+t;//stop  -->> convert methode
+String ts=t+s;//tops  -->> convert methode
+
+>>the + sign is used for concatination....there is no confusing because of the different data types
+#################################{Code}#################################
+        int n=1;
+        String s="1";
+
+        int m=n+n;//prints 2 adding two integers
+        String p=s+s;//prints 11 -->concatinating 2 strings
+        String q=s+n;//prints 11 -->if one of the operands is a string
+        //the other operand is converted to a string too.
+        int w=s+n;//error -->strings cannot be converted to ints
+------------------------------------------
+NOW with some of string methods(functions):
+the length():
+=============
+        String s="s";
+        String t="top";
+        String p="";
+        String q=" ";
+
+        int n=s.length();//1
+        int m=t.length();//3
+        int j=p.length();//0
+        int k=q.length();//1
+
+the charAt():
+=============
+//extracts character of a string at some position(index)
+		String s="we can";
+		System.out.println(s.charAt(1));//prints 'e'
+
+the substring():
+================
+//slicing the string.
+/*
+	   _________________________
+	   | R | A | M | O | U | N |
+	   -------------------------
+	     0   1   2   3   4   5
+*/
+        //extracting a part of a given string
+        String r="RAMOUN";
+        String a=r.substring(2,4);//we extract the substring string that starts at position 2 and
+        //ends at the position before the 4.
+        String b=r.substring(0,4);
+        String c=r.substring(2,6);
+        String d=r.substring(2);//substract from position 2 to the end of the string
+
+        OUTPUT:
+        -------
+        1: MO
+        2: RAMO
+        3: MOUN
+        4: MOUN
+-----------------------------------------
+the print statement:allows us to print(show) something(string,digits....etc) on the screen.
+#code:
+		System.out.print("HELLO WORLD");//prints the argument w/out a new line after it.
+		System.out.println("hello world");//prints a new line after it prints the argument(s).
+		System.out.println(a+" "+b+" "+c);//to use spaces between strings
+-----------------------------------------
+final grasp:
+============
+1-concentrate on strings we will not use chars much here.
+2-String is not a primitive data type (thats why you write it with a capital S)
+3-java evaluates expressions during declaration or during printing too.
+  (so expressions have values)
+4-important definations
+Keywords: reserved words in Java. Such as variable types.
+
+Strings: character chains.
+
+Identifiers: names for variables and other language entities.
+-----------------------------------------
+compiling:This will translate the Java code into machine code that can be executed by a computer later.
+-----------------------------------------
+examples of code:logical expression
+====================================
+	  	boolean a = true;
+	    boolean b = false;
+	    boolean c= !false;
+
+	    boolean d = b && !c;
+	    boolean e = (c || d) || false;
+	    boolean f = !(b && c) && (true || (c && a));
+	    boolean g = (a && b) || c && d || (e || f);
+
+	    System.out.println("a = "+ a);//true
+	  	System.out.println("b = "+ b);//false
+	  	System.out.println("c = "+ c);//true
+	  	System.out.println("d = "+ d);//false
+	  	System.out.println("e = "+ e);//true
+	  	System.out.println("f = "+ f);//true
+	  	System.out.println("g = "+ g);//true
+-----------------------------------------
+examples of code:logical expressions and increment operator
+===========================================================
+public class  main{
+
+	public static void main(String[] args) {
+
+		boolean a=true;
+		boolean b=false;
+		boolean c=!(true && false && true || false ||(true || !true && false));
+		boolean c_evaluated=false;
+
+		System.out.println(c);
+		System.out.println(c_evaluated);
+		/////////////////////////new program/////////////////////////
+		int y=16;
+		int x;
+
+		x=++y;
+		System.out.println("y:"+y);//17
+		System.out.println("x:"+x);//17
+		System.out.println();
+
+		y=16;
+		x=y++;
+		System.out.println("y:"+y);//17
+		System.out.println("x:"+x);//16
+		//
+	}
+}
+-----------------------------------------
+Decisions:
+==========
+this is one of the structures that control the flow of execution
+->main if structure:
+
+		if (boolean expression){
+			statements;
+		}
+
+->alternative:
+
+		if(boolean expression){//notice "BOOLEAN expression"
+			statements;
+		}
+		else{
+			statements;
+		}
+
+->nested if:
+
+		if(boolean expression){
+			statements;
+		}
+		else{
+			if(boolean expression){
+				statements;
+			else{
+				statements;
+			}
+		}
+		//it can be also written this way:
+		if(boolean expression){
+			statements;
+		}
+		else if(boolean expression){
+			statements;
+		}
+		else{
+			statements;
+		}
+
+example:
+        boolean b=true;
+        if(b==true) {s1;} else {s2;}
+        //can be also written
+        if(b) {s1;} else {s2;}//s1
+        **test:convert this code:if (b==false) {s1;} else {s2;}
+        **ans:if(!b) {s1;} else {s2;}
+          or  if(b) {s2;} else {s1;}
+-----------------------------------------
+The Ternary (conditional) operator:
+===================================
+The word "Ternary" comes form a Latin word that means "composed of three parts". 
+the Java ternary operator let's you assign a value to a variable based on a
+(boolean expression)— either a boolean field(true-false), or a statement that
+evaluates to a boolean result.
+
+An example on:abs(function)
+//############code##########
+public calss absolute{
+      public static void main(Stirng[] args){
+            int x=5;
+            if(x>0){
+                  x=x;//may be this step is not needed
+            }
+            else{
+                  x=-x;
+            }
+            //the same program but enhanced
+            if(x<0){
+                  x=-x;
+            }//yeah just like this
+
+            //NOW LET'S TRY THIS IMAGINE THIS INSTR.
+            f(x>0,x,-x)
+            f(b,e1,e2)
+            //yeah but the real syntax is
+            b?e1:e2;//where e1 and e2 can be of any type where b can only be boolean
+            //now : see this
+            eval(true?e1:e2)=eval(e1)
+            eval(false?e1:e2)=eval(e2)
+            //where e1 and e2 cannot be assignment statements
+      }
+}
+
+recreating the Math.max(a,b) method
+max=(a>b)?a:b;//parentheses are optional
+
+General ternary operator syntax:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+result = testCondition ? value1 : value2
+**the testcondition is a boolean expression
+
+As described in the Oracle documentation, this statement can be read as
+“If testCondition is true, assign the value of value1 to result;
+otherwise, assign the value of value2 to result.”
+
+@@@@@@@@@@@@@@@@@@@@@@@@(Code)@@@@@@@@@@@@@@@@@@@@@@@@@
+// result is assigned the value "Sorry Dude, it's false"
+String result = false ? "Dude, that was true" : "Sorry Dude, it's false";
+
+example:
+b ? true: false
+if b is undefined the result is undefined too.
+if b is true the result is true too.
+if b is false the result is false too.
+/so it can be simply written b.
+
+b ? false: true
+if b is undefined the result is undefined too.
+if b is true the result is false too.
+if b is false the result is true too.
+
+/so it can be simply written !b.
+
+relationship with logical operators:
+####################################
+        b ? c : false  //same as b && c
+        b ? true : c   //same as b || c
+//the behavior of 'and' and 'or' are called:
+      -non-strict,or sequential ,or short circuit.
+      cus,values are looked at in a sequential mannar.
+
+//in case of "&&":
+      the 2nd argument is only evaluated if the first argument is true.
+      else it takes the value of the first argument
+FINAL GRASP:
+Using the Ternary operator is easy if we think in the following way.
+
+What is written before the ? sign is the question,
+just as it is done in English. And what is written after it are the decisions
+that we do depending on the answer.
+
+If the answer to the question is yes (true) we are going to do the first option,
+if it is no we are going to do the second one. For example:
+-----------------------------------------
+postfix-infix (in-de)crement operators:
+=======================================
+x++;
+same as saying:return the x value and then increment it(x+=1)
+++x;
+same as saying:increment the x and then return the x value
+
+**there is no effect (difference) if you implemented it like this:
+      x++; or like this:  ++x;
+
+**it really takes effect only if it was a part of an expression or a statement.
+y=x++;
+same as:y=x; x=x+1;
+
+y=++x;
+same as:x=x+1; y=x;
+
+System.out.println(x++);//printing the value of x then increment it.
+System.out.println(++x);//incrementing the x then printing it.
+_______
+NOTICE:YOU CAN PRINT EXPRESSIONS AND STATEMENTS WITH THE ..println().
+______ System.out.println(c=c+4);//prints 6 if c=2;
+
+-----------------------------------------
+Iteration:
+==========
+->while loop:
+      while(boolean expression){
+              statements;
+      }
+//keeps executing the statements till the condiotion is false
+
+->for loop:
+      for(initialization[statement];stop condition[boolean expression];step{update}[statemnet]){
+              statements;
+      }
+      //the update is executed after the body of the for loop
+//used when you know previously times of iteration
+important examles:
+(x != 10)  (x < 10) huge differrence
+if(int x=10; x>=0 ; x=x/3)   Infinte loop
+-----------------------------------------
+Arrays:
+=======
+a sequnce of elements (all are of the same type(ints..floats..Strings..))
+/*
+  ->index                      0    |    1     |    2     |    3     |    4
+                         ########################################################
+  ->values               #    1|1   #   2|2    #   3|3    #   4|4    #   5|5    #
+                         ########################################################
+  ->addresses of bytes    {101}{102} {103}{104} {105}{106} {107}{108} {109}{110}
+  ->adreses of elements   {__101___} {___103__} {__105___} {__107___} {___109__}
+
+ // array declartion
+ 		byte[]a;
+ 		short[] b;
+ 		int[] c;
+ 		long[] d;
+ 		double[] e;
+ 		float [] f;
+ 		boolean[] g;
+ 		char[] h;
+ 		String[] i;
+
+ //array creation (reserving space in memory)
+ 		a=new byte[5];
+ 		b=new short[5];
+ 		c=new int[4];
+ 		d=new long[5];
+ 		e=new double[6];
+ 		f=new float[4];
+ 		g=new boolean[3];
+ 		h=new char[4];
+ 		i=new String[3];
+
+ //declaration and creation in the same line
+ 		int[] nums=new int[4];
+    //or
+    int[] nums=new int[] {1,2,3,4};
+
+ //access elements of an array
+ 		nums[0]=11;//first element in the array is now 11
+ 		nums[4]=22;//error array has been declared of length 4 indices go from 0 to 3
+
+ //assignment
+ 		c[0]=33;
+ 		c[1]=44;
+ 		c[2]=55;
+ 		c[3]=c[1]+c[2];//array name with an index is like identifiers
+
+ //Declaration ,creation,initialization at once
+ 		String[] bears={"red","blue","green"};
+
+ //arrays and strings are not the same thing although it is straightforward to
+ //convert from one to another
+ 		char[] word={'w','o','r','d'};
+
+ //printing all elements in an array using for loop:
+    int [] list;
+    list=new int[5];
+    list[0]=1;
+    list[1]=2;
+    list[2]=3;
+    list[3]=4;
+    list[4]=5;
+    for(int i=0;i<list.length//5//;i++){//map
+        System.out.println(list[i]);
+    }
+    //another way of doing that very fast:
+    int[] fast_list={1,2,3,4,5};//notice the length is now the number of elements
+    //int fast_list[]={1,2,3,4};//work perfectly too.
+    for(int x:fast_list){//reduce
+        System.out.println(x);//where x =fast_list[i]
+    }//if you remember it is just like python
+
+ //an element of an array might also be an array
+ //2-D arrays
+ 		int[]twodim={[1,2,3,4],[5,6,7,8]};
+ //Conclusion
+ //Length fixed at declaration
+ //All elements of the same type
+ //elements might be arrays

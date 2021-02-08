@@ -1,0 +1,58 @@
+the website:
+============
+http://www.dummies.com
+http://www.allmycode.com
+
+cheat sheet:
+============
+http://www.dummies.com/cheatsheet/beginningprogrammingwithjava
+
+web extras:
+===========
+http://www.dummies.com/extras/beginningprogrammingwithjava.
+
+connect-author:
+===============
+e-mail: BeginProg@allmycode.com.
+facebook: /allmycode
+twitter:@allmycode
+
+the book's website:
+===================
+http://allmycode.com/BeginProg
+http://www.dummies.com/go/beginningprogrammingwithjavafd
+
+book update:
+============
+http://www.dummies.com/go/beginningprogrammingwithjavafdupdates
+
+Java API documentation download:
+================================
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+http://docs.oracle.com/javase/8/docs/api/
+
+Downloading the jdk:
+====================
+http://www.oracle.com/technetwork/java/javase/downloads
+
+Java SE Development Kit Documentation:
+======================================
+http://www.oracle.com/technetwork/java/javase/downloads
+Eclipse website:
+================
+http://www.eclipse.org
+
+->download java SE.
+
+-<<Check out the article �Making Sense of Java�s API Documentation� (and more) online:
+at http://www.dummies.com/extras/beginningprogrammingwithjava>>-
+
+Most of the programs in this book are text-based programs. These programs do their input and output almost exclusively in Eclipse’s Console view. In contrast,a GUI (Graphical User Interface) program displays windows, buttons, text fields, and other widgets to interact with the user. You can see GUI versions of the program in Listing 4-1, and in many other examples from this book, by visiting the book’s website (http://allmycode.com/BeginProg).
+
+<<(Cliffs Notes book: is a book to summarize a famous program.)>>
+
+article “Making Sense of Java’s API Documentation,”
+    at http://www.dummies.com/extras/beginningprogrammingwithjava.
+
+Check out the article “How to Squeeze Nanoseconds out of a Java Loop” (and more)
+online at http://www.dummies.com/extras/beginningprogrammingwithjava

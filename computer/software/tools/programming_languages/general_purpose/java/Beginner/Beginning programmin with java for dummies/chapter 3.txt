@@ -1,0 +1,32 @@
+compile-time errors(marked in red):
+===================================
+(known as a compiler error) is an error that prevents the computer from translating your code. 
+
+to fix compile-time-errors:
+---------------------------
+you compare every character with original code.
+You don't miss a single detail,including spelling,puctuation and uppercase versus lowercase.
+
+Unhecked runtime exception:
+===========================
+an error occures in the middle of the run.
+your instructions tell java to do something that can't be done,
+So your program crashes and displays a nastylooking message(raise exception).
+Eclipse’s editor doesn’t warn you about an unchecked runtime exception because, 
+until you run the program, the computer can’t predict that the exception will occur.
+
+Logic errors:
+=============
+You see no error markers in Eclipse’s editor, 
+and when you run your code, the program runs to completion. 
+But the answer isn’t correct.
+
+Compile-time Warnings:
+======================
+A warning isn’t as severe as an error message.
+just like saying:are you sure you want this code (the stuff that seems to serve no
+purpose in your program)
+Barry Burd's recommendation is this: Pay attention to warnings. 
+But,if you can’t figure out why you’re getting a particular warning, 
+don’t let the warning prevent you from moving forward.
+

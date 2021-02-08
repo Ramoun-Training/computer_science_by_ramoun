@@ -1,0 +1,184 @@
+Methods:
+=========
+
+Defination:
+------------
+A method is a named indpendent version of code that performs a specific task and optionally returns a value to the caller program.
+
+
+Why do we need to use methods:
+------------------------------
+1- instead of repeating blocks of code several times(code resue).
+2- avoids the need for redundant programming.
+3- increases the logical clarity of the program.
+4- breaks large computings into smaller ones.
+5- Methods are independent: methods can perform their tasks without interference with or from  
+   other parts of the program.
+6- instead of updating values of repeated code, you can put it inside a method and now you 
+   have one place to update the values (piece of cake);
+7- methods give us abstraction(the ability to throw away details so we can concentrate 
+   on what is important).   
+
+Mehthod structure:
+------------------
+
+MethodDataType methodName(DataType argument/*optional Normal variable declaration*/)//method header
+{
+	return value; //optional statement //method body
+}
+
+
+
+Method Terminology:
+------------------
+2) methodName:
+	- Each method has a unique name (or to be more precise : an identifier) - just like a variable.
+
+	- Since the name of the method is an identifier , it follows the same rules of naming an identifier.
+
+	- for conceptual purposes we use the camelCase naming way for naming methods (*_^ just like variables).
+
+	- we use the name of the method followed by parenthies in another parts of the program to execute the statements contained in the method.This is known as (aka) calling the mehtod.
+
+3) DataType:
+	- just a normal data type.It can be: int, float, double, short, byte, long, boolean, String.....
+
+4) argument(parameter):
+	- an argument is basically the information you want to send to the method when calling it.
+
+	- arguments are optional.
+
+	- as its name specifies, it is a normal variable.
+
+	- it can be accessed within the method.
+
+	- It has the scope of the method
+
+	- if you declare a variable between the methods parenthises then you have to pass a value to be stored in that variable when you call the method
+
+	- if you leave the method's parenthises empty then you won't pass any values to the method when it is called.
+
+	- you can add more than one parameter if you want (seprating them with commas).
+
+	- if you have more than one formal argument in the method header, you have to pass actual arguments in the same order.
+
+5) return :
+	- can be used like that "return ;" to switch back the control immediatly to the caller and returning void (only used with void mehtods) or to specify that we are returning data.
+
+	- after the return statement comes an expression (boolean/arith/variable/method call).That expression is evaluated to a value and this value is sent to be the value of the method call while switching back the control to it.
+
+	- the return statment can't be used arbitrary at any part of the method , you have to make sure that there is no dead code or the compiler gonna throw an exception.
+
+	- you can use as many return statements as you want as long as you don't use them in a conflict context i.e:
+				1. //some code goes here
+				2. return ;
+				3. return ;//dead code
+		where this works because at all cases only one return statement will be executed so no problem at all.:
+				1. //some code goes here
+				2. if (2 > 1) {
+					return 2;
+				   }
+				   else {
+				   return 1;
+				   }
+	
+	- if you are gonna use more than one return statement in your mehtod , all of them have to return the same datatype as specified by the MethodDataType.				   
+
+6)MethodDataType:
+	- it depends on the return statment (if it returns a value of type boolean then the method data type should be boolean, if it returns a value of type integer the data type of the mehtod should be integer)
+
+	- the method data type is "void" if it doesn't return anything back to the caller 
+
+	- if the return statment is used with empty space after it -> then the type of the method is also void alongside with the power of switching the control back to the caller any tyme.
+
+	- the MehtodDataType is important to differenciate between method declaration(defination) and method calling.
+
+
+7) Method call:
+	- structure : methodName(values for different actual parameters respectivly/left empty if there is no formal parameters at the method declaration code);
+
+	- just by typing the name of the method followed by parenthises a method call is invoked.
+
+	- a method call is simply calling the method to start executing the statments within it.
+
+	- or it is substituting the method call statement with the statements contained in the called method.
+
+	- void method calls are not treated as expressions but treated as statements.
+
+	- since void method calls are not expressions, you can't assign them to variables.
+
+	- the method call is an expression if the method's data type is not void.
+
+	- since the method call is an expression it evaluates to the returned value of the method.
+
+	- you can call a method from within another method and also you can do that from within a class but with some restrictions like: it(non-void method call) has to be assigned to a variable.{note:you can not use imperative instructions(statements) within a class but you can use expressions.Thats why you can't use void method calls from within a class}
+
+
+8) Passing Arguments:
+	- is just filling the actual values for each parameter of the method parameters respectivly
+
+	- other defination: sending values to the method so that it can work with 'em(process 'em).
+
+	-
+
+How does a method works:
+-------------------------
+	1- a java program doesn't execute the instructions within a method until the method is called by another part of the program.
+
+	2- when the method is called the program can send the mehtod information in form of one or more arguments.
+
+	3- when the method's statements have finished executing, execution passed back to the same location in the program that called the method.Mehtods can send info back to the program in form of a return value.
+
+	4- each time the method is called, execution passes to that method.When method is finished, execution passes back to place from where the method was called and continue on...
+
+	5- a method can be called as many times as needed and methods can by called in any order.
+
+	6- when the code is compiled, all mehtods get a fixed address in memory(even the main method).
+
+	7- when the program runs, the operating system calls the main mehtod by its fixed address in memory.
+
+	8- when a method is called, what really happens is: the computer jumps to the address where we have got method instructions reserved, execute all instructions at that address, at the same time if the method have arguments it passes(assigns) value in the method call to the paraments of the mehod.
+
+	9- you can play with if statement if it's cases are return statements
+		ex:
+
+		if (condtion) {              =         if (condition) {
+			return true;             =             return true;		      
+		} else {                     =         } return false;
+			return false;            =
+		}                            =
+
+	10- call stack:
+		+-------------------------------------------------------------+
+		| method2() second local variable                             | <- frame pointer
+		+-------------------------------------------------------------+
+		| method2() first local variable                              |
+		+-------------------------------------------------------------+
+		| return address:adress of the method2() call within method1()|
+		+-------------------------------------------------------------+
+		| parameter1 of method2()                                     |
+		+-------------------------------------------------------------+
+		| parameter2 of method2()                                     |
+		+-------------------------------------------------------------+
+		| method1() second local variable                             |
+		+-------------------------------------------------------------+
+		| method1() first local variable                              |
+		+-------------------------------------------------------------+
+
+
+
+final restrictions:
+-+-+-+-+-+-+-+-+-+-+	
+1- you can't declare a mehtod inside of another method 
+2- in Java: method declarations must be inside classes(in other words you can't declare a
+   method outside of a class)
+3- you can't declare more than one method with the same identifier and arguments(argument 
+   data types). -logically when calling a mehtod how the program will know which method of the 2 you are trying to call-
+4-   
+
+
+
+Q and A:
+1- your code has to be self explainatory.(less comments)
+
+
