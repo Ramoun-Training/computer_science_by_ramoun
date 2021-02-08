@@ -37,6 +37,8 @@ they are completly isolated environments. They can have their own processors, se
 
 ## OS
 
+![os](https://imgur.com/tTmQ8j2.png)
+
 Any OS in the world consists of 2 parts the os kernal and a set of software.
 
 OS-kernal: is responsible for interacting with underlying hardware.
@@ -46,5 +48,7 @@ OS-kernal: is responsible for interacting with underlying hardware.
 Softwares: may consist of a different ui, compilers, file managers, dev tools ...etc.
 
 ## Sharing Kernal
+
+![sharing kernal](https://imgur.com/8vzmRVQ.png)
 
 if we have docker on an ubuntu system, docker can run any flavour of os on top of it as long as 
