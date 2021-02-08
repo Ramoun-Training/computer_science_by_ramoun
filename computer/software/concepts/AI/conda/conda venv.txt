@@ -1,0 +1,15 @@
+*anaconda: (conda is a package manager + virtual env. manager + python) + (data science tools)
+
+conda env create -v -f tensorflow.yml
+conda activate tensorflow
+conda deactivate
+conda create -n test python=3.6
+conda env list
+conda env remove -n test
+===========================================
+how to make jupyter know whrere is your env:
+pthon -m ipykernel install --user --name tensorflow --display-name "Python 3.7 (tensorflow)"
+pthon -m ipykernel uninstall unwanted-kernel
+============================================
+2 ways to run tensor flow env: through start menu -> jupyter (tensorflow)
+or through conda terminal: conda activate
