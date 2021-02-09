@@ -123,3 +123,5 @@ command | job
 `docker rmi` | removes an image.
 
 > **Note**: you must stop and delete all dependent containers to be able to delete an image.
+
+> **Note**: if you run `docker run ubuntu` command. Because containers are not meant to host an OS. Containers are meant to run a specific task or process
