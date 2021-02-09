@@ -51,4 +51,75 @@ Softwares: may consist of a different ui, compilers, file managers, dev tools ..
 
 ![sharing kernal](https://imgur.com/8vzmRVQ.png)
 
-if we have docker on an ubuntu system, docker can run any flavour of os on top of it as long as 
+if we have docker on an ubuntu system, docker can run any flavour of os on top of it as long as they are all based on the same kernal. Each docker container only has the additional set of software that makes distro different.
+
+> **Note**: you won't be able to run a windows based container on a docker host with a linux on it because they do not share the same kernal.
+
+> **Note**: Windows plays a very cool trick though, windows runs a linux container on a linux virtual machine under the hoods.
+
+> **Note**: the main purpose of docker is not to virtualize and run different OSes and kernals on the same hardware, The main purpose of docker is to package and containerize apps and to ship them and to run them anywhere, anytime, and as manytimes as you want.
+
+## Containers Vs VMS
+
+![containers vs vms](https://imgur.com/6jl75kn.png)
+
+|  | vms | containers
+|--|-------|--------
+utlization | heavy(multiple kernals are running) | light
+size | big (each vm is heavy) | lightwieght
+boot | slower | faster (seconds)
+
+## Containers & VMS
+
+![containers and vms](https://imgur.com/uxkUsRr.png)
+
+## How is it done?
+
+![how is it done](https://imgur.com/HjjxUZY.png)
+
+There are a lot of containerized versions of apps readily available as of today. Most organizations have their products containerized and available in a public docker repository called dockerhub/dockerstore (e.g: images of most OSes, dbs, services, and tools).
+
+> **Note**: we use the `docker run <image-name>` to run instances of different images.You can run multiple instances of the same image.
+
+## container vs image
+
+image: is a package/template that is used to create one or more containers.
+
+containers: are running instances of images that are isolated and have their own environements and set of processes.
+
+> **Note**: you can create your own image and push it to dockerhub repository making it public for other users if you don't find what you want. 
+
+## Docker in DevOps
+
+![](https://imgur.com/Wena679.png)
+
+- Life before Docker:
+    ![life before](https://imgur.com/nRBzQuC.png)
+    + traditionaly developers developed apps and they handed them over to devops team to deploy and manage them in production environments.
+    + They do that by providing a set of instructions such as information about how the host must be set-up, what pre-requisites are to be installed on the host and how the dependencies to be configured ...etc.
+    + devops didn't develop the app so they struggle on setting it up.
+    + So they work with developers to solve issues (and that takes time).
+- Life after Docker:
+    ![life after](https://imgur.com/XPPjxkG.png)
+    + developers and opteam work hand in hand to transform the guide into a docker file with both of their requirements.
+    + this docker file is then used to create an image for thier apps.
+    + this image can now run on any host wiht docker installed on it and is guranteed to work well anywhere.
+
+## Docker Editions
+
+- community
+- eterprise
+
+## Docker Commands
+
+command | job
+--------|----
+`docker pull` | pulls (downloads) an image from the docker repo.
+`docker run` | start a container (e.g: run an instance of the nginx app).
+`docker ps -a` | lists all running containers with additonal info (`-a` is used to show even stopped containers).
+`docker stop` | stop a container from running (must provide container name/id).
+`docker rm` | remove a stopped or exited container (to save space on ram but the image is still there though).
+`docker image` | list all downloaded images and their sizes.
+`docker rmi` | removes an image.
+
+> **Note**: you must stop and delete all dependent containers to be able to delete an image.
