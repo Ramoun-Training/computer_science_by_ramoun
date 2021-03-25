@@ -124,4 +124,49 @@ command | job
 
 > **Note**: you must stop and delete all dependent containers to be able to delete an image.
 
-> **Note**: if you run `docker run ubuntu` command. Because containers are not meant to host an OS. Containers are meant to run a specific task or process
+> **Note**: if you run `docker run ubuntu` command. Because containers are not meant to host an OS. Containers are meant to run a specific task or process.
+
+> **Note**: the container lives as long as the process inside it is alive.
+
+### `docker run`
+
+```docker
+docker run kodekloud/simple-webapp
+```
+
+### `docker run -d`
+detached mode
+```docker
+docker run -d kodekloud/simple-webapp
+```
+
+## `run`
+
+- traditional run
+  ```docker
+  docker run redis
+  ```
+
+- run with a tag
+    ```docker
+    docker run redis:4.0
+    ```
+- interactive mode
+  ```docker
+  docker run -i <image-name>
+  ```
+- attach to terminal
+  ```docker
+  docker run -t <image-name>
+  ```
+
+- PORT mapping
+
+  ```docker
+  
+  ```
+
+# links
+
+- [lab](https://kodekloud.com/courses/970256/lectures/18323815)
+- [official labs](https://labs.play-with-docker.com/p/c0hcq09lo550009b0j2g#c0hcq09l_c0hcraplo550009b0j70)

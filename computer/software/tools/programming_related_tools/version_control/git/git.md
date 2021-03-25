@@ -40,8 +40,8 @@ command | explaination
 
 ## Git Flow
 
-1. go to github.com and create a new repo.
-2. clone the repo to your local machine.
+1. go to github.com and create a new repo or fork a repo that you like.
+2. clone the repo to your local machine `git clone <link-of-repo>`.
 3. make some changes.
 4. track those changes using `git add .`.
 5. commit changes to the repo with `git commit -m "This is the title" -m "This is the description"`.
