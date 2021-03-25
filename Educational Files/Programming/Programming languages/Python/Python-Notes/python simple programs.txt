@@ -1,0 +1,20 @@
+#1:
+===
+def absolute (n):
+	if type (n)== float or type (n)==int:
+		return abs(n)
+
+#2:
+===
+def bigger(first, second):
+    print max(first, second)
+    return True
+
+#3:
+===
+def wages(hours):
+    # If I make $8.35/hour...
+    return 8.35 * hours
+
+#4:
+===

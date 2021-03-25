@@ -1,0 +1,10 @@
+1- learn the prerequesties(cs and programming concepts) and tools(programming languages)
+2- (need more knowledge about that*)research the topic your app discuss
+3- learn about the topic from the internet or a friend
+4- research
+5- is the app greate yet?
+5- if the app is good test it(back to cs and programming concepts + engineering)
+6- before deploying read about marketing
+7- before deploying learn how to deploy(back to the cs and programming concepts + engineering)
+blackhat python
+8- see the users point of view(what the user needs if it doesn't exist so it can be a new idea)

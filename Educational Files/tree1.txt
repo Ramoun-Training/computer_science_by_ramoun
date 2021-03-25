@@ -1,0 +1,251 @@
+/
+/
+├── Animation/
+│   ├── 3ds max/
+│   ├── Animaion-Concepts/
+│   ├── Blender/
+│   └── Maya/
+├── Computer Science/
+│   ├── Computer Basics/
+│   ├── computer Engineering/
+│   │   ├── Artificial Intelligence/
+│   │   ├── Software Engineering/
+│   │   └── System Enineering/
+│   ├── Fundementals of computer science/
+│   │   ├── Algorithms/
+│   │   ├── C.S/
+│   │   ├── Data Structrue/
+│   │   └── problem solving/
+│   │       └── ch2probl.ppt
+│   └── I.T/
+│       ├── Internet/
+│       ├── MCITP/
+│       └── Networks/
+├── Educational Files Tree.txt
+├── GFX/
+│   ├── Graphic Design/
+│   │   ├── Illustrator/
+│   │   └── Photoshop/
+│   │       ├── Ps-Art/
+│   │       ├── Ps-Basics/
+│   │       ├── Ps-Graphic Design/
+│   │       ├── Ps-icon-ui/
+│   │       ├── Ps-logo Design/
+│   │       ├── Ps-manipulating/
+│   │       ├── Ps-Print Design/
+│   │       └── Ps-Web Design/
+│   └── Motion Graphic/
+│       ├── After Effects/
+│       │   ├── AE-Basics/
+│       │   ├── AE-Filming/
+│       │   ├── AE-Motion Graphics/
+│       │   │   └── gfx Academy flat tuts.aep
+│       │   └── AE-VFX/
+│       └── Cinema 4d/
+├── Learnin' system.txt
+├── Programming/
+│   ├── Game Development/
+│   ├── Mobile Development/
+│   │   └── Android/
+│   │       └── Notes/
+│   │           ├── 20229033_1635600046463789_3452811244753861285_n.jpg
+│   │           └── 20245738_1635600096463784_2980362820874864528_n.jpg
+│   ├── Programming languages/
+│   │   ├── C-C++/
+│   │   │   ├── C/
+│   │   │   └── C++/
+│   │   ├── coolbooks.PNG
+│   │   ├── HTML/
+│   │   │   ├── Html/
+│   │   │   │   ├── Html-Projects/
+│   │   │   │   └── Html-Websites/
+│   │   │   │       ├── html files/
+│   │   │   │       │   ├── html.html
+│   │   │   │       │   └── index.html
+│   │   │   │       └── udacity/
+│   │   │   │           └── the web.html
+│   │   │   ├── Html 5/
+│   │   │   └── XHtml/
+│   │   ├── Java/
+│   │   │   ├── Advanced/
+│   │   │   ├── Beginner/
+│   │   │   ├── Intermediate/
+│   │   │   └── Notes/
+│   │   │       ├── 20245968_1635600019797125_728016030202530726_n.jpg
+│   │   │       ├── After Java.txt
+│   │   │       ├── General notes.txt
+│   │   │       ├── methods&classes.txt
+│   │   │       └── mthods.txt
+│   │   ├── Microsoft/
+│   │   │   └── VBs.net/
+│   │   ├── Python/
+│   │   │   ├── Advanced/
+│   │   │   ├── Beginner/
+│   │   │   │   └── codecademy/
+│   │   │   │       ├── coco.py
+│   │   │   │       ├── python3 codecademy.txt
+│   │   │   │       └── this is py.py
+│   │   │   ├── couresea-python for everybody/
+│   │   │   │   ├── Py4Inf-01-Intro.pdf
+│   │   │   │   ├── shit.txt
+│   │   │   │   └── words.py
+│   │   │   ├── Intermediate/
+│   │   │   ├── Python Programs/
+│   │   │   │   ├── .idea/
+│   │   │   │   │   ├── .name
+│   │   │   │   │   ├── dictionaries/
+│   │   │   │   │   │   └── RAMOUN_X6.xml
+│   │   │   │   │   ├── encodings.xml
+│   │   │   │   │   ├── inspectionProfiles/
+│   │   │   │   │   │   ├── profiles_settings.xml
+│   │   │   │   │   │   └── Project_Default.xml
+│   │   │   │   │   ├── misc.xml
+│   │   │   │   │   ├── modules.xml
+│   │   │   │   │   ├── python programes.iml
+│   │   │   │   │   └── workspace.xml
+│   │   │   │   ├── .vscode/
+│   │   │   │   │   └── tasks.json
+│   │   │   │   ├── apps with py/
+│   │   │   │   │   ├── intro-python-code-master.zip
+│   │   │   │   │   └── Introduction-Programming-Python-master.zip
+│   │   │   │   ├── arith (2).py
+│   │   │   │   ├── arith.py
+│   │   │   │   ├── aslhraf.py
+│   │   │   │   ├── begining python book/
+│   │   │   │   │   └── book test 2-1.py
+│   │   │   │   ├── browser.py
+│   │   │   │   ├── calculator basic.py
+│   │   │   │   ├── Capture.PNG
+│   │   │   │   ├── chip.py
+│   │   │   │   ├── clinic code.PNG
+│   │   │   │   ├── code.org/
+│   │   │   │   │   ├── draw your snow flake.py
+│   │   │   │   │   └── snow flake#1.py
+│   │   │   │   ├── college/
+│   │   │   │   │   ├── even counter.py
+│   │   │   │   │   ├── m_cm.py
+│   │   │   │   │   └── star triangle.py
+│   │   │   │   ├── conditions.py
+│   │   │   │   ├── conv.py
+│   │   │   │   ├── cube function.py
+│   │   │   │   ├── damn.py
+│   │   │   │   ├── dictionary (2).py
+│   │   │   │   ├── dictionary.py
+│   │   │   │   ├── directory function.py
+│   │   │   │   ├── functions.py
+│   │   │   │   ├── game.py
+│   │   │   │   ├── Hello_Tkinter.py
+│   │   │   │   ├── I AM INTERESTED IN SHOUTING.py
+│   │   │   │   ├── klkl.py
+│   │   │   │   ├── leap year checker.py
+│   │   │   │   ├── lists&tuples.py
+│   │   │   │   ├── lists.py
+│   │   │   │   ├── MadLips.py
+│   │   │   │   ├── membershiii.py
+│   │   │   │   ├── mixer.py
+│   │   │   │   ├── modules.py
+│   │   │   │   ├── music.py
+│   │   │   │   ├── musicplayer-1.20141030.091600.tar.gz
+│   │   │   │   ├── new.py
+│   │   │   │   ├── npd.py
+│   │   │   │   ├── numbers.py
+│   │   │   │   ├── password.py
+│   │   │   │   ├── password.txt
+│   │   │   │   ├── precedence.py
+│   │   │   │   ├── print it ordered.py
+│   │   │   │   ├── py.py
+│   │   │   │   ├── pyglatin.py
+│   │   │   │   ├── pymarks.py
+│   │   │   │   ├── python for kids/
+│   │   │   │   │   ├── anipoly.py
+│   │   │   │   │   ├── area and circum with function.py
+│   │   │   │   │   ├── Bounce Game.py
+│   │   │   │   │   ├── calculada.py
+│   │   │   │   │   ├── Capture.PNG
+│   │   │   │   │   ├── clinic test.py
+│   │   │   │   │   ├── exception.py
+│   │   │   │   │   ├── hamada.py
+│   │   │   │   │   ├── jp.py
+│   │   │   │   │   ├── length.py
+│   │   │   │   │   ├── Macho.png
+│   │   │   │   │   ├── phantom.py
+│   │   │   │   │   ├── pickle.py
+│   │   │   │   │   ├── Randy The Macho Luck Game.py
+│   │   │   │   │   ├── redx6.py
+│   │   │   │   │   ├── save.dat
+│   │   │   │   │   ├── speed test.py
+│   │   │   │   │   ├── textyl.py
+│   │   │   │   │   ├── the xcarpet.py
+│   │   │   │   │   ├── Untitled-1.psd
+│   │   │   │   │   ├── UpTtime Took Function.py
+│   │   │   │   │   └── variable length argument.py
+│   │   │   │   ├── python mva course hw/
+│   │   │   │   │   ├── functions.py
+│   │   │   │   │   └── text showing module.py
+│   │   │   │   ├── RANGE function.py
+│   │   │   │   ├── string.py
+│   │   │   │   ├── te.py
+│   │   │   │   ├── test (2).py
+│   │   │   │   ├── test.py
+│   │   │   │   ├── time.py
+│   │   │   │   ├── todays date.py
+│   │   │   │   ├── treiangle.py
+│   │   │   │   ├── tuples.py
+│   │   │   │   ├── unt.py
+│   │   │   │   ├── webbrowser.py
+│   │   │   │   ├── weird cotton ball.py
+│   │   │   │   ├── weired eye.py
+│   │   │   │   ├── words.py
+│   │   │   │   └── zero to hero/
+│   │   │   │       ├── 3 squares.py
+│   │   │   │       ├── 8 shapes inside.py
+│   │   │   │       ├── charging software in canada.py
+│   │   │   │       ├── draw your shape.py
+│   │   │   │       ├── lists.py
+│   │   │   │       ├── project date.py
+│   │   │   │       └── shipping software.py
+│   │   │   ├── Python-libraries/
+│   │   │   ├── Python-Notes/
+│   │   │   │   ├── python simple programs.txt
+│   │   │   │   └── qs.txt
+│   │   │   └── Python-Projects/
+│   │   ├── vb.net/
+│   │   │   ├── savedialogbox.PNG
+│   │   │   └── vb.net.txt
+│   │   └── Xml/
+│   │       └── xml for dummies/
+│   │           ├── appData.xml
+│   │           ├── books.xml
+│   │           ├── new.xml
+│   │           ├── newsData].xml
+│   │           ├── style.css
+│   │           └── xml.html
+│   ├── Software Programming/
+│   │   └── how to create an App.txt
+│   ├── System Programming/
+│   │   ├── $Bash/
+│   │   └── CMD/
+│   │       ├── Cmd patch programs/
+│   │       │   ├── cd
+│   │       │   ├── echo.bat
+│   │       │   ├── google.bat
+│   │       │   ├── null
+│   │       │   ├── random numbers.bat
+│   │       │   ├── shudown100.bat
+│   │       │   ├── shutdown block.bat
+│   │       │   └── snakegame.bat
+│   │       └── cmd.txt
+│   └── Web Development/
+│       └── Webdesign nanodegree -udaciy/
+│           └── Portfolio/
+│               ├── mock3-portfolio-1.pdf
+│               ├── mock4-portfolio-2.pdf
+│               └── toplist/
+│                   └── style.css
+├── save.txt
+├── Security/
+│   ├── adt.txt
+│   ├── IHack.txt
+│   ├── ntfs conversion.txt
+│   └── samsung java.txt
+└── t.py

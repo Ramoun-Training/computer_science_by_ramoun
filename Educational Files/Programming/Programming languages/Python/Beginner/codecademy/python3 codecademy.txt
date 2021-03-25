@@ -1,0 +1,147 @@
+1- Comments:
+============
+- single comments with #
+- Text written in a program but not run by the computer is called a comment. 
+- why we use comments:
+    + Provide context for why something is written the way it is:
+        # This variable will be used to count 
+        # the number of times anyone tweets the word persnickety
+        persnickety_count = 0
+
+    + Help other people reading the code understand it faster: 
+        # This code will calculate the likelihood that 
+        # it will rain tomorrow
+        complicated_rain_calculation_for_tomorrow() 
+
+    + Ignore a line of code and see how a program will run without it:
+        # useful_value = old_sloppy_code()
+        useful_value = new_clean_code()     
+
+    + Documentation is an important step in programming. 
+      Write a comment describing the first program you want to write!    
+
+2- Print - func. in v3.7 /statement in v2.7:
+============================================
+- Now what we're going to do is teach our computer to communicate. 
+- The gift of speech is valuable: a computer can answer many questions 
+  we have about "how" or "why" or "what" it is doing. 
+- In Python, the print() function is used to tell a computer to talk. 
+- The message to be printed should be surrounded by quotes:
+
+    + # from Mary Shelley's Frankenstein
+      print("There is something at work in my soul,/
+                         which I do not understand.")
+
+3- Strings:
+===========
+- Computer programmers refer to blocks of text as strings. 
+- In our last exercise, we created the string "Hello world!".
+- In Python a string is either surrounded by double quotes ("Hello world")
+  or single quotes ('Hello world'). 
+- It doesn't matter which kind you use, just be consistent.                             
+- strings have shapes or symbols but these symbols has no values , just
+  a bunch of pixels to show on the screen.
+
+4- Variables:
+=============
+- Programming languages offer a method of storing data for reuse. 
+- If there is a greeting we want to present, a date we need to reuse,
+  or a user ID we need to remember we can create a variable which can 
+  store a value. In Python, we assign variables by using the equals sign (=).  
+
+    + variable declaration/defining:
+        # variable declaration is the same syntax as variable assigning
+        message_string = "Hello there"
+        # Prints "Hello there"
+        print(message_string)
+
+        # In the above example, we store the message "Hello there" 
+        # in a variable called message_string. 
+    
+    + variable assignment:
+        # It's no coincidence we call these creatures "variables". 
+        # If the context of a program changes, we can update a variable 
+        # but perform the same logical process on it.
+        # Greeting
+        message_string = "welcome"
+        print(message_string)
+
+        # Farewell
+        message_string = "goodbye"
+        print(message_string)
+
+    + how to name a variable:
+        # Variables can't have spaces or symbols in their names other 
+        # than an underscore (_).
+        # They can't begin with numbers but they can have numbers
+        # after the first letter (e.g., cool_variable_5 is OK).         
+
+5- Errors:
+==========
+- Humans are prone to making mistakes.
+- Humans are also typically in charge of creating computer programs.
+- To compensate, programming languages attempt to understand and
+  explain mistakes made in their programs.         
+- Python refers to these mistakes as errors and will point to the
+  location where an error occurred with a ^ character. 
+- When programs throw errors that we didn't expect to encounter 
+  we call those errors bugs.
+- Programmers call the process of updating the program 
+  so that it no longer produces unexpected errors debugging.  
+
+    + Two common errors that we encounter while writing Python are:
+     -> SyntaxError and NameError:
+
+    + SyntaxError:
+        # means there is something wrong with the way your program is written
+        # — punctuation that does not belong, 
+        # a command where it is not expected, 
+        # or a missing parenthesis can all trigger a SyntaxError. 
+
+    + NameError:
+        # occurs when the Python interpreter sees a word it does not recognize.
+        # Code that contains something that looks like a variable 
+        # but was never defined will throw a NameError  
+
+6- Numbers:
+===========
+- Computers can understand much more than just strings of text.
+- Python has a few numeric data types.
+- It has multiple ways of storing numbers.
+- Which one you use depends on your intended purpose for the number
+- you are saving.          
+- Numbers can be assigned to variables or used literally in a program(see code)
+
+    + An integer, or int:
+        # is a whole number. 
+        # It has no decimal point and contains all counting numbers 
+        # (1, 2, 3, ...) as well as their negative counterparts and 
+        # the number 0. 
+        # If you were counting the number of people in a room, 
+        # the number of jellybeans in a jar, 
+        # or the number of keys on a keyboard you would likely use an integer.
+    + A floating-point number, or a float:
+        # is a decimal number.
+        # It can be used to represent fractional quantities as well as 
+        # precise measurements.
+        # If you were measuring the length of your bedroom wall,
+        # calculating the average test score of a seventh-grade class,
+        # or storing a baseball player's batting average for the 1998 season
+        # you would likely use a float.    
+
+    + code:
+        an_int = 2
+        a_float = 2.1
+        print(an_int + 3)
+        # prints 5
+
+    + Above we defined an integer and a float as the variables 
+      an_int and a_float. We printed out the sum of the variable 
+      an_int with the number 3. We call the number 3 here a literal, 
+      meaning it's actually the number 3 and not a variable with 
+      the number 3 assigned to it.        
+
+    + Floating-point numbers can behave in some unexpected ways 
+      due to how computers store them. For more information on 
+      floating-point numbers and Python, review Python's documentation 
+      on floating-point limitations.  

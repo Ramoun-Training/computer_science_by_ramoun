@@ -1,0 +1,3 @@
+String classs methods:
+======================
+valueOf:static method that converts its parameters into String type.

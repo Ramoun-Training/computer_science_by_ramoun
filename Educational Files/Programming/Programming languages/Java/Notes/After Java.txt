@@ -1,0 +1,11 @@
+After a while, when you begin to understand the philosophy and syntax of language, 
+try to implement one of your programming ideas. Start with simple things like a program to convert currencies for example. Then, make more complex programs by integrating elements that you have assimilated either through reading or through courses.
+Learn another language. When you have mastered a first language, try a second language. It is preferable to choose a language that is radically different from the first in terms of structure and syntax. So, if you master Scheme, continue with the C or Java. If you started with Java, you can continue with Perl or Python.
+Do not stop programming, innovate, test new lines of code! A programmer never stops, he updates his knowledge, is familiar with innovations in coding, he mixes languages (HTML and javascript for example). It tests, deceives, starts again: it is an activity of all the moments!
+When it is programmed, it is practical to have at hand a good reference book of the studied language. Buy the manual of the latest version of the code! It goes so fast in this area!
+Do not start in a complicated language like Java. Start with Python, less daunting for beginners and it's a very good approach to programming.
+If you learn Java, work with Netbeans 6.0.1: it's very nice and easy.
+Begin with simple and fun programs, then challenge yourself, refine your programming skills, sober too!
+Learning syntax by heart is essential. You are free to use it as you please. We advise you to study the syntax of some programs (written in the language you are studying) and then start writing your own program.
+Java is a multitasking language. So study it closely!
+Before you try your program, use Eclipse. It is an extremely powerful debugging program that will "clean" your code and report syntax or structure errors. It also has a packet explorer, basic if you have many code files linked to each other.

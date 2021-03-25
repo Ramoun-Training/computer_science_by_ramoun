@@ -1,0 +1,328 @@
+vb.net
+=======
+me.location=new point(0,0)
+me.size = new size(500,400)
+
+label:
+======
+event:lablel_TextChanged
+lbl.text = textbox.text
+checkbox:
+=========
+threestate:true
+
+dim choices as string = string.empty 
+dim choices as string = ""
+ 
+if chkjava.checked = true then
+choices = choices + " " + chkjava.text
+end if
+
+if txtothers.text <> string.empty then
+choices = choices + "" + txtothers.text
+
+chkeckedlistbox:
+================
+event: moveall_click
+ 
+listbox1.items.clear()
+for each item in checklistbox.items
+me.listbox1.items.add(item)
+next
+
+event:moveslected
+listbox1.items.clear()
+for each item in checkedlistbox1.items
+me.listbox1.items.add(item)
+next
+
+ 
+event:check all
+for count as integer = 0 to checkedlistbox1.items.count - 1
+checkedlistbox.setitemcheckstate(count,checkstate.checked)
+
+event:uncheck all
+for counter as integer = 0 to checkedlistbox.count - 1
+checkedlistbox.setitemcheckstate(count,checkstate.unchecked)
+
+'checkedlistbox.items,checkedlistbox.selecteditems,checkedlistbox.checkeditems'
+
+
+
+radio button:
+==============
+event: rbred_checkedchanged
+
+me.backcolor = color.red
+
+'use groupbox or panel to seprate'
+
+listbox:
+=========
+selectionmode:multisimple,multiextened
+
+event:additem_btn_click
+if txtname.text <> string.empty then
+lbnames.items.add(txtname.text)
+end if
+
+even:remove_selected_items_btn_click
+lbname.items.removeat(lbnames.selectedIndex)
+end if
+
+evnet:remove_all_itmes_btn_click
+lbnames.items.clear()
+
+event:display_item_count_btn_click
+lbnames.items.count()
+
+event:sort_itme_btn_click
+lbnames.sorted = true
+
+
+combobox:
+=========
+dropdownstyle:dropdownlist
+
+event:selectedindexchanged
+combobox.text
+
+event :btn_click
+combobox.items.add("something"), addrange()
+
+event:reomveselecteditems_btn_click
+combo1.items.removeat(combo1.selectedindex)
+combo1.items.remove("itemsname")
+como1.items.clear()
+
+
+picturebox:
+=============
+event:btn_click
+picturebox2.image=image.fromfile("c:\"mind.jpg")
+
+
+
+richtextbox:
+============
+event:btn_click
+rtftext.selectioncolor = color.blue
+rtftext.selectionfont = new font("comic sans ms", 22)
+
+
+datetimepicker:
+===============
+customformat:yyyy , MM, dd
+mm:min MM:month
+
+value:rightclick + reset
+
+event:btn_clac_diff_btn_click
+dim fdate,sdate as datetime
+dim result as timespan
+
+fdate = dattimepicker1.value
+sdate = datetimepicker2.value
+
+result = sdate.subtract(fdate), sdate.substract(fdate).days
+
+msgbox(result)
+
+msgbox(dateDiff(dateinterval.month,fdate,sdate))
+
+msgbox(dateadd(dateinterval.day,15,fdate))'add 15 days to a specific date'
+
+msgbox(datepart(dateinterval.year,fdate))'shows the year only'
+
+msgbox(month(fdate))'show y=mnth only'
+
+msgbox(fdate.day.tostring("00"))'+ format'
+
+msgbox(now.toshortdatestring())
+msgbox(now.tolongdatestring())
+
+msgbox(now.tolongtimestring())
+
+
+imagelist:
+==========
+in btn properties:
+imagelist:choose a list
+imageindex:choose the index of the image you want
+
+
+listview:
+=========
+shows data from database
+items:management
+
+event:fomr_load
+listviwe1.view = view.details
+listview.gridlines = true
+listview1.colums.add("id")
+listview1.columns.add("name",200)
+listview1.colums.add("shsh", 250)
+200:width of the colums
+listview1.checkboxes = true
+
+dim lv1 as new listviewitem("001")
+lv.subitems.add("khaled")
+
+dim lv2 as new listviewitem("002")
+lv.subitmes.add("kamel",)
+lv.subitems.add("casa blanca")
+ 
+listview1.items.add(lv1)viewitem()
+listview1.items.add(lv2)
+'or'
+listview1.items.addrange(new  listviewitem() {lv1,lv2,lv3})
+
+----------------------
+dim lv3 as new listviewitem("001", 0)
+0: index of image in imagelist
+
+event:combobox_selectedindexchanged
+
+dim index as integer = combobox1.selectedindex
+
+if index = 0 then
+listview1.view = view.largeIcon
+elseif index = 1 
+listview1.view = view.smallicon
+elseif index = 2
+listview1.view = view.details
+elseif index = 3 
+listview1.view - view.tile
+elsif index =4
+listview1.view = view.list
+end if
+
+-------------------------
+event:btn_click
+for each item as listviewitem in listview1.checkeditems
+msgbox(string.format("Is is:{0}, name is{1}",item.subitems(0).text,item.subitems(1)))
+
+listview1.items.reomveat(item.index)
+next
+
+fullrawselect:true
+
+event:btn2_click
+
+for each item as listview in listview.selectedItems
+	
+	next
+
+------------------------
+listview.items.add("0055", 1)
+listview.items(3).subitems.add("cola")
+
+event:btngroup_click
+listview1.groups.add("grou1", "customers")
+listview1.gourps.add("","devs")
+
+listview.items(0).group = listview1.groups(0)
+listview.itmems(2).group = listview1.groups(2)
+
+
+context menu strip:
+=======
+form:
+contextmenustrip:chosse
+'can be with any tool not just the form'
+
+open file dialog control:
+============================
+event:btnchange_click
+openFileDialog1.showDialog()
+openfiledialog1.addextension = false
+openfiledialog1.checkfileexists = true
+openfiledialog1.checkpathexists = false
+openfiledialog1.initialdirectory = "c:\"
+openfiledialgo1.title="titl"
+openfiledialog1.filter="Image Files(*.PNG; *JPG;) |*.PNG; *.JPG; *.BMP"
+
+if openfiledialog1.showdialog = dialogresult.ok then
+me.backgroundimage = image.fromfile(openfiledialog1.filename)
+me.backgroundimagelayout = imagelayout.stretch
+end if
+
+folderbrowserdialgo
+==================
+folderBrowserDialog.showDialog()
+msgbox(folderbrowserdialog.selectpath)
+
+timer:
+======
+interval:1000 'ms'
+enabled: true
+
+event:timer1_tick
+msgbox("timer running")
+
+'digital clock'
+event:timer_tick
+label1.tect = now.tolongtimestring
+
+progressbar:
+============
+event:btn_click
+timer1.enabled = true
+
+event:timer_tick
+if progressbar1.value<progressbar1.mazimum then
+progrssbar1.value += 1
+else
+msgbox("download complete")
+timer1.enabled = false
+
+error provider:
+================
+event:btn_click
+if not isnumeric(textage.text) then
+errorprovider.icon = new icon("error.ico")//
+errorproveder.setalignment(txtage,erroriconalignment.middleleft)
+	errorprovider.seterror(txtage,"error")
+	errorprover.icon = new icon("ok.ico")//inside debug inside the bin
+else
+	errorprovider.clear()
+endif
+end it
+
+
+notify icon:
+==============
+event:btn_click
+notifyicon1.icon = me.icon
+notifyicon.ballontiptitle="notify"
+notifyicon.ballontiptext="please update teh sofware"
+notifyicon.ballontipicon=tooltipicon.warning
+notifyicon.showballontip(12)
+
+event:aboouttoolstrip_click
+msg("message")
+
+event:max_windotoolstrip
+me.windowstate = formwindowstate.max
+
+NumericUpDown Control
+=============4========
+
+
+tooltip:
+========
+tooltip on tooltip1 : this is a button
+
+
+property grid:
+===============
+
+
+splitcontainer:
+===============
+
+
+MaskedTextBox
+=============
+
+https://www.youtube.com/watch?v=5kCturrK6aA

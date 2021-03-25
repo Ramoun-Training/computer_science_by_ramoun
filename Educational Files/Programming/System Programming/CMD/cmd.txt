@@ -1,0 +1,46 @@
+in the cmd the command attrib is very good command is used hide/unhide folders and file(s):
+also can make (unmake) them readonly 
+
+way of usage:
+=============
+_____________________________________________________________
+command                 |   Describtion
+_____________________________________________________________
+attrib +h "filname.ext" |hide files and folders
+attrib -h "filname.ext" |unhide files and folders
+-------------------------------------------------------------
+attrib +r "filname.ext" |enable readonly
+attrib -r "filname.ext" |disable readonly
+-------------------------------------------------------------
+attrib +a "filname.ext" |enable archive
+attrib -a "filname.ext" |disable archive
+-------------------------------------------------------------
+attrib +s "filname.ext" |enable system
+attrib -s "filname.ext" |disable system
+-------------------------------------------------------------
+
+/S:Processes matching files in the current folder
+   and all subfolders.(the folder will not be visible even-
+   if you used show all files in tools panel)
+
+/D  Processes folders as well.
+
+"you can't use /D without /S"
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Type:command that helps view files inside the cmd
+note: to change a directory ex:e: or c: and so on do not use cd for this
+cls:command used to clear the window
+defrag:used to defragment volumes
+md:creates an new directory like:mkdir
+rd:or rmdir removes a directory
+nslookup : Lookup IP address to/from domain name
+netstat : Displays current TCP/IP network connections and statistics.
+ping : Ping the specified internet IP address or host name.
+tracert : Traces the route to the specified IP address or host.
+msinfo32:shows info of the device(computer)
+ver:version of dos
+winver:version of windows
+####################################################################################
+prompt:shows c>
+prompt $P$G: shows the normal prompt of cmd

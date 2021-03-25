@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--these are the data of my app-->
+<accounts><!--this is the root(parent) tag-->
+	<user id = "1">
+		<userName>ramoun</userName>
+		<password>2345235</password>
+	</user>
+	<user id = "2">
+		<userName>michael</userName>
+		<password>thingshappen</password>
+	</user>
+	<user id = "3">
+		<userName>john</userName>
+		<password>ilovecats</password>
+	</user>
+	<user id = "4">
+		<userName>mets</userName>
+		<password>iloveRuby</password>
+	</user>
+</accounts>

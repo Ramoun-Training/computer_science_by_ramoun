@@ -1,0 +1,1 @@
+omg it really works and i like it i provide a path of the file and then it counts the most common words in it
