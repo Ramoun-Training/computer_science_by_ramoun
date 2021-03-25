@@ -1,0 +1,25 @@
+﻿chapter 4:
+keywords:.....
+2 keywords have no meaning in java programs
+Those keywords — const and goto — are reserved
+for non-use in Java.
+The creators of Java
+figure that, if you use either of the words const or goto in your code, you
+should be told politely to move to the C++ programmers’ table
+
+✓ main: The main starting point for execution in every Java program.
+✓ String: A bunch of text; a row of characters, one after another.
+✓ System: A canned program in the Java API. This program accesses some
+features of your computer that are outside the direct control of the Java
+Virtual Machine (JVM).
+✓ out: The place where a text-based program displays its text. (For a
+program running in Eclipse, the word out represents the Console view.
+To read more about text-based programs, check the first several paragraphs of Chapter 3.)
+✓ println: Display text on your computer screen.
+
+
+
+A literal is a chunk of text that looks like whatever value it represents. In
+Suzanne’s sentence (refer to Figure 4-2), “eh” is a literal because “eh” refers
+to the word "eh."
+

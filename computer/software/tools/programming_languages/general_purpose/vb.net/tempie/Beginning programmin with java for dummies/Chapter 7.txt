@@ -1,0 +1,104 @@
+NOTE:You can make as many calls to Scanner method as you want.
+     You can also separte your input by (spaces,tabs,enter......).
+
+NOTE:When you divide an int value by another int value, you get an int value.
+     The computer doesn’t round. Instead, the computer chops off any remainder.
+     If you put System.out.println(11 / 4)  in your program, the computer
+     prints 2, not 2.75. If you need a decimal answer, make either (or both) of the
+     numbers you’re dividing double values. For example, if you put System.
+     out.println(11.0 / 4)  in your program, the computer divides a double
+     value, 11.0, by an int value, 4. Because at least one of the two values is
+     double, the computer prints 2.75.
+
+NOTE:Another name for the remainder operator is the modulus operator.
+
+Type Casting:
+=============
+When you
+cast a value, you essentially say, “I’m aware that
+I’m trying to squish a double value into an int
+variable. It’s a tight fit, but I want to do it anyway.”
+
+        double n=3.9;
+		int z;
+		z=(int)n;
+		System.out.println("z: "+z);
+		System.out.println("n: "+n);
+
+increment and decrement:
+========================
+++var;//preincrement
+var++;//postincrement
+
+--var;//predecrement
+var--;//postdecrement
+
+++var or var++(are both expressions and statements at the same time)
+
+for more about increment and decrement see chapter 7 page 144.
+
+Expressions:
+============
+has a value(evaluated to a value of some type).
+examples:
+--------
+3       3+x     x/y .... {arithmatic expressions}
+true    false   ..... {boolean expressions}
+
+Statment:
+=========
+statements tell the computer to do something.
+
+assignment operator:
+====================
+used for assigning new values to variables and incrementing,decrementing.....
+
+examples:
+---------
+x=4;        x=y;
+x=x+y;      --->(same as)   x+=y;
+x=x+1;      --->(same as)   x+=1;
+x=x*4       --->(same as)   x*=4;
+
+NOTE:   kids+=1;
+Is this better than kids++ or kids = kids + 1? No, it’s not better. It’s just
+an alternative. But you can add 5 to the kids variable by writing:
+kids += 5; You can’t easily add 5 with preincrement or postincrement.(and that is
+why assignment operators are very useful).
+
+ramainder (modulu) operand:
+----------------------------
+ex:  5%2
+    1) first,the computer divides first operator by second operator.(5/2=2)
+    2) second,the computer gets the remainder of this operation.(1)
+NOTE:
+the answer to the remainder operation is always in range of (0 -> second operand-1)
+
+Data Types:
+===========
+byte paydaysInAMonth;
+short sickDaysDuringYourEmployment;
+long numberOfStars;
+
+|primitive types(simple types):
+-------------------------------
+
+________________________________________________________________________________________
+Type Name                    Range of Values
+----------------------------------------------------------------------------------------
+byte                        –128 to 127(-2^7 TO 2^7-1)
+short                       -32,768 to 32,767(-2^15 TO 2^15-1)
+int                         –2147483648 to 2147483647(-2^31 TO 2^31-1)
+long                        –9223372036854775808 to 9223372036854775807(-2^63 TO 2^63-1)
+-----------------------------------------------------------------------------------------
+float                       –3.4×1038 to 3.4×1038   (32 bits == 4 bytes)
+double                      –1.8×10308 to 1.8×10308 (64 bits == 8 bytes)
+------------------------------------------------------------------------------------------
+
+NOTE:Given the choice between double and float, I always choose double.
+A variable of type double has a greater possible range of values and much
+greater accuracy.
+
+NOTE:
+✓ The types byte, short, int, and long represent whole numbers.
+✓ The types float and double represent decimal numbers.

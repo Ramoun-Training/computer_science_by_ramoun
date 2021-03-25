@@ -1,0 +1,37 @@
+void:
+=====
+✓ The word void tells the computer that, when the display method is
+  called, the display method doesn’t return anything to the place that called it.
+✓ The word display is the method’s name.
+  Every method must have a name. Otherwise, you don’t have a way to call the method.
+✓ The parentheses contain all the things you’re going to pass to the
+  method when you call it.
+Packages:
+=========
+if you are going to use a class (defined in a different package),you have to provid it is path(package.class) or
+use an import abbreviation.
+
+import:
+=======
+when you use the * : that means you can use all the classes in the imported package.
+i.e: import java.util.*; //all the classes in the java.util package (Scanner,Random,Locale....) can be used easily.
+
+NOTE:
+when you try to concatenate (char) type and (int,short,long,byte,float,double) type the char type gets converted to an int type.
+
+REMEMBER:
+Java doesn’t allow you to assign a char value to a string variable.
+
+NOTE:The duality of (char) type needs more explaining.
+NOTE:Using the double type to store an amount of money is generally a bad idea.
+     The BigDecimal type is better.(need to use the java.math.BigDecimal import).
+
+(Prameters or arguments)//
+N.
+*NOTE: A method call is an expression with a value.
+*NOTE: If a method returns anything, then a call to the method is an expression with
+       a value. That value can be printed, assigned to a variable, added to something
+       else, or whatever. Anything you can do with any other kind of value, you can
+       do with a method call.
+NOTE: any variable that is not initialized have value of zero.
+NOTE: need to know more about scopes.

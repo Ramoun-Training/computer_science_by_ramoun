@@ -1,0 +1,132 @@
+Switch statement:
+=================
+*compound statement treated as single statement.
+*used (instead of if statement in equality[==]cases) when there is a lot of alternatives.
+*variable/expression can doesn't have to have an int value ,it can be char,byte or short but not long.
+*The default clause is optional.
+*you can’t use a condition in a switch statement’s Expression.
+*You can’t use a condition as a case value, either.
+*You can put any statements inside each case (after the colon)-[if statements,print....]
+*you can nest switch inside another switch statements.
+
+
+switch (variable/expression) {//remember "variable" can also be an assignment statement.
+    case value : statements; break;//you can still add as many statement as you want.
+    case value2: statements; break;//here too.
+    case value3: statements; break; z = 2//the statement after the break is unreachable code.
+    ...
+    ..
+    .
+    default : statement; break;
+}//you can have as many cases as you want.
+
+NOTE:
+The second statement is called a break statement.
+(What a surprise!) When the computer encounters a break statement,
+the computer jumps out of whatever switch statement it’s in. So in
+Listing 11-1, the computer skips right past case 3, case 4, and so on.
+The computer jumps to the statement just after the end of the switch
+statement.
+BREAK:is called a control statement.
+
+TODO:
+You don’t really need to put a break at the very end of a switch statement.
+The last break (the break that’s part of the default clause) is
+just for the sake of overall tidiness.
+
+NOTE:
+switch statement (CAN) have:
+*- one default statement.
+*- one case statement.
+*- case with no statements within it[i.e: case : ].
+*- nothing at all (just white space - but that's not useful).
+
+NOTE:
+switch : is treated as a single statement in a whole java program just like (the if statemetn).
+{} works just like a semicolon.[works only with compound statements.]
+
+NOTE:
+braces in the switch statement are NOT optional,Even with a single statement.
+
+NOTE:
+you can't use other statements within the swithch block than the switch keywords (case,default)
+
+The Problem Of Printing Uninitialized Variable:
+===============================================
+i.e:
+    int z;
+    switch(Generator.nextInt(9)) {
+        case 1:z=1;//when ommiting no problem
+        case 2:z=2;//when ommitign no problem
+        default:z=3;//when ommiting -> big problem.
+    }
+    System.out.println(z);
+    //So assigning the variable anywhere within the swtich statement other than the default(with no breaks before.)
+    //gives an error because as we 've said before the compiler doesn't execute the program
+    //it just checks the structure of the program.
+//TODO:Always make sure that in all cases to put an assinment statement even if there is cases that will never happen.
+NOTE:
+cases values have to be of the same type of the expression.
+Except for the char and int type those two can be used intrchangbly.
+
+NOTE:
+break is called a control statement and can't be uesed outside of a loop or a switch.
+
+NOTE:
+switch expression can be of type String too. (This feature from java 7 and later.)
+
+NOTE:
+switch expression doesn't have to be a single variable it can be any expression of
+type (char,int,short,byte,String)
+For example, you can
+simulate the rolling of two dice with the following code:
+---------------------------------------------------------
+byte die1,die2;
+die1 = random_generator.nextInt(6) + 1;
+die2 = random_generator.nextInt(6) + 1;
+
+switch (die1 + die2){
+    //etc.
+}
+
+NOTE:The cases in a switch statement don’t have to be in order. Here’s some.
+     This mixing of cases may slow you down when you’re trying to read a
+     program, but it’s legal nonetheless.
+
+To Break or not to break:
+=========================
+The term fall-through describes what happens when you end a case without a break statement.
+What happens is that execution of the code falls right through to the next case in line.
+Execution keeps falling through until you eventually reach a break statement or the end of the
+entire switch statement.
+
+Using Fall-Through to Your Advantage:
+=====================================
+*just keep a space after the cases....
+i.e:
+	switch (c){
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+			out.println("you've choosen 1,2,3 or 4");break;
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+			out.println("you've choosen 5,6,7 or 8");break;
+	}
+	//the computer hits case 1 but he finds it empty (and he doesn't find a break to stop him)so he moves to case 2(but same here)so he keeps falling through until he reaches case 4 (here he:first hits a print statement so he executes it,then he finds break to stop him.)so he gets out of the switch statement.
+
+NOTE:compund statements are treated as single statements.
+
+	//it is just like using this code
+	if (n == 1 || n == 2 || n == 3 || n == 4)
+		out.println("you....etc.
+	...
+
+Conditional Operator:
+=====================
+used to assign a value to a varaiable based on a certin boolean expression.
+
+(boolean expression)?expression:expession;

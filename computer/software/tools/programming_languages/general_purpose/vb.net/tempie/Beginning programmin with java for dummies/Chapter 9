@@ -1,0 +1,76 @@
+if statement:
+=============
+if statements are compound statements.Consists of block
+
+when you surround a bunch of statements with curly braces, you get what’s called
+a block, and a block behaves, in all respects,
+like a single statement.
+
+
+Structure for multiple statements inside if/else
+------------------------------------------------
+if (boolean expression){
+    someStatement;//(if clause)
+}
+else{
+    otherStatement;//(else clause)
+}
+
+Structure for single statement within if/else
+---------------------------------------------
+if (boolean expression)
+    someStaement;//(if clause)
+else
+    otherStatement;//(else clause)
+
+/*
+The program sometimes compiles without errors,
+but the program’s run may not do what you expect it to do. (So the bottom line
+is, don’t omit the curly braces.)
+*/
+                ---------------------------------------
+NOTE:
+if is an example of a compound statement.
+compound statement:a statement that includes other statements within it.
+
+NOTE:
+✓ The condition must be in parentheses.
+✓ Statements inside the if clause end with semicolons. So do statements
+  inside the else clause.
+✓ Else keyword should be written imediately after if'clause.
+✓ There’s no semicolon immediately after the condition.(logic error)
+✓ There’s no semicolon immediately after the word else.(logic error)
+
+NOTE:
+you can use braces anywhere in your program as you want although it is not recommended.
+just a simple semicolon can mean a terminated empty statement.
+
+i.e:
+        if(x==123)System.out.println("good");//if clause ends here
+		//System.out.println("hahahah");//a statement out of the if scope
+		else ;//else clause ends here
+		System.out.println("BAD");//a statement that will execute anyway
+
+if statement’s skeletal outline:
+================================
+if () { //To do: Fill in the condition.
+ //To do: Fill in SomeStatements.
+} else {
+ //To do: Fill in OtherStatements.
+}
+NOTE:
+With the entire outline in place, you can start working on the items on your
+to-do list. When you apply this kind of thinking to a compound statement, it’s
+harder to make a mistake.
+
+/!\
+---
+} else; { 
+==========
+The program compiles
+without errors, but the
+statement after the word
+else is always executed,
+whether the condition is
+true or false
+.

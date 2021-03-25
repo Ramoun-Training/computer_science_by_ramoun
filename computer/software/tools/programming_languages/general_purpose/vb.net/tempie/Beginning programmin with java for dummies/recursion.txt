@@ -1,0 +1,239 @@
+Recursion:
+==========
+recursion is : defining something in terms of itself.
+			   or:
+			   it is a mehtod used heavily in computer science where the solution of a problem depends on solutions to smaller instances of the same problem.
+
+*What is recursive method?
+	1- it is a method that calls itself.
+	2- it is based on the "divide and conquer" idea inside the "art of war" book
+	3- with each method call the problem becomes simpler
+	4- must have a condition that leads to the method no longer making another method call on itself.And that condition is known as the (base case / termination condition).
+
+Example:
+	public static int triName(int num) {
+		if (num == 1)
+			return 1;
+		else {
+			return (num + triName(num - 1));
+		}
+	}
+
+	Trace:
+	======
+	triName(5) = 5 + triName(4)   = 15
+	triName(4) = 4 + triName(3)   = 10
+	triName(3) = 3 + triName(2)   = 6
+	triName(2) = 2 + triName(1)   = 3
+	triName(1) = 1
+
+NOTE: with great power comes great responsiblity
+	  recursive programming may reduce the time to write something
+	  but it will also take much more memory(compared to iterative programming)
+
+--> F1 --> F2 --> F3 --> F4 --> F5
+<-- F1 <-- F2 <-- F3 <-- F4 <-- F5
+
+--> F1 --> F1 --> F1 --> F1 --> F1
+<-- F1 <-- F1 <-- F1 <-- F1 <-- F1
+
+HOW TO WRITE A RECURSIVE METHOD/FUNCTION/PROCEDURE
+
+	1. Write "if"	
+		there must be at least 2 cases:
+		a recursive case (where the method calls itself)
+		and a base case (where the method doesn't)
+
+	2. Handle the simplest case(s) "Base Case"
+		simple = no recursive call needed (no further looping)
+		if you need to add useful statements that are going to help in solving the problem only.(mathematical problem)
+		if not then leave it empty or use : return ;
+
+	3. Write the recursive call(s) "Recursive Case"
+		on the next simpler input/state
+		NOTE:maybe store the recursive call result in a variable specially in non-void mehtods.
+
+	4. Assume the recursive call works
+		ask yourself : what does it do? //if it works then computes the .....factorial of (n-1)
+		ask yourself : how does it help?
+
+HOW RECURSION WORKS?
+	
+	1. Each call to the method (recursive call) is seprated from other calls 
+
+	2. Java builds a stack of calls 
+		each time a call happens java leaves a pointer/mark in front of the line it should 
+		back to after the call finishes
+
+	3. Java handles method calls in stacks
+
+	4. Each time a recursive call happens, the arguments are treated independently although
+	   they have the same name
+	    each 
+
+	5. Each time a call ends it is freed out of the stack
+
+
+NOTE:
+ 	// we can use it to result in iterational/looping behavior without actually writing a loop(for/while/do) explixitly in our code.
+
+ 	any problem that can be solved with a loop can be solved recursively
+ 	and any problem that can be solved recursivly can also be solved with  loop
+
+ 	we can choose what we want either way will work but sometimes one way is harder to implement or use than the other
+
+
+WHAT HAPPENS AFTER CALL FINISHES:
+	1. free code from memory
+	2. free variables from memory
+	3. switch control back to the place from where the method was called.
+
+
+Tracing:
+========
+public static void walkToTheWall() {
+	if (Robot.frontIsClear()) {
+		Robot.move();
+		WalkToTheWall();
+	}
+	else {
+		//do nothing
+	}
+}
+
+
+/*
+				    __
+				   |
+				   | 1	    				  (if n <= 0)
+	factoiral(n) = |
+				   | n * factorial(n - 1)     (if n > 1)
+				   |
+				    --
+*/
+public static long factorial(int nubmer) {//long: so that you don't get an overflow so soon
+	if(number <= 0) {
+		return 1;
+	} else {
+		return number * factroial(number - 1);
+	}
+}
+
+
+
+public static int d() {
+	if (Robot.frontIsClear()) {
+		Robot.move();
+		int n = d();//marking this to back to after the call finishes
+		//back up and count
+		Robot.backUp();
+		return n + 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+/*//not that good
+	int d = 0;
+	public static int forwardd() {
+		if (Robot.frontIsClear()) {
+			Robot.move();
+			d++;
+			forwardd();
+		}
+		else {
+			for (int i = 0; i < d; i++) {
+				backUp();
+			}
+		}
+		return d;
+	}
+*/
+
+another example:
+
+public static int p2(int n) {
+	if (n == 0) {
+		return 1;
+	}
+	else {
+		return 2 * P2(n - 1);
+	}
+}
+
+-------------------
+n       |    P2()
+-------------------
+0       |    1
+1       |    2
+2		|	 4
+3		|	 8
+4		| 	 16
+n 		| 	 2 ^ n
+
+p(3) = 2 * p(2)
+p(2) = 2 * p(1)
+p(1) = 2 * p(0)
+P(0) = 1
+P(1) = 2 * 1 = 2
+p(2) = 2 * 2 = 4
+p(3) = 2 * 4 = 8
+
+fibonachi
+========\
+{1,1,2,3,5,8,13.....}
+
+public static int f(n) {
+	if (n < 2) {//termination condition
+		return 1;
+	}
+	else {
+		return f(n - 1) + f(n - 2);
+	}
+}
+//f(n) = 1 || f(n) = f(n - 1) + f(n - 2)
+
+
+//the operational way
+power(x,3)
+x * power(x,2)
+x * (x * power(x,1))
+x * (x * (x * power(x,0)))
+x * (x * (x * 1))
+x * (x * x)
+x * x * x
+
+NOTE: With recursive programs you can create very complex behaviors with a few lines of code. But on all of that power on the expense of memory usage (be careful)
+
+NOTE: recursion is nice but if we don't pay attention, we can get into infinite computations
+NOTE: to avoid infinite computaions, we have to understand the conditions under which a recursive method does in fact terminate.
+NOTE: at some point we need to reach a non-recursive case.
+NOTE: if there is a recursive call for all possible values, there is no way to stop.
+NOTE: there is always one or more base cases and one or more recursive cases.
+NOTE: we need to have the recursive call gets closer to the base case (to the termination condition)
+NOTE: in infinite(non-terminating) recursive calls there is to opinions:
+		in THeory: it will never stop.
+		in practise: it does stop because an overflow of data somewhere(stack overflow)
+
+//the factorial of a natural number n is the multiplication of all natural nubmers between 1 and n.
+NOTE: There is two ways to read and understand recursive methods:
+		-> Operational way
+		    - the rewriting game 
+		    2. 
+		    	fact(3) = 3 * fact(2) = 3 * (2 * fact(1)) = 3 * (2 * (1 * fact(0)))
+		-> Mathematical/Notational way
+			1. reduce the problem to another problem of the same kind(assuming that i know the solution of that simpler problem so -> i can solve the main problem)
+
+			2. identify the case when the previous reasoning does not hold.(base case)
+
+NOTE: remember that statements before the recursive call are different from statements after the recursive call.
+
+
+=========================================================================
+ramounparis@gmail.com
+_________________________________________
+made with 𓋹 by 𓆩RAM#UN𓉛
+_________
+R𓄿moun𓋔
+=========================================================================

@@ -1,0 +1,23 @@
+nested loops:
+=============
+while (not at the end of the email.txt file)  {outer loop
+ //Blah-blah
+ while (symbol != '@')  {//inner loop
+ //Blah-blah-blah
+ }
+ //Blah-blah-blah-blah
+}
+NOTE:
+Because one loop is inside the other, they’re called nested loops.  The old loop
+(the symbol != '@'  loop) is the inner loop.  The new loop (the end-of-file
+loop) is called the outer loop.
+
+hasNext():
+==========
+while (diskScanner.hasNext()) {
+ Execute the statements in Listing 14-1
+}
+NOTE:
+The Scanner class’s hasNext method answers true or false to the following question:
+    Does the email.txt file have anything to read in it (beyond what you’ve
+    already read)?

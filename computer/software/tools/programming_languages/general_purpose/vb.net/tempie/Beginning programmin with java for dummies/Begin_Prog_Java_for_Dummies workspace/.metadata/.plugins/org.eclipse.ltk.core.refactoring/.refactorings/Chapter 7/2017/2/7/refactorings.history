@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;What_do_i_have.java&apos; to &apos;Chapter 7/src/change&apos;&#x0D;&#x0A;- Original project: &apos;Chapter 7&apos;&#x0D;&#x0A;- Destination element: &apos;Chapter 7/src/change&apos;&#x0D;&#x0A;- Original element: &apos;What_do_i_have.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;change" element1="/src&lt;{What_do_i_have.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1487254296362" units="1" version="1.0"/>
+</session>

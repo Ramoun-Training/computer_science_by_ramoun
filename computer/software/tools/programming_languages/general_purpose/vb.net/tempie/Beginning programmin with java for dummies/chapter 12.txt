@@ -1,0 +1,27 @@
+while statement:
+================
+repeating statements while certain condition remains true.
+
+while the sum of the two dice isn't 7 and isn't 11
+keep doing all the stuff in curly braces: {
+}
+
+*Each repetition of the statements in the loop is called an iteration of the loop.
+*when condition is no longer true,the repeating of statements stops dead in its tracks.The computer marches on to the statements that come after the loop.
+
+GOOD PROGRAMMING PRACITICE:
+---------------------------
+use flags instead of break; and continue; statements.
+
+NOTE:
+INFINITE LOOP:This kind of processing that doesn't stop -run forever- is called an infinite loop. The loop runs and runs until someone trips over the computer’s extension cord.
+
+NOTE:
+to know the difference between (keyboard.next().charAt(0))and (keyboard.findWithinHorizon(".",0).charAt(0)) becomes clear inside the loop.
+
+NOTE:
+What the userName_Extractor program needs to do is (input->test->print).
+OR  TODO:test -> print ->input
+
+NOTE:
+Disastrous or not, an unwanted blank space is the symptom of a logical flaw.

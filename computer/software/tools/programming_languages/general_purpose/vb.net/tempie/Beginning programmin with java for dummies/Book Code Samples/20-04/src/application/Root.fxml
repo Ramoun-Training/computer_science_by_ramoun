@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="206.0" prefWidth="244.0"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.Main">
+	<children>
+		<TextField fx:id="textField" layoutX="47.74609375" layoutY="25.5" />
+		<Button layoutX="88.0" layoutY="71.0" mnemonicParsing="false"
+			onAction="#onClick" text="Capitalize" />
+	</children>
+</AnchorPane>

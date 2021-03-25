@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Real-World-Projects</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/Absence.java</name>
+			<type>1</type>
+			<locationURI>PARENT-8-PROJECT_LOC/My%20Works/Programming/Programming%20languages/Java/Programs/absence%20TEST/Absence.java</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

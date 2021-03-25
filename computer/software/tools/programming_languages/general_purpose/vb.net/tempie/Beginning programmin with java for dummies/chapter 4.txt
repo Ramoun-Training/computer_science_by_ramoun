@@ -1,0 +1,300 @@
+﻿chapter 4:
+
+HOw to approach a new project slowly and carefully:
+===================================================
+1- gawk in awe of the program.
+2- run the program to see what it does.
+3- stare at the program for a while or read someone’s explanation of the program and its parts.
+4-gawk a little more and run the program again.
+**Don’t believe the wise guys who say they never go through these steps.
+	Even experienced programmers approach a new project slowly and carefully.
+
+keywords:.....
+==============
+A keyword is a dictionary word — a word that’s built right into a language.
+Each Java keyword has a specific meaning — a meaning that remains unchanged from one program to another.
+i.e: public -> means signals a part of a program that is accessable to any other piece of code.
+*the words (true,false,null) are not java keywords.(blame the guys at oracle).
+ _________________
+ ** 2 keywords have no meaning in java programs
+	Those keywords — const and goto — are reserved
+	for non-use in Java.
+	The creators of Java figure that, if you use either of the words const or goto in your code,
+	you should be told politely to move to the C++ programmers’table_______________________
+
+Identifiers:
+============
+An identifier refers to a value (variable), a part of a program (method),a certain kind structure, or any number of things.
+identifiers with agreed upon meaning:
+=====================================
+In Java, almost all these identifiers are defined in the Java API. Listing 4-1 has
+five such identifiers. They’re the words main, String, System, out, and println.
+
+meaning of println statement:
+=============================
+	✓ main:		The main starting point for execution in every Java program.
+	✓ String:   A bunch of text; a row of characters, one after another.
+	✓ System: 	A canned program in the Java API. This program 	accesses some
+				features of your computer that are outside the direct control
+				of the Java Virtual Machine (JVM).
+	✓ out: 	    The place where a text-based program displays its text. (For a
+				program running in Eclipse, the word out represents the "Console view".
+				(To read more about text-based programs, check the first several paragraphs of Chapter 3.)
+	✓ println:  Display text on your computer screen.
+
+meaning of printf statement:
+============================
+	the ability to use placeholders(%d,%c,%s,%f,%b):
+	i.e: System.out.printf("welcome to %s,the number %d in the U.S","apple",1)
+	prints -> welcome to apple,the number 1 in teh U.S
+	you can use place-holders to format the output.
+	ex:System.out.printf("you pay: %.2f",34.44823)
+	   it prints -> you pay: 34.45 //yes it rounds the cut.
+Literals:
+=========
+	A literal is a chunk of text that looks like whatever value it represents. In
+	Suzanne’s sentence (refer to Figure 4-2), “eh” is a literal because “eh” refers
+	to the word "eh".Numbers (all kinds of numbers) are literals too.
+
+NOTE:you can use underscore in your code to seprate digits in DOUBLE literals only.
+     Supported in versions java 7 and +java 7 only.
+
+					####################################
+Comments:
+=========
+*the comment tells other programmers something about your code.
+*There are no instructions for the computer to perform inside this comment.
+
+*Comments are for your own benefit, too. Imagine that you set aside your code
+for a while and work on something else. When you return later to work on the
+code again, the comments help you remember what you were doing.
+
+The Java programming language has three kinds of comments:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+✓ Traditional comments:
+-----------------------
+The comment begins with /* and ends with */. Everything between the opening /* and the closing */
+is for human eyes only.
+Nothing between /* and */ gets translated by the compiler.
+
+asterisks aren’t required when you create a comment. They just make the comment look pretty.
+I include them in Listing 4-1 because, for some reason that I don’t entirely understand,
+most Java programmers add these extra asterisks.
+
+
+✓ End-of-line comments:
+-----------------------
+An end-of-line comment starts with two slashes and goes to the end of aline of type.
+
+NOTE:When you’re writing a program and something’s not working correctly,
+it often helps to try commenting some of the code.
+This keeps the Java compiler from seeing the code while you try to figure
+out what’s wrong with your program.
+
+
+✓ Javadoc comments:
+------------------
+ A special Javadoc comment is any traditional comment that begins with an extra asterisk.
+
+/**
+ * Print a String and then terminate the line.
+ */
+
+This is a cool Java feature. The software that you can download from java.sun.com
+includes a little program called javadoc. The javadoc
+program looks for these special comments in your code. The program
+uses these comments to create a brand new web page — a customized
+documentation page for your code. To find out more about turning
+Javadoc comments into web pages, visit this book’s website (http://allmycode.com/BeginProg)
+
+
+Java methods:
+=============
+In Java, a method is a list of things to do. Every method
+has a name, and you tell the computer to do the things in the list by using the
+method’s name in your program.
+
+method declaration:
+-------------------
+constracting the method.
+A method’s declaration (or method for short)tells the computer what will happen if you call the
+method into action.
+
+void FixTheAlternator() {//This part up to but not including the open curly brace is called METHOD HEADER
+	DriveInto(car, bay);
+	Lift(hood);
+	Get(wrench);
+	Loosen(alternatorBelt);
+	...
+}//The part surrounded by carly braces is called METHOD BODY
+
+method calling:
+---------------
+A method call (a separate piece of code) tells the computer to actually call the method into action.
+
+FixTheAlternator(junkyOldFord);
+
+
+NOTE:____
+Almost every computer programming language has something akin to Java’s
+methods. If you’ve worked with other languages, you may remember things
+like subprograms, procedures, functions, subroutines, Sub procedures,
+or PERFORM statements. Whatever you call it in your favorite programming
+language, a method is a bunch of instructions collected together and given a
+new name.
+____________________________________________________
+
+A method’s declaration and the method’s call tend to be in different parts of the Java program.
+
+					#################################
+The main method in a program
+============================
+The word main plays a special role in Java. In particular, you never write
+code that explicitly calls a main method into action. The word main is the
+name of the method that is called into action automatically when the program begins running.
+{THE MAIN STARTING POINT OF A PROGRAM}
+NOTE:________
+None of the instructions in a method are executed until the method is called
+into action. But if you give a method the name main, that method is called into
+action automatically.
+_______________________________________________
+How you finally tell the computer
+to do something:
+=================================
+When the ThingsILike program runs, the computer automatically finds the
+program’s main method and executes any instructions inside the method’s
+body.
+/*
+System.out.println("Chocolate, royalties, sleep");
+*/
+I can describe this line of code in at least two different
+ways:
+
+It’s a statement:
+-----------------
+In Java, a direct instruction that tells the computer to do something is called a statement.
+The statements in other programs may tell the computer to put 7 in a certain memory location or make a
+window appear on the screen. The statements in computer programs do all kinds of things.
+
+It's a methode call:
+--------------------
+Java has many different kinds of statements. A method call is just one kind.
+
+Ending a statement with a semicolon:
+====================================
+In Java, each statement ends with a semicolon.
+
+The method header (the line with the word main in it) doesn’t directly tell the
+computer to do anything. Instead, the method header describes some action
+for future reference. The header announces “Just in case someone ever calls
+the main method, the next few lines of code tell you what to do in response
+to that call.”
+
+Every complete Java statement ends with a semicolon. A method call is a
+statement, so it ends with a semicolon, but neither a method header nor a
+method declaration is a statement.
+
+The method named System.out.println:
+====================================
+System.out.println. This method is defined in the Java API. Whenever you call the
+System.out.println method, the computer displays text on its screen.
+
+Just as Pauline and Ott are names in their own right, so System, out, and
+println are names in the Java API. But to use println, you must write the
+method’s full name. You never write println alone. It’s always System.
+out.println or some other combination of API names.
+
+i.e:there is DriverManager.println method which used to write to a database logfile
+
+/*
+programmers look up new features in an online document called the API Specification
+(known affectionately to most Java programmers as the API documentation, or the Javadocs).
+*/
+
+
+methods,methods and methods:
+============================
+-There’s a declaration for a main method. I wrote the main method
+myself. This main method is called automatically whenever I start running the ThingsILike program.
+/*
+	010001111010001010.....
+			  \
+			   \      the jvm calls your main method automatically...
+			    \
+				 \
+				  \
+				   \
+public static void main(String args[]){
+		System.out.println("i love you very much computer.");
+}                     \
+					   \
+					    \     a statement in the main method calls the
+						 \	  	System.out.println() method.
+						  \
+			public void println(String s){
+				ensureOpen();
+				textOut.write(s);
+				textOut.flushBuffer();
+				.......
+			}
+*/
+-There’s a call to the System.out.println method. The method call
+for the System.out.println method is the only statement in the body
+of the main method. In other words, calling the System.out.println
+method is the only thing on the main method’s to-do list.
+The declaration for the System.out.println method is buried inside
+the official Java API. For a refresher on the Java API, refer to Chapter 1.
+
+NOTE:___________
+True, you can ignore all the nitty-gritty Java code
+inside the API. All you need to remember is that System.out.println is
+defined somewhere inside that code. But I’m not being fair when I make the
+API code sound like something magical. The API is just another bunch of Java
+code. The statements in the API that tell the computer what it means to carry
+out a call to System.out.println look a lot like the Java code in Listing 4-1
+________________________________
+The Java class:
+===============
+Have you heard the term object-oriented programming (also known as OOP)?
+OOP is a way of thinking about computer programming problems — a way
+that’s supported by several different programming languages. OOP started in
+the 1960s with a language called Simula. It was reinforced in the 1970s with
+another language named Smalltalk. In the 1980s, OOP took off big time with
+the language C++.
+
+NOTE:_________
+Some people want to change the acronym, and call it COP — class-oriented programming.
+
+In Java, everything starts with classes, everything is enclosed in
+classes, and everything is based on classes. You can’t do anything in Java until
+you’ve created a class of some kind.
+__________________________________________________
+To box off a chunk of code, you do two things:
+----------------------------------------------
+✓ You use curly braces. These curly braces tell the compiler where a chunk
+of code begins and ends.
+✓ You indent code. Indentation tells your human eye (and the eyes of other
+programmers) where a chunk of code begins and ends.
+Don’t forget. You have to do both.
+
+				####################################
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+The NEXT PART IS NOT PART OF THIS CHAPTER FOR MORE INFO @ INTERNET.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+escaping characters:
+====================
+used to escape from errors in print statements.
+
+System.out.println("i said "don't repeat my words" to him ");
+//error message appears.
+
+System.out.println("i said \"don't repeat my words\" to him");
+valid in java:
+--------------
+\t:inserts a tab.
+\n:inserts a new line.
+\\:to allow you to type the \ character.
+\":inserts the double quotation mark.
+\':inserts the singel quotation mark.
+\r:inserts an new line with small indention.
