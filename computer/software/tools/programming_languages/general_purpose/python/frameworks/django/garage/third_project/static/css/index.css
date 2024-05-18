@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(to top, tomato, crimson);
+    color: #fff;
+    width: 100%;
+    padding: 0.4rem 1rem;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}

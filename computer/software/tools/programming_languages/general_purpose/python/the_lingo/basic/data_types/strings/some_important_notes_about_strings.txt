@@ -1,4 +1,8 @@
-NOTE:
+NOTE: strings are immutable.
+```
+x = 'hi'
+x[0] = 'f' # error
+```
 
 alphanumeric strings share the same id (same memory address)
 
@@ -11,4 +15,7 @@ x is y # True
 x.isalnum() # True
 y.isalnum() # True
 
+you can use f-strings and you can use format
 
+x = 'hello mr {}'.format('omar')
+y = 'hello mr {x} and ms {y}'.format(x='omar', y='soso')

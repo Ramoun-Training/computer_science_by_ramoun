@@ -1,3 +1,9 @@
+---
+runme:
+  id: 01HWTMW6CGW4B8JC6EA203BQTD
+  version: v3
+---
+
 # Scopes
 
 basically every method/function in python got its own scope and that means variables defined within that scope are only known for members of that scope (scopres determine where variables can be accessed from within the program and what values those variables hold in different contexts).
@@ -8,19 +14,16 @@ basically every method/function in python got its own scope and that means varia
 
 |L  |E  |G  |B  |
 |---------|---------|---------|---------|
-|Local     |Enclosing         |Global         |Built-in         |
-|variables defined within a function.|variables insthe local scope of an enclosing function.|variables defined at the top-level of a module or explicitly defined usnig the `global` keyword.|names preassigned in python.
+|Local     |Enclosing Function Locals |Global(module)         |Built-in         |
+|variables assigned within a function(`def` or `lambda`). |variables in the local scope of an enclosing function(`def` or `lambda` - inner to outer). |variables assigned at the top-level of a module or explicitly defined using the `global` keyword. |names preassigned in built-in names module in python.
 
 > **Note**: python first checks for the variables in the local scope, then the enclosing scope, then the global scope and finally the built-in.[2]
 
 ## how python works with scopes
 
-1. [**`L`**] pyhon searches for the refrenced variable in the scope of the method, if it finds it then this variable is a local variable (you can say it's environment aware)
-
-2. if python doesn't find the variable declared elsewhere in the body of the function, it searches in the global scope, if it finds it in the global scope, then that is a global variable.
-
-3. if python doesn't find the variable in the global scope, then the variable doesn't exist.
-
+1. [**`L`**] python searches for the referenced variable in the scope of the method, if it finds it then this variable is a local variable (you can say it's environment aware)
+2. [**`G`**] if python doesn't find the variable declared elsewhere in the body of the function, it searches in the global scope, if it finds it in the global scope, then that is a global variable.
+3. [**`B`**] if python doesn't find the variable in the global scope, then the variable doesn't exist.
 
 > **Note**: any refrencing to a global variable in a function works smoothly, unless you assign the refrenced global varaible inside of the function (python considers that a declaration of a new local variable).
 
@@ -30,7 +33,7 @@ basically every method/function in python got its own scope and that means varia
 
 > **Note**: the difference between local vars and paramters is that paramters can be assigned values from outside the scope of the function (they are the i/p gate of the function).[2]
 
-```python
+```python {"id":"01HWTMW6CF378QCAP3C7TYPMJR"}
 x = 3
 def method():
     global x = 33
@@ -40,7 +43,7 @@ print(x) # 33
 
 > **Note**: it is considered good practice not using the `global` keyword, instead use the passing args way.
 
-```python
+```python {"id":"01HWTMW6CF378QCAP3C88H0V35"}
 x = 3
 def method(x):
     print(x)
@@ -54,7 +57,7 @@ method(x)
 
 to view buit-in vars in python
 
-```python
+```python {"id":"01HWTMW6CF378QCAP3CB4CYBH0"}
 import builtins
 
 print(dir(builtins))
@@ -62,7 +65,7 @@ print(dir(builtins))
 
 > **Note**: be carefull not to override builtins. Python gives the programmer the power to overide bultins.[2]
 
-```python
+```python {"id":"01HWTMW6CGW4B8JC6E9T73X68T"}
 import builtins
 
 def min():
@@ -81,7 +84,7 @@ python found the min function in the global scope so it fell back for the built-
 
 it has to do with nested functions and closures.
 
-```python
+```python {"id":"01HWTMW6CGW4B8JC6E9TN7SK93"}
 def outer():
     x = 'outer x'
     def inner():
@@ -93,7 +96,7 @@ def outer():
 outer()
 ```
 
-```python
+```python {"id":"01HWTMW6CGW4B8JC6E9TSZ6VTT"}
 def outer():
     x = 'outer x'
     def inner():
@@ -104,16 +107,17 @@ def outer():
     print(x)
 outer()
 ```
+
 ### What happens with the Enclsing scope:[2]
 
 1. python looks in the local scope for the variable.
-1. then python looks in the local scope of an enclosing function.
+2. then python looks in the local scope of an enclosing function.
 
 > **Note**: the local scope and the enclosing scope is just like the local and global scope but inside of functions.[2]
 
 ### and as with the global scope...the `nonlocal` statement [2]
 
-```python
+```python {"id":"01HWTMW6CGW4B8JC6E9TWQC5VH"}
 def f1():
     x = 'hi'
     def f2():
@@ -125,11 +129,12 @@ def f1():
 
 f1()
 ```
+
 > **Note**: `nonlocal` is used more often than the `global`. Because `nonlocal` can be useful in order to change the state of closures, decorates and things like that.[2]
 
 ## Final thoughts
 
-```python
+```python {"id":"01HWTMW6CGW4B8JC6E9Y9CTP61"}
 # global_0
 def f_1():
     # local_1
@@ -138,7 +143,7 @@ def f_1():
         #local_2
 ```
 
-```python
+```python {"id":"01HWTMW6CGW4B8JC6E9Z0V02G2"}
 # just follow the LEGB
 x = 'global x'
 
@@ -154,12 +159,52 @@ outer()
 print(x)
 ```
 
+```python {"id":"01HWTQ7JRE283JW20RG0GX6NK6"}
+x = 22
+def func(x):
+    print("x is:", x)
+    x = 1000
+    print("local x changed to:", x)
+
+func(x)
+print(x)
+```
+
+```python {"id":"01HWTQJSHMMNPWHY5CPBTHCFY1"}
+x = 22
+
+def change_x():
+  global x
+  x = 2000
+
+print(x)
+change_x()
+print(x)
+
+```
+
+```python {"id":"01HWTQNZ9484WHEBGM0TSPYA92"}
+# better way
+x = 1000
+change_x(x):
+  x = 20000
+  return x
+
+x = change_x(x)
+```
+
+```python {"id":"01HWTQKX4N0RQNAEQ3J7207BGE"}
+
+```
+
 ## benifits of knowing about scopes
 
 - helps in the debugging process when a variable may not have the value that you expected.[2]
+
+![scopes](./scopes.png)
 
 # Refrences
 
 [1] video of that guy that i donp't remember his name
 
-[2] corey schafer (https://www.youtube.com/watch?v=QVdf0LgmICw&list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7&index=19&t=0s)
+[2] [corey schafer](https://www.youtube.com/watch?v=QVdf0LgmICw&list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7&index=19&t=0s)

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Mind (🥈🧠)</title>
+    <link rel="stylesheet" href="{% static "css/tables.css" %}"> <link
+    rel="stylesheet" href="{% static "css/forms.css" %}">
+    <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <div id="search-form">
+      <form method="post">
+        {{search_form}} {% csrf_token %}
+        <label for="topic">Topic*:</label>
+        <select id="topic" name="topic">
+          <optgroup label="topics">
+            {% for topic in topics %}
+            <option value="{{topic}}">{{topic}}</option>
+            {% endfor %}
+          </optgroup>
+        </select>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div id="form-container">
+      <div class="col-md-12">
+        <form action="index.html" method="post">
+          <h1>Add New Webpage</h1>
+
+          <fieldset>
+            <legend><span class="number">*</span> Required</legend>
+
+            <label for="name">Title*:</label>
+            <input type="text" id="name" name="user_name" />
+
+            <label for="url">Url*:</label>
+            <input type="url" id="url" name="url" />
+
+            <label for="notes">Notes*:</label>
+            <textarea id="notes" name="user_bio"></textarea>
+
+            <label for="topic">Topic*:</label>
+            <select id="topic" name="user_job">
+              <optgroup label="topics">
+                {% for topic in topics %}
+                <option value="{{topic}}">{{topic}}</option>
+                {% endfor %}
+              </optgroup>
+            </select>
+          </fieldset>
+
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <section class="wrapper">
+      <!-- Row title -->
+      <main class="row title">
+        <ul>
+          <li>Title</li>
+          <li>Topic</li>
+          <li>Notes</li>
+        </ul>
+      </main>
+
+      {% for webpage in webpages %}
+      <article class="row color">
+        <ul class="v-center">
+          <li>
+            <a href="{{webpage.url}}" target="_blank">{{webpage.name}}</a>
+            {% comment %} <span class="small">(update)</span> {% endcomment %}
+          </li>
+          <li>{{webpage.topic}}</li>
+          <li>{{webpage.notes}}</li>
+        </ul>
+        <ul class="more-content">
+          <li>
+            <a class="max-len" href="{{webpage.url}}" target="_blank"
+              >{{webpage.url}}</a
+            >
+          </li>
+        </ul>
+      </article>
+      {% endfor %}
+    </section>
+  </body>
+</html>

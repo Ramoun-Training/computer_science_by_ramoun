@@ -1,0 +1,31 @@
+# CS
+
+- [learn to program - coursera](https://www.coursera.org/learn/learn-to-program)
+- []()
+- []()
+- []()
+- []()
+
+## Resources
+
+- [git the primetime](https://www.youtube.com/watch?v=FjfgIImzhxc&list=TLPQMTAwNTIwMjTnd3ui0fNkzA&index=3&ab_channel=ThePrimeTime)
+- [fp vs oop](https://www.youtube.com/watch?v=08CWw_VD45w&t=15s&ab_channel=BasicOverflow)
+- [problems with lists - theprimetime](https://www.youtube.com/watch?v=wMYWR-iNzdM&ab_channel=ThePrimeTime)
+- [react next.js](https://www.youtube.com/watch?v=ZmoOQmugUtE&ab_channel=ActiveMindGamer)
+- [uncle bob - future of programming](https://www.youtube.com/watch?v=ecIWPzGEbFc&ab_channel=PaulStringer%27sMobileTech)
+- [github the primetime - git](https://www.youtube.com/watch?v=fPYSh680ZBY&ab_channel=ThePrimeTime)
+- [language design](https://www.youtube.com/watch?v=F25ez8s3AsQ&ab_channel=MaryElaineCaliff)
+- [best channel for anything cs - yt channel](https://www.youtube.com/@maryelainecaliff)
+- [my lesson - for cs stuff - yt channel](https://www.youtube.com/@MyLesson007/videos)
+- [cs channel - youtube](https://www.youtube.com/@DrChrisCain/playlists)
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
